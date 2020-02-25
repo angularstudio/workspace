@@ -74,10 +74,8 @@ watch:
 
 	nodemon -e ts -w projects/$(PROJECT)/src -x 'make build PROJECT=$(PROJECT) && ng serve'
 
-#
-
 ## Update (and pull) everything to latest.
-update: guard-BRANCH
+all/update: guard-BRANCH
 
 	@git pull
 	$(MAKE) git/update

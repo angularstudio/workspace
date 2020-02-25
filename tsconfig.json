@@ -28,13 +28,14 @@
       "@angular.studio/button": [
         "dist/button"
       ],
-      "card": [
-        "dist/card/card",
+      "@angular.studio/card": [
         "dist/card"
       ],
-      "dynamic-form": [
-        "dist/dynamic-form/dynamic-form",
+      "@angular.studio/dynamic-form": [
         "dist/dynamic-form"
+      ],
+      "@angular.studio/toolbar": [
+        "dist/toolbar"
       ]
     }
   },
