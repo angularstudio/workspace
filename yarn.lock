@@ -125,11 +125,6 @@
     ora "4.0.2"
     rxjs "6.5.3"
 
-"@angular.studio/board-button@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.npmjs.org/@angular.studio/board-button/-/board-button-0.0.5.tgz#105c0aaddf9ab61780ad638bdfb51ab0f776ee0e"
-  integrity sha512-n+AEslLPayplbx8eZc+FOZcL0SNhWho9wDmgkKndvHD/Y6JxE6J6LmvPCgYh2lV6XG9PpfjbF6nPk4/pr1zbNQ==
-
 "@angular/animations@~9.0.2":
   version "9.0.2"
   resolved "https://registry.npmjs.org/@angular/animations/-/animations-9.0.2.tgz#f20a5c93bd37a1e286722c58361bb8e9ac1af0f7"

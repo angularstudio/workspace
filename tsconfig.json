@@ -25,11 +25,16 @@
       "@angular.studio/board-button": [
         "dist/board-button"
       ],
-      "@angular.studio/dynamic-button": [
-        "dist/dynamic-button"
-      ],
       "@angular.studio/button": [
-        "dist/studio-button"
+        "dist/button"
+      ],
+      "card": [
+        "dist/card/card",
+        "dist/card"
+      ],
+      "dynamic-form": [
+        "dist/dynamic-form/dynamic-form",
+        "dist/dynamic-form"
       ]
     }
   },

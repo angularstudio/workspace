@@ -16,18 +16,19 @@ export class AppComponent {
         bottomButtons: [ {
 
             backgroundColor: '#32e666',
+            iconClass: 'fad fa-home',
             label: 'Button 1',
             routerPath: '/some/path'
 
         }, {
 
             backgroundColor: '#6265ee',
+            iconClass: 'fad fa-home',
             label: 'Button 2',
             routerPath: '/some/path'
 
         } ],
-
-        width: '216px',
+        width: '220px',
 
         buttons: [
 

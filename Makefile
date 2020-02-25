@@ -60,6 +60,10 @@ build:
 
 	ng build --prod $(PROJECT)
 
+build/all:
+
+	@for F in $(PROJECTS); do ng build --prod $$F; done
+
 publish:
 
 	rm -rf dist/$(PROJECT)

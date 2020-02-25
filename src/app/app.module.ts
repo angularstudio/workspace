@@ -1,5 +1,3 @@
-import { BoardButtonModule }       from '@angular.studio/board-button';
-import { StudioButtonModule }      from '@angular.studio/button';
 import { NgModule }                from '@angular/core';
 import { BrowserModule }           from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,11 +19,8 @@ import { AppComponent }            from './app.component';
         BrowserAnimationsModule,
 
         BoardModule,
-        BoardButtonModule,
 
         RouterModule.forRoot([]),
-
-        StudioButtonModule
 
     ],
 
