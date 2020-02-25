@@ -7,3 +7,6 @@
 [submodule "projects/board-button"]
 	path = projects/board-button
 	url = git@github.com:angularstudio/board-button.git
+[submodule "projects/toolbar"]
+	path = projects/toolbar
+	url = git@github.com:angularstudio/toolbar.git
