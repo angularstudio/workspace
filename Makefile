@@ -85,7 +85,7 @@ update: guard-BRANCH
 ### Commit and push all changes for all projects (make git/commit-and-push MESSAGE="my changes").
 git/commit-and-push:
 
-	@for F in $(PROJECTS); do echo "Committing $$F .." && cd $(PWD)/services/$$F && git add . && git commit -am '$(MESSAGE)' && git push origin HEAD:master; done || true
+	@for F in $(PROJECTS); do echo "Committing $$F .." && cd $(PWD)/projects/$$F && git add . && git commit -am '$(MESSAGE)' && git push origin HEAD:master; done || true
 	@git commit -am '$(MESSAGE)' || true
 	@git push || true
 
