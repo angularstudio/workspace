@@ -10,11 +10,12 @@
         "e2e": "ng e2e"
     },
     "workspaces": [
-        "projects/board-button"
+        "projects/board",
+        "projects/board-button",
+        "projects/button"
     ],
     "private": true,
     "dependencies": {
-        "@angular.studio/board-button": "^0.0.5",
         "@angular/animations": "~9.0.2",
         "@angular/common": "~9.0.2",
         "@angular/compiler": "~9.0.2",

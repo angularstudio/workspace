@@ -1,0 +1,9 @@
+[submodule "projects/board"]
+	path = projects/board
+	url = git@github.com:angularstudio/board.git
+[submodule "projects/button"]
+	path = projects/button
+	url = git@github.com:angularstudio/button.git
+[submodule "projects/board-button"]
+	path = projects/board-button
+	url = git@github.com:angularstudio/board-button.git
