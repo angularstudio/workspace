@@ -1,3 +1,4 @@
+import { Datatable }         from '@angular.studio/datatable';
 import { DialogService }     from '@angular.studio/dialog';
 import { Plans }             from '@angular.studio/plans';
 import { Toggle }            from '@angular.studio/toggle';
@@ -253,6 +254,19 @@ export class AppComponent implements OnInit {
     });
 
     // public features: FeaturesTable = {};
+
+    public datatable: Datatable = {
+
+        columns: [ {
+
+            id: 'feature',
+            label: 'FEATURES'
+
+        }, {
+
+            id: ''
+        } ]
+    };
 
     public constructor(private readonly dialogService: DialogService) {
 

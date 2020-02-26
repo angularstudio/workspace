@@ -54,6 +54,10 @@
       ],
       "@angular.studio/datatable": [
         "dist/datatable"
+      ],
+      "buttons": [
+        "dist/buttons/buttons",
+        "dist/buttons"
       ]
     }
   },

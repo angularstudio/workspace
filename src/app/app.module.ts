@@ -19,7 +19,7 @@ import { DemoDialogComponent }     from './demo-dialog/demo-dialog.component';
 
         AppComponent,
 
-        DemoDialogComponent
+        DemoDialogComponent,
 
     ],
 

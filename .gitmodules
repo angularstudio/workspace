@@ -37,3 +37,6 @@
 [submodule "projects/login"]
 	path = projects/login
 	url = git@github.com:angularstudio/login.git
+[submodule "projects/buttons"]
+	path = projects/buttons
+	url = git@github.com:angularstudio/buttons.git
