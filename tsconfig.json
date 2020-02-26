@@ -45,6 +45,10 @@
       ],
       "@angular.studio/toggle": [
         "dist/toggle"
+      ],
+      "plans": [
+        "dist/plans/plans",
+        "dist/plans"
       ]
     }
   },
