@@ -10,3 +10,6 @@
 [submodule "projects/toolbar"]
 	path = projects/toolbar
 	url = git@github.com:angularstudio/toolbar.git
+[submodule "projects/dialog"]
+	path = projects/dialog
+	url = git@github.com:angularstudio/dialog.git
