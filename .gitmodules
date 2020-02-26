@@ -28,3 +28,6 @@
 [submodule "projects/datatable"]
 	path = projects/datatable
 	url = git@github.com:angularstudio/datatable.git
+[submodule "projects/features-table"]
+	path = projects/features-table
+	url = git@github.com:angularstudio/features-table.git
