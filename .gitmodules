@@ -19,3 +19,6 @@
 [submodule "projects/toggle"]
 	path = projects/toggle
 	url = git@github.com:angularstudio/toggle.git
+[submodule ".ngmake"]
+	path = .ngmake
+	url = git@github.com:angularstudio/.ngmake.git
