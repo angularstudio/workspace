@@ -40,3 +40,6 @@
 [submodule "projects/buttons"]
 	path = projects/buttons
 	url = git@github.com:angularstudio/buttons.git
+[submodule "projects/confirm"]
+	path = projects/confirm
+	url = git@github.com:angularstudio/confirm.git

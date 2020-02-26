@@ -1,11 +1,12 @@
-import { Button, Buttons }   from '@angular.studio/buttons';
-import { DialogService }     from '@angular.studio/dialog';
-import { Plans }             from '@angular.studio/plans';
-import { Toggle }            from '@angular.studio/toggle';
-import { Toolbar }           from '@angular.studio/toolbar';
-import { Component, OnInit } from '@angular/core';
-import { Board }             from '../../projects/board/src/lib/board';
-import { Card }              from '../../projects/card/src/lib/card';
+import { Button, Buttons }         from '@angular.studio/buttons';
+import { Confirm, ConfirmService } from '@angular.studio/confirm';
+import { DialogService }           from '@angular.studio/dialog';
+import { Plans }                   from '@angular.studio/plans';
+import { Toggle }                  from '@angular.studio/toggle';
+import { Toolbar }                 from '@angular.studio/toolbar';
+import { Component, OnInit }       from '@angular/core';
+import { Board }                   from '../../projects/board/src/lib/board';
+import { Card }                    from '../../projects/card/src/lib/card';
 
 @Component({
     selector: 'app-root',
@@ -290,11 +291,22 @@ export class AppComponent implements OnInit {
 
     });
 
-    public constructor(private readonly dialogService: DialogService) {
+    public confirm: Confirm = new Confirm({
+
+        title: 'Delete User',
+        message: 'Are you sure you want to delete this user?',
+        confirmLabel: 'DELETE'
+
+    });
+
+    public constructor(private readonly dialogService: DialogService,
+                       private readonly confirmService: ConfirmService) {
 
     }
 
     public ngOnInit(): void {
+
+        this.confirmService.open(this.confirm);
 
         // this.dialogService.open(DemoDialogComponent, new DialogConfig({
         //
