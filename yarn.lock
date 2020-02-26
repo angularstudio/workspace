@@ -125,6 +125,11 @@
     ora "4.0.2"
     rxjs "6.5.3"
 
+"@angular.studio/board-button@0.0.7":
+  version "0.0.7"
+  resolved "https://registry.npmjs.org/@angular.studio/board-button/-/board-button-0.0.7.tgz#577d0fcc2ff7502cc2ccde558d728ecc951ab82e"
+  integrity sha512-f6mgNtAKi+/Nq9wBIyoicOje6sfoHJr0J/Q2SLUHLa0jhDFtJO7+wMLRiZk/sYqQlZWMtPRVVCsYj2J52XfzIw==
+
 "@angular/animations@~9.0.2":
   version "9.0.2"
   resolved "https://registry.npmjs.org/@angular/animations/-/animations-9.0.2.tgz#f20a5c93bd37a1e286722c58361bb8e9ac1af0f7"
@@ -194,6 +199,11 @@
   version "9.0.2"
   resolved "https://registry.npmjs.org/@angular/core/-/core-9.0.2.tgz#250093b6a4d3137e2cc30e73e6cee919f1386165"
   integrity sha512-ccVPR6RZo2s9O9phO0TJ60QZ0WA7qfUMzo0xnpBW0XGcbTzLEn9upvs+0PX64f9UpnHz/MQo0wsqYvTLuoz7Yw==
+
+"@angular/flex-layout@^9.0.0-beta.29":
+  version "9.0.0-beta.29"
+  resolved "https://registry.npmjs.org/@angular/flex-layout/-/flex-layout-9.0.0-beta.29.tgz#a334ffd15c272e2d48cdaef3879625aadcc13a54"
+  integrity sha512-93sxR+kYfYMOdnlWL0Q77FZ428gg8XnBu0YZm6GsCdkw/vLggIT/G1ZAqHlCPIODt6pxmCJ5KXh4ShvniIYDsA==
 
 "@angular/forms@~9.0.2":
   version "9.0.2"

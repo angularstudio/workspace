@@ -36,6 +36,12 @@
       ],
       "@angular.studio/toolbar": [
         "dist/toolbar"
+      ],
+      "@angular.studio/dialog": [
+        "dist/dialog"
+      ],
+      "@angular.studio/login": [
+        "dist/login"
       ]
     }
   },

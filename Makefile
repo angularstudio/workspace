@@ -1,5 +1,9 @@
-PROJECTS = $(shell ls projects)
-
+#PROJECTS = $(shell ls projects)
+PROJECTS = button \
+		   board-button \
+		   board \
+		   toolbar \
+		   card
 
 PURPLE          := $(shell tput setaf 129)
 GRAY            := $(shell tput setaf 245)
@@ -67,11 +71,13 @@ build/all:
 publish:
 
 	rm -rf dist/$(PROJECT)
+	cd projects/$(PROJECT) && git commit -am'bump' || true
 	cd projects/$(PROJECT) && npm version patch
 	ng build --prod $(PROJECT) && cd dist/$(PROJECT) && npm publish --access=public
 
 watch:
 
+	rm -rf dist/$(PROJECT)
 	nodemon -e ts -w projects/$(PROJECT)/src -x 'make build PROJECT=$(PROJECT) && ng serve'
 
 ## Update (and pull) everything to latest.

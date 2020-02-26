@@ -1,20 +1,49 @@
-<div class="wrapper">
+<div class="wrapper mat-elevation-z6">
 
-    <!--    <board-button [item]="{-->
+    <div class="top">
 
-    <!--        backgroundColor: '#222',-->
-    <!--        borderColor: 'red',-->
-    <!--        fontColor: 'green',-->
-    <!--        iconClass: 'fad fa-home',-->
-    <!--        iconColor: 'blue',-->
-    <!--        iconFontSize: '20px',-->
-    <!--        label: 'Home',-->
-    <!--        labelFontSize: '50px',-->
-    <!--        labelFontColor: 'rebeccapurple',-->
-    <!--        tooltip: 'Go Home!'-->
+        <toolbar [config]="toolbar">
 
-    <!--    }"></board-button>-->
+            <div class="left" left>
 
-    <board [collapsed]="true" [board]="board"></board>
+                <div class="icon">
+
+                    <img src="https://storage.googleapis.com/streamnvr-assets/gfx/logos/icon.png">
+
+                </div>
+
+                <div class="logo">
+
+                    <img src="https://storage.googleapis.com/streamnvr-assets/gfx/logos/logo-text.png">
+
+                </div>
+
+            </div>
+
+            <div class="logo" center>
+
+                center
+
+            </div>
+
+        </toolbar>
+
+    </div>
+
+    <div class="content" fxLayout="row">
+
+        <div class="left">
+
+            <board [collapsed]="true" [board]="board"></board>
+
+        </div>
+
+        <div class="right">
+
+            <!--            <card [config]="card"></card>-->
+
+        </div>
+
+    </div>
 
 </div>

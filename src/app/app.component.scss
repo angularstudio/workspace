@@ -2,7 +2,55 @@
 
     .wrapper {
 
+        display: flex;
+        flex-direction: column;
+
         height: 100%;
+
+        .top {
+
+            toolbar {
+
+                .left {
+
+                    display: flex;
+                    align-items: center;
+
+                    padding: 10px;
+
+                    .icon {
+
+                        margin-right: 20px;
+
+                        img {
+
+                            width: 50px;
+
+                        }
+
+                    }
+
+                    .logo {
+
+                        img {
+
+                            width: 150px;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        .content {
+
+            flex: 1;
+
+        }
 
     }
 
