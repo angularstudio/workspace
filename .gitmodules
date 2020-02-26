@@ -34,3 +34,6 @@
 [submodule "projects/dynamic-form"]
 	path = projects/dynamic-form
 	url = git@github.com:angularstudio/dynamic-form.git
+[submodule "projects/login"]
+	path = projects/login
+	url = git@github.com:angularstudio/login.git
