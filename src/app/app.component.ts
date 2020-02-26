@@ -178,10 +178,14 @@ export class AppComponent implements OnInit {
 
     public plans: Plans = new Plans({
 
-        backgroundImage: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        shadow: true,
+        backgroundColor: '#020215',
         footer: 'These prices are valid until January 1, 2021. Contact support for any questions or concerns.',
+        footerFontColor: '#999',
         title: 'Simple and flexible pricing',
-        description: 'A asdfasf asdf asd fasdfas dfas dfas. asd fas df asdfa sdfas dfas d fasdf!',
+        titleFontColor: '#fff',
+        description: 'Pay only for what you use. All plans are backed by our money back guarantee.',
+        descriptionFontColor: '#999',
         buttonPrimary: {
 
             kind: 'raised',
@@ -194,43 +198,53 @@ export class AppComponent implements OnInit {
 
             {
 
-                backgroundColor: '#7247b8',
+                backgroundColor: '#391b75',
+                button: 'SUBSCRIBE NOW',
+                buttonBackgroundColor: '#fd20d5',
                 iconClass: 'fad fa-home',
-                iconBackgroundColor: '#AE89FD',
-                title: 'Starter',
-                price: '$29.99',
+                iconBackgroundColor: '#999',
+                title: 'Personal',
+                titleFontColor: '#ccc',
+                price: '$19.99',
+                priceFontColor: '#fff',
                 unit: '/ mo',
-                details: [ 'Up to 3 cameras', '30+ days storage', 'Unlimited sharing' ]
+                details: [ '1 camera', '7+ days storage', 'Unlimited sharing' ],
+                detailsFontColor: '#ccc'
 
             }, {
 
-                backgroundColor: '#8d1ce6',
-                iconClass: 'fad fa-home',
-                iconBackgroundColor: '#333',
+                backgroundColor: '#7543E8',
+                button: 'SUBSCRIBE NOW',
+                buttonBackgroundColor: '#fd20d5',
+                iconClass: 'fad fa-rocket',
+                iconBackgroundColor: '#999',
                 title: 'Starter',
-                price: '$29.99',
+                price: '$49.99',
                 unit: '/ mo',
-                details: [ 'Up to 3 cameras', '30+ days storage', 'Unlimited sharing' ]
+                details: [ 'Up to 3+ cameras', '30+ days storage', 'Unlimited sharing' ]
 
             }, {
 
-                backgroundColor: '#2E3F58',
-                iconClass: 'fad fa-home',
-                iconBackgroundColor: '#333',
-                title: 'Starter',
-                price: '$29.99',
+                backgroundColor: '#8956FF',
+                button: 'SUBSCRIBE NOW',
+                buttonBackgroundColor: '#fd20d5',
+                iconClass: 'fad fa-atom',
+                iconBackgroundColor: '#999',
+                title: 'Pro',
+                price: '$99.99',
                 unit: '/ mo',
-                details: [ 'Up to 3 cameras', '30+ days storage', 'Unlimited sharing' ]
+                details: [ 'Up to 7+ cameras', '30+ days storage', 'Unlimited sharing' ]
 
             }, {
 
-                backgroundColor: '#2E3F58',
-                iconBackgroundColor: '#333',
-                iconClass: 'fad fa-home',
-                title: 'Starter',
-                price: '$29.99',
-                unit: '/ mo',
-                details: [ 'Up to 3 cameras', '30+ days storage', 'Unlimited sharing' ]
+                backgroundColor: '#7543E8',
+                button: 'CONTACT US',
+                iconBackgroundColor: '#999',
+                iconClass: 'fad fa-building',
+                title: 'Enterprise',
+                price: '$7.99',
+                unit: '/ ea',
+                details: [ 'Unlimited cameras', '30+ days storage', 'Unlimited sharing' ]
 
             }
 
