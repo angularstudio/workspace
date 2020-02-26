@@ -31,3 +31,6 @@
 [submodule "projects/features-table"]
 	path = projects/features-table
 	url = git@github.com:angularstudio/features-table.git
+[submodule "projects/dynamic-form"]
+	path = projects/dynamic-form
+	url = git@github.com:angularstudio/dynamic-form.git
