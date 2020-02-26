@@ -25,3 +25,6 @@
 [submodule "projects/plans"]
 	path = projects/plans
 	url = git@github.com:angularstudio/plans.git
+[submodule "projects/datatable"]
+	path = projects/datatable
+	url = git@github.com:angularstudio/datatable.git
