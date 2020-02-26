@@ -22,3 +22,6 @@
 [submodule ".ngmake"]
 	path = .ngmake
 	url = git@github.com:angularstudio/.ngmake.git
+[submodule "projects/plans"]
+	path = projects/plans
+	url = git@github.com:angularstudio/plans.git
