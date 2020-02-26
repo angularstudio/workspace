@@ -1,4 +1,5 @@
 import { DialogModule }            from '@angular.studio/dialog';
+import { ToggleModule }            from '@angular.studio/toggle';
 import { ToolbarModule }           from '@angular.studio/toolbar';
 import { NgModule }                from '@angular/core';
 import { FlexLayoutModule }        from '@angular/flex-layout';
@@ -30,6 +31,7 @@ import { DemoDialogComponent }     from './demo-dialog/demo-dialog.component';
         BoardModule,
         CardModule,
         DialogModule,
+        ToggleModule,
         ToolbarModule,
 
     ],

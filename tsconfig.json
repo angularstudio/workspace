@@ -42,6 +42,9 @@
       ],
       "@angular.studio/login": [
         "dist/login"
+      ],
+      "@angular.studio/toggle": [
+        "dist/toggle"
       ]
     }
   },

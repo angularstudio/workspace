@@ -1,9 +1,9 @@
-import { DialogConfig, DialogService } from '@angular.studio/dialog';
-import { Toolbar }                     from '@angular.studio/toolbar';
-import { Component, OnInit }           from '@angular/core';
-import { Board }                       from '../../projects/board/src/lib/board';
-import { Card }                        from '../../projects/card/src/lib/card';
-import { DemoDialogComponent }         from './demo-dialog/demo-dialog.component';
+import { DialogService }     from '@angular.studio/dialog';
+import { Toggle }            from '@angular.studio/toggle';
+import { Toolbar }           from '@angular.studio/toolbar';
+import { Component, OnInit } from '@angular/core';
+import { Board }             from '../../projects/board/src/lib/board';
+import { Card }              from '../../projects/card/src/lib/card';
 
 @Component({
     selector: 'app-root',
@@ -158,33 +158,50 @@ export class AppComponent implements OnInit {
 
     };
 
+    public toggle: Toggle = {
+
+        backgroundColor: '#333',
+        iconClass: 'fad fa-home',
+        iconColor: '#fff',
+        iconFontSize: '20px',
+        title: 'Notify me when xyz',
+        titleFontColor: '#fff',
+        description: 'You will be notified when xyz occurs.',
+        descriptionFontColor: '#666',
+        toggleLabel: 'asdf',
+        toggleColor: 'accent',
+        toggleFontColor: 'limegreen',
+        width: '700px',
+
+    };
+
     public constructor(private readonly dialogService: DialogService) {
 
     }
 
     public ngOnInit(): void {
 
-        this.dialogService.open(DemoDialogComponent, new DialogConfig({
-
-            id: 'demo',
-
-            width: '400px',
-            height: '400px',
-
-            title: 'Demo Dialog',
-
-            backBackgroundColor: 'red',
-            backLabel: 'asdf',
-            backShow: false,
-
-            nextBackgroundColor: 'rebeccapurple',
-            nextEnabled: true,
-            nextLabel: 'SAVE',
-            nextShow: true,
-
-            footerMessage: 'This is an example<br>footer message!'
-
-        }));
+        // this.dialogService.open(DemoDialogComponent, new DialogConfig({
+        //
+        //     id: 'demo',
+        //
+        //     width: '400px',
+        //     height: '400px',
+        //
+        //     title: 'Demo Dialog',
+        //
+        //     backBackgroundColor: 'red',
+        //     backLabel: 'asdf',
+        //     backShow: false,
+        //
+        //     nextBackgroundColor: 'rebeccapurple',
+        //     nextEnabled: true,
+        //     nextLabel: 'SAVE',
+        //     nextShow: true,
+        //
+        //     footerMessage: 'This is an example<br>footer message!'
+        //
+        // }));
 
     }
 

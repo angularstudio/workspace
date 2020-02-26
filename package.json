@@ -12,7 +12,13 @@
     "workspaces": [
         "projects/board",
         "projects/board-button",
-        "projects/button"
+        "projects/button",
+        "projects/card",
+        "projects/dialog",
+        "projects/dynamic-form",
+        "projects/login",
+        "projects/toggle",
+        "projects/toolbar"
     ],
     "private": true,
     "dependencies": {
