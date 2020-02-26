@@ -13,3 +13,6 @@
 [submodule "projects/dialog"]
 	path = projects/dialog
 	url = git@github.com:angularstudio/dialog.git
+[submodule "projects/card"]
+	path = projects/card
+	url = git@github.com:angularstudio/card.git
