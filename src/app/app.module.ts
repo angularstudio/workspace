@@ -1,3 +1,4 @@
+import { DatatableModule }         from '@angular.studio/datatable';
 import { DialogModule }            from '@angular.studio/dialog';
 import { PlansModule }             from '@angular.studio/plans';
 import { ToggleModule }            from '@angular.studio/toggle';
@@ -31,6 +32,7 @@ import { DemoDialogComponent }     from './demo-dialog/demo-dialog.component';
 
         BoardModule,
         CardModule,
+        DatatableModule,
         DialogModule,
         PlansModule,
         ToggleModule,

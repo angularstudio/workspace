@@ -49,9 +49,11 @@
       "@angular.studio/plans": [
         "dist/plans"
       ],
-      "features-table": [
-        "dist/features-table/features-table",
+      "@angular.studio/features-table": [
         "dist/features-table"
+      ],
+      "@angular.studio/datatable": [
+        "dist/datatable"
       ]
     }
   },

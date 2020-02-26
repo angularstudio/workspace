@@ -252,6 +252,8 @@ export class AppComponent implements OnInit {
 
     });
 
+    // public features: FeaturesTable = {};
+
     public constructor(private readonly dialogService: DialogService) {
 
     }
