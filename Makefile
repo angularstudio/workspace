@@ -2,6 +2,7 @@ PROJECTS = button \
 		   board-button \
 		   board \
 		   toolbar \
-		   card
+		   card \
+		   plans
 
 include .ngmake/Makefile.inc

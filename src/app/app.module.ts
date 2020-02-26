@@ -1,4 +1,5 @@
 import { DialogModule }            from '@angular.studio/dialog';
+import { PlansModule }             from '@angular.studio/plans';
 import { ToggleModule }            from '@angular.studio/toggle';
 import { ToolbarModule }           from '@angular.studio/toolbar';
 import { NgModule }                from '@angular/core';
@@ -31,6 +32,7 @@ import { DemoDialogComponent }     from './demo-dialog/demo-dialog.component';
         BoardModule,
         CardModule,
         DialogModule,
+        PlansModule,
         ToggleModule,
         ToolbarModule,
 

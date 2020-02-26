@@ -1,4 +1,5 @@
 import { DialogService }     from '@angular.studio/dialog';
+import { Plans }             from '@angular.studio/plans';
 import { Toggle }            from '@angular.studio/toggle';
 import { Toolbar }           from '@angular.studio/toolbar';
 import { Component, OnInit } from '@angular/core';
@@ -174,6 +175,68 @@ export class AppComponent implements OnInit {
         width: '700px',
 
     };
+
+    public plans: Plans = new Plans({
+
+        backgroundImage: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        footer: 'These prices are valid until January 1, 2021. Contact support for any questions or concerns.',
+        title: 'Simple and flexible pricing',
+        description: 'A asdfasf asdf asd fasdfas dfas dfas. asd fas df asdfa sdfas dfas d fasdf!',
+        buttonPrimary: {
+
+            kind: 'raised',
+            backgroundColor: '#364967',
+            label: 'Start your free trial',
+            width: '200px'
+
+        },
+        plans: [
+
+            {
+
+                backgroundColor: '#7247b8',
+                iconClass: 'fad fa-home',
+                iconBackgroundColor: '#AE89FD',
+                title: 'Starter',
+                price: '$29.99',
+                unit: '/ mo',
+                details: [ 'Up to 3 cameras', '30+ days storage', 'Unlimited sharing' ]
+
+            }, {
+
+                backgroundColor: '#8d1ce6',
+                iconClass: 'fad fa-home',
+                iconBackgroundColor: '#333',
+                title: 'Starter',
+                price: '$29.99',
+                unit: '/ mo',
+                details: [ 'Up to 3 cameras', '30+ days storage', 'Unlimited sharing' ]
+
+            }, {
+
+                backgroundColor: '#2E3F58',
+                iconClass: 'fad fa-home',
+                iconBackgroundColor: '#333',
+                title: 'Starter',
+                price: '$29.99',
+                unit: '/ mo',
+                details: [ 'Up to 3 cameras', '30+ days storage', 'Unlimited sharing' ]
+
+            }, {
+
+                backgroundColor: '#2E3F58',
+                iconBackgroundColor: '#333',
+                iconClass: 'fad fa-home',
+                title: 'Starter',
+                price: '$29.99',
+                unit: '/ mo',
+                details: [ 'Up to 3 cameras', '30+ days storage', 'Unlimited sharing' ]
+
+            }
+
+        ]
+
+    });
 
     public constructor(private readonly dialogService: DialogService) {
 

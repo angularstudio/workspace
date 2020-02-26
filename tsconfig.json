@@ -46,9 +46,12 @@
       "@angular.studio/toggle": [
         "dist/toggle"
       ],
-      "plans": [
-        "dist/plans/plans",
+      "@angular.studio/plans": [
         "dist/plans"
+      ],
+      "features-table": [
+        "dist/features-table/features-table",
+        "dist/features-table"
       ]
     }
   },

@@ -17,6 +17,7 @@
         "projects/dialog",
         "projects/dynamic-form",
         "projects/login",
+        "projects/plans",
         "projects/toggle",
         "projects/toolbar"
     ],
