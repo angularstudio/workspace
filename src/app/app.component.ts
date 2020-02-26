@@ -1,4 +1,4 @@
-import { Datatable }         from '@angular.studio/datatable';
+import { Button, Buttons }   from '@angular.studio/buttons';
 import { DialogService }     from '@angular.studio/dialog';
 import { Plans }             from '@angular.studio/plans';
 import { Toggle }            from '@angular.studio/toggle';
@@ -255,18 +255,40 @@ export class AppComponent implements OnInit {
 
     // public features: FeaturesTable = {};
 
-    public datatable: Datatable = {
+    // public datatable: Datatable = {
+    //
+    //     columns: [ {
+    //
+    //         id: 'feature',
+    //         label: 'FEATURES'
+    //
+    //     }, {
+    //
+    //         id: ''
+    //     } ]
+    // };
 
-        columns: [ {
+    public buttons: Buttons = new Buttons({
 
-            id: 'feature',
-            label: 'FEATURES'
+        leftButtons: [ new Button({
 
-        }, {
+            id: 'delete',
+            label: 'DELETE',
+            backgroundColor: 'red'
 
-            id: ''
-        } ]
-    };
+        }) ],
+
+        rightButtons: [ new Button({
+
+            id: 'save',
+            label: 'SAVE',
+            backgroundColor: 'green'
+
+        }) ],
+
+        textColor: '#ccc'
+
+    });
 
     public constructor(private readonly dialogService: DialogService) {
 

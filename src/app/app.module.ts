@@ -1,3 +1,5 @@
+import { ButtonsModule }           from '@angular.studio/buttons';
+import { ConfirmModule }           from '@angular.studio/confirm';
 import { DatatableModule }         from '@angular.studio/datatable';
 import { DialogModule }            from '@angular.studio/dialog';
 import { PlansModule }             from '@angular.studio/plans';
@@ -31,7 +33,9 @@ import { DemoDialogComponent }     from './demo-dialog/demo-dialog.component';
         RouterModule.forRoot([]),
 
         BoardModule,
+        ButtonsModule,
         CardModule,
+        ConfirmModule,
         DatatableModule,
         DialogModule,
         PlansModule,
