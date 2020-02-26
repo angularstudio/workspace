@@ -16,3 +16,6 @@
 [submodule "projects/card"]
 	path = projects/card
 	url = git@github.com:angularstudio/card.git
+[submodule "projects/toggle"]
+	path = projects/toggle
+	url = git@github.com:angularstudio/toggle.git
