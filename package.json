@@ -36,7 +36,9 @@
         "@angular/platform-browser": "~9.0.2",
         "@angular/platform-browser-dynamic": "~9.0.2",
         "@angular/router": "~9.0.2",
+        "@types/stripe": "^7.13.22",
         "rxjs": "~6.5.4",
+        "stripe": "^8.23.0",
         "tslib": "^1.10.0",
         "zone.js": "~0.10.2"
     },

@@ -60,6 +60,10 @@
       ],
       "@angular.studio/confirm": [
         "dist/confirm"
+      ],
+      "stripe": [
+        "dist/stripe/stripe",
+        "dist/stripe"
       ]
     }
   },
