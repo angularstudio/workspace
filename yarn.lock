@@ -135,13 +135,6 @@
   resolved "https://registry.npmjs.org/@angular/animations/-/animations-9.0.2.tgz#f20a5c93bd37a1e286722c58361bb8e9ac1af0f7"
   integrity sha512-vj4N8nSLytQI45TtGy2tJb0Yc7uqlyap+qhghc+jdyG41w18KQUnIneEWKOfHWnp8VJEfzgzaY7zr/1QPlxWgA==
 
-"@angular/cdk@^9.1.0":
-  version "9.1.0"
-  resolved "https://registry.npmjs.org/@angular/cdk/-/cdk-9.1.0.tgz#da88568aed9efc39b160a0ac18cfca25f4961441"
-  integrity sha512-qKpAudJx9z0MD+ADptS0OZViJBTA49+JCKym0hPQUkcB9Po4Al6gu6oZ1VSXV5Ln3T84z9aAw/AhUGP/YCFNSQ==
-  optionalDependencies:
-    parse5 "^5.0.0"
-
 "@angular/cli@~9.0.3":
   version "9.0.3"
   resolved "https://registry.npmjs.org/@angular/cli/-/cli-9.0.3.tgz#114bf16fd00685d814840f6fece286e0f8f6f1e3"
@@ -214,11 +207,6 @@
   version "9.0.2"
   resolved "https://registry.npmjs.org/@angular/language-service/-/language-service-9.0.2.tgz#5bc4b50e6cec95df660879f9f092774d5f2420c0"
   integrity sha512-b+1g1FYG5MkSQtRqqUAN50N7fcEqA355dEHa2Vl03uBDZSYC/XSrR59IvgJfKLFuS4dopirvY9Eddbhk2FcAmg==
-
-"@angular/material@^9.1.0":
-  version "9.1.0"
-  resolved "https://registry.npmjs.org/@angular/material/-/material-9.1.0.tgz#550cbf7f6a9ce679b77435278faebfc4f2a3b2ed"
-  integrity sha512-KjA1ARoZ1vBg4jUH1y39muynxAFvkD8QZFGKH8Nh4zXW5pOP/7NyjokxXsNx5qSBCq/6ac2xBxCrCYJN7HmoDw==
 
 "@angular/platform-browser-dynamic@~9.0.2":
   version "9.0.2"
@@ -3444,9 +3432,9 @@ etag@~1.8.1:
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
 eventemitter3@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.0.tgz#d65176163887ee59f386d64c82610b696a4a74eb"
-  integrity sha512-qerSRB0p+UDEssxTtm6EDKcE7W4OaoisfIMl4CngyEhjpYglocpNg6UEqCvemdGhosAsg4sO2dXJOdyBifPGCg==
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
+  integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
 
 events@^3.0.0:
   version "3.1.0"
@@ -3751,11 +3739,9 @@ flush-write-stream@^1.0.0:
     readable-stream "^2.3.6"
 
 follow-redirects@^1.0.0:
-  version "1.10.0"
-  resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.10.0.tgz#01f5263aee921c6a54fb91667f08f4155ce169eb"
-  integrity sha512-4eyLK6s6lH32nOvLLwlIOnr9zrL8Sm+OvW4pVTJNoXeGzYIkHVf+pADQi+OJ0E67hiuSLezPVPyBcIZO50TmmQ==
-  dependencies:
-    debug "^3.0.0"
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
+  integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
 
 for-in@^1.0.2:
   version "1.0.2"
@@ -4272,9 +4258,9 @@ http-proxy-middleware@0.19.1:
     micromatch "^3.1.10"
 
 http-proxy@^1.13.0, http-proxy@^1.17.0:
-  version "1.18.0"
-  resolved "https://registry.npmjs.org/http-proxy/-/http-proxy-1.18.0.tgz#dbe55f63e75a347db7f3d99974f2692a314a6a3a"
-  integrity sha512-84I2iJM/n1d4Hdgc6y2+qY5mDaz2PUVjlg9znE9byl+q0uC3DeByqBGReQu5tpLK0TAqTIXScRUV+dg7+bUPpQ==
+  version "1.18.1"
+  resolved "https://registry.yarnpkg.com/http-proxy/-/http-proxy-1.18.1.tgz#401541f0534884bbf95260334e72f88ee3976549"
+  integrity sha512-7mz/721AbnJwIVbnaSv1Cz3Am0ZLT/UBwkC92VlxhXv/k/BBQfM2fXElQNC27BVGr0uwUpplYPQM9LnaBMR5NQ==
   dependencies:
     eventemitter3 "^4.0.0"
     follow-redirects "^1.0.0"
@@ -6372,11 +6358,6 @@ parse5@4.0.0:
   resolved "https://registry.npmjs.org/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
   integrity sha512-VrZ7eOd3T1Fk4XWNXMgiGBK/z0MG48BWG2uQNU4I72fkQuKUTZpl+u9k+CxEG0twMVzSmXEEz12z5Fnw1jIQFA==
 
-parse5@^5.0.0:
-  version "5.1.1"
-  resolved "https://registry.npmjs.org/parse5/-/parse5-5.1.1.tgz#f68e4e5ba1852ac2cadc00f4555fff6c2abb6178"
-  integrity sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==
-
 parseqs@0.0.5:
   version "0.0.5"
   resolved "https://registry.npmjs.org/parseqs/-/parseqs-0.0.5.tgz#d5208a3738e46766e291ba2ea173684921a8b89d"
@@ -7373,7 +7354,7 @@ require-main-filename@^2.0.0:
 
 requires-port@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npmjs.org/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
+  resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
 
 resolve-cwd@^2.0.0:
