@@ -1,74 +1,87 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ],
-    "paths": {
-      "@angular.studio/board": [
-        "dist/board"
-      ],
-      "@angular.studio/board-button": [
-        "dist/board-button"
-      ],
-      "@angular.studio/button": [
-        "dist/button"
-      ],
-      "@angular.studio/card": [
-        "dist/card"
-      ],
-      "@angular.studio/dynamic-form": [
-        "dist/dynamic-form"
-      ],
-      "@angular.studio/toolbar": [
-        "dist/toolbar"
-      ],
-      "@angular.studio/dialog": [
-        "dist/dialog"
-      ],
-      "@angular.studio/login": [
-        "dist/login"
-      ],
-      "@angular.studio/toggle": [
-        "dist/toggle"
-      ],
-      "@angular.studio/plans": [
-        "dist/plans"
-      ],
-      "@angular.studio/features-table": [
-        "dist/features-table"
-      ],
-      "@angular.studio/datatable": [
-        "dist/datatable"
-      ],
-      "@angular.studio/buttons": [
-        "dist/buttons"
-      ],
-      "@angular.studio/confirm": [
-        "dist/confirm"
-      ],
-      "stripe": [
-        "dist/stripe/stripe",
-        "dist/stripe"
-      ]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "declaration": false,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "target": "es2015",
+        "skipLibCheck": true,
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "lib": [
+            "es2018",
+            "dom"
+        ],
+        "paths": {
+            "@angular.studio/board": [
+                "dist/board"
+            ],
+            "@angular.studio/board-button": [
+                "dist/board-button"
+            ],
+            "@angular.studio/button": [
+                "dist/button"
+            ],
+            "@angular.studio/card": [
+                "dist/card"
+            ],
+            "@angular.studio/dynamic-form": [
+                "dist/dynamic-form"
+            ],
+            "@angular.studio/toolbar": [
+                "dist/toolbar"
+            ],
+            "@angular.studio/dialog": [
+                "dist/dialog"
+            ],
+            "@angular.studio/login": [
+                "dist/login"
+            ],
+            "@angular.studio/toggle": [
+                "dist/toggle"
+            ],
+            "@angular.studio/plans": [
+                "dist/plans"
+            ],
+            "@angular.studio/features-table": [
+                "dist/features-table"
+            ],
+            "@angular.studio/datatable": [
+                "dist/datatable"
+            ],
+            "@angular.studio/buttons": [
+                "dist/buttons"
+            ],
+            "@angular.studio/confirm": [
+                "dist/confirm"
+            ],
+            "clr-form-field-editable": [
+              "dist/clr-form-field-editable/clr-form-field-editable",
+              "dist/clr-form-field-editable"
+            ],
+            "clr-manager": [
+                "dist/clr-manager/clr-manager",
+                "dist/clr-manager"
+            ],
+            "clr-search": [
+              "dist/clr-search/clr-search",
+              "dist/clr-search"
+            ],
+            "stripe": [
+                "dist/stripe/stripe",
+                "dist/stripe"
+            ]
+        }
+    },
+    "angularCompilerOptions": {
+        "fullTemplateTypeCheck": true,
+        "strictInjectionParameters": true
     }
-  },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
 }

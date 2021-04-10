@@ -1,0 +1,58 @@
+:host {
+
+    .search-top {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .left {
+
+            flex: 1;
+
+        }
+
+        .center {
+
+            display: flex;
+            align-items: flex-end;
+
+            span {
+
+                margin-right: 5px;
+
+            }
+
+        }
+
+        .right {
+
+            display: flex;
+            align-items: flex-end;
+            margin-left: 15px;
+
+            button {
+
+                margin: 0 0 0 5px;
+
+            }
+
+        }
+
+    }
+
+    i {
+
+        //font-size: 18px;
+        cursor: pointer;
+        margin: 3px;
+
+        &:hover {
+
+            color: rebeccapurple;
+
+        }
+
+    }
+
+}
