@@ -1,12 +1,11 @@
-import { Component, ViewEncapsulation, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
 
     selector: 'angularstudio-clr-form-field-editable',
     templateUrl: './angularstudio-clr-form-field-editable.component.html',
-    styleUrls: [ './angularstudio-clr-form-field-editable.component.scss' ],
-    encapsulation: ViewEncapsulation.None
+    styleUrls: [ './angularstudio-clr-form-field-editable.component.scss' ]
 
 })
 export class AngularstudioClrFormFieldEditableComponent implements OnInit {
