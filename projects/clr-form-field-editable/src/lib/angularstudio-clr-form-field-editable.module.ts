@@ -4,8 +4,8 @@ import { ClarityModule } from '@clr/angular';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularstudioClrFormFieldEditableComponent } from './angularstudio-clr-form-field-editable.component';
 
-
 @NgModule({
+
     declarations: [
 
         AngularstudioClrFormFieldEditableComponent
