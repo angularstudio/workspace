@@ -1,4 +1,6 @@
-<form [formGroup]="formService.formGroup" class="angularstudio-clr-form">
+<form [formGroup]="formService.formGroup"
+      [style.width]="formService.config?.width"
+      class="angularstudio-clr-form">
 
     <div *ngFor="let field of formService.config?.fields" class="angularstudio-clr-form-row">
 

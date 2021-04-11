@@ -2,11 +2,12 @@ import { AngularStudioClrFormConfigField } from './angularstudio-clr-form-config
 
 export class AngularStudioClrFormConfig<T> {
 
-    // public formGroup: FormGroup;
-
+    public width: string;
     public fields: Array<AngularStudioClrFormConfigField<any>>;
 
     public constructor(config: AngularStudioClrFormConfig<T>) {
+
+        Object.assign(this, config);
 
         this.fields = [];
 
