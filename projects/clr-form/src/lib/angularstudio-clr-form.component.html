@@ -1,4 +1,5 @@
-<form [formGroup]="formService.formGroup"
+<form *ngIf="formService.config"
+      [formGroup]="formService.formGroup"
       [style.width]="formService.config?.width"
       class="angularstudio-clr-form">
 
