@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
 
@@ -9,12 +9,14 @@ import { FormControl } from '@angular/forms';
     encapsulation: ViewEncapsulation.None
 
 })
-export class AngularstudioClrFormFieldEditableComponent implements OnInit {
+export class AngularStudioClrFormFieldEditableComponent implements OnInit {
 
     @Input() public label: any;
     @Input() public value: any;
     @Input() public wavy: boolean;
     @Input() public formControl: FormControl;
+    @Input() public formControlName: string;
+    @Input() public formGroup: FormGroup;
 
     @Output() public onSave: EventEmitter<string> = new EventEmitter();
 

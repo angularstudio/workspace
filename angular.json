@@ -874,6 +874,46 @@
                     }
                 }
             }
+        },
+        "clr-form": {
+            "projectType": "library",
+            "root": "projects/clr-form",
+            "sourceRoot": "projects/clr-form/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "tsConfig": "projects/clr-form/tsconfig.lib.json",
+                        "project": "projects/clr-form/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/clr-form/tsconfig.lib.prod.json"
+                        }
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/clr-form/src/test.ts",
+                        "tsConfig": "projects/clr-form/tsconfig.spec.json",
+                        "karmaConfig": "projects/clr-form/karma.conf.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/clr-form/tsconfig.lib.json",
+                            "projects/clr-form/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
         }
     },
     "defaultProject": "angular-studio-framework"

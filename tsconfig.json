@@ -62,6 +62,10 @@
             "@angular.studio/confirm": [
                 "dist/confirm"
             ],
+            "clr-form": [
+              "dist/clr-form/clr-form",
+              "dist/clr-form"
+            ],
             "clr-form-field-editable": [
               "dist/clr-form-field-editable/clr-form-field-editable",
               "dist/clr-form-field-editable"

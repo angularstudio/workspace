@@ -1,0 +1,82 @@
+.angularstudio-clr-form {
+
+
+}
+
+angularstudio-clr-form-input,
+angularstudio-clr-form-select,
+angularstudio-clr-form-checkbox {
+
+    width: 100%;
+
+}
+
+.angularstudio-clr-form-row {
+
+    display: flex;
+    width: 100%;
+
+    margin-bottom: 5px;
+
+}
+
+.angularstudio-clr-form-control .clr-form-control {
+
+    margin: 0 !important;
+
+}
+
+.angularstudio-clr-form-label {
+
+    flex: 0 1 200px;
+
+}
+
+.angularstudio-clr-form-control {
+
+    flex: 1;
+    width: 100%;
+
+}
+
+.angularstudio-clr-form-control .clr-control-container,
+.clr-select-wrapper,
+.clr-checkbox-wrapper {
+
+    width: 100%;
+
+}
+
+.angularstudio-clr-form-control .clr-control-container input, select {
+
+    width: 100%;
+
+}
+
+.angularstudio-clr-form-plaintext {
+
+    flex: 1;
+    cursor: pointer;
+
+}
+
+.angularstudio-clr-form-plaintext:hover {
+
+    text-decoration: underline;
+    cursor: context-menu;
+
+}
+
+.angularstudio-clr-form-icons {
+
+    //display: flex;
+    //align-items: flex-end;
+
+}
+
+.angularstudio-clr-form-icons i {
+
+    cursor: pointer;
+    margin-left: 15px;
+
+}

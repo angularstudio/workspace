@@ -13,6 +13,8 @@ import { AngularStudioClrSearchModule } from '../../projects/clr-search/src/lib/
 import { ClrSearchComponent } from './clr-search/clr-search.component';
 import { AngularstudioClrFormFieldEditableModule } from '../../projects/clr-form-field-editable/src/lib/angularstudio-clr-form-field-editable.module';
 import { ClrFormEditableComponent } from './clr-form-editable/clr-form-editable.component';
+import { ClrFormComponent } from './clr-form/clr-form.component';
+import { AngularstudioClrFormModule } from '../../projects/clr-form/src/lib/angularstudio-clr-form.module';
 
 @NgModule({
 
@@ -24,7 +26,8 @@ import { ClrFormEditableComponent } from './clr-form-editable/clr-form-editable.
         ChildOneComponent,
         ChildTwoComponent,
         ClrSearchComponent,
-        ClrFormEditableComponent
+        ClrFormEditableComponent,
+        ClrFormComponent
 
     ],
 
@@ -60,6 +63,11 @@ import { ClrFormEditableComponent } from './clr-form-editable/clr-form-editable.
                         path: 'clr-form-editable',
                         component: ClrFormEditableComponent
 
+                    }, {
+
+                        path: 'clr-form',
+                        component: ClrFormComponent
+
                     }
 
                 ]
@@ -70,6 +78,7 @@ import { ClrFormEditableComponent } from './clr-form-editable/clr-form-editable.
 
         AngularStudioClrManagerModule,
         AngularStudioClrSearchModule,
+        AngularstudioClrFormModule,
         AngularstudioClrFormFieldEditableModule
         // BoardModule,
         // ButtonsModule,

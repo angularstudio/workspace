@@ -1,0 +1,19 @@
+<form [formGroup]="formService.formGroup" class="angularstudio-clr-form">
+
+    <div *ngFor="let field of formService.config?.fields" class="angularstudio-clr-form-row">
+
+        <angularstudio-clr-form-input *ngIf="field.type === 'text'"
+                                      [field]="field"
+                                      [control]="formService.formGroup.get(field.name)"></angularstudio-clr-form-input>
+
+        <angularstudio-clr-form-select *ngIf="field.type === 'select'"
+                                       [field]="field"
+                                       [control]="formService.formGroup.get(field.name)"></angularstudio-clr-form-select>
+
+        <angularstudio-clr-form-checkbox *ngIf="field.type === 'checkbox'"
+                                         [field]="field"
+                                         [control]="formService.formGroup.get(field.name)"></angularstudio-clr-form-checkbox>
+
+    </div>
+
+</form>

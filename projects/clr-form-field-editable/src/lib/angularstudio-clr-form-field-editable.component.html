@@ -1,33 +1,36 @@
 <div class="angular-clr-form-field-editable">
 
-    <div class="angular-clr-form-field-editable-input-label">
+    <form clrForm>
 
-        {{ label }}
 
-    </div>
+        <div class="angular-clr-form-field-editable-input-label">
 
-    <div *ngIf="editing"
-         class="angular-clr-form-field-editable-input-control">
+            {{ label }}
 
-        <input clrInput
-               [formControl]="formControl">
+        </div>
 
-    </div>
+        <div *ngIf="editing"
+             class="angular-clr-form-field-editable-input-control">
 
-    <div *ngIf="!editing"
-         (click)="editing = !editing"
-         [style.text-decoration]="styleTextDecoration"
-         [style.text-decoration-style]="styleTextDecorationStyle"
-         class="angular-clr-form-field-editable-input-plaintext">
 
-        {{ formControl.value }}
+        </div>
 
-    </div>
+        <div *ngIf="!editing"
+             (click)="editing = !editing"
+             [style.text-decoration]="styleTextDecoration"
+             [style.text-decoration-style]="styleTextDecorationStyle"
+             class="angular-clr-form-field-editable-input-plaintext">
 
-    <div *ngIf="editing" class="angular-clr-form-field-editable-input-icons">
+            {{ formGroup.get(formControlName).value }}
 
-        <i (click)="onSaveClick()" class="fad fa-save"></i>
+        </div>
 
-    </div>
+        <div *ngIf="editing" class="angular-clr-form-field-editable-input-icons">
+
+            <i (click)="onSaveClick()" class="fad fa-save"></i>
+
+        </div>
+
+    </form>
 
 </div>
