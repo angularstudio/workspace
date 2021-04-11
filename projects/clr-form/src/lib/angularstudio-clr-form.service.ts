@@ -11,6 +11,7 @@ export class AngularStudioClrFormService<T> {
     public config: AngularStudioClrFormConfig<T>;
     public formGroup: FormGroup;
     public value$: Subject<T> = new Subject();
+    public save$: Subject<T> = new Subject();
 
     public constructor(private formBuilder: FormBuilder) {
 
@@ -45,6 +46,12 @@ export class AngularStudioClrFormService<T> {
     public edit(): void {
 
         this.config.fields.forEach(field => field.editing = true);
+
+    }
+
+    public save(): void {
+
+        this.save$.next(this.formGroup.value);
 
     }
 

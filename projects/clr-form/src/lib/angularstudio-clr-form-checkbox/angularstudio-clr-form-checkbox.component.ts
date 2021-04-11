@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { AngularStudioClrFormConfigField } from '../angularstudio-clr-form-config-field';
+import { AngularStudioClrFormService } from '../angularstudio-clr-form.service';
 
 @Component({
     selector: 'angularstudio-clr-form-checkbox',
@@ -20,6 +21,10 @@ export class AngularStudioClrFormCheckboxComponent implements OnInit {
     public checks: Array<any> = [];
     public checked: any = {};
     public label: string;
+
+    public constructor(private readonly formService: AngularStudioClrFormService<any>) {
+
+    }
 
     public ngOnInit(): void {
 
@@ -43,6 +48,8 @@ export class AngularStudioClrFormCheckboxComponent implements OnInit {
     public onSaveClick(): void {
 
         this.editing = false;
+
+        this.formService.save();
 
     }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { AngularStudioClrFormConfigField } from '../angularstudio-clr-form-config-field';
+import { AngularStudioClrFormService } from '../angularstudio-clr-form.service';
 
 @Component({
 
@@ -21,6 +22,10 @@ export class AngularStudioClrFormSelectComponent implements OnInit {
 
     public label: string;
 
+    public constructor(private readonly formService: AngularStudioClrFormService<any>) {
+
+    }
+
     public ngOnInit(): void {
 
         if (this.field.wavy) {
@@ -39,6 +44,8 @@ export class AngularStudioClrFormSelectComponent implements OnInit {
     public onSaveClick(): void {
 
         this.editing = false;
+
+        this.formService.save();
 
     }
 
