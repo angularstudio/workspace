@@ -35,5 +35,5 @@ import { AngularStudioClrFormTextareaComponent } from './angularstudio-clr-form-
     ]
 
 })
-export class AngularstudioClrFormModule {
+export class AngularStudioClrFormModule {
 }

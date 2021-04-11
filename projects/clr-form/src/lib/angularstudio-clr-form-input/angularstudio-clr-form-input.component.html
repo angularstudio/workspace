@@ -12,6 +12,7 @@
         <clr-input-container>
 
             <input clrInput
+                   (keydown.enter)="onSaveClick()"
                    [placeholder]="field.placeholder || ''"
                    [formControl]="control">
 

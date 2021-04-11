@@ -1,0 +1,45 @@
+<clr-modal clrModalOpen="true"
+           [clrModalSize]="confirmService.config.size"
+           [clrModalStaticBackdrop]="false"
+           [clrModalClosable]="false"
+           #modal>
+
+    <h3 class="modal-title">
+
+        <i *ngIf="confirmService.config.titleIcon" [class]="confirmService.config.titleIcon"></i>
+
+        {{ confirmService.config?.title }}
+
+    </h3>
+
+    <div class="modal-body" #container>
+
+        {{ confirmService.config?.message }}
+
+    </div>
+
+    <div class="modal-footer">
+
+        <div class="right">
+
+            <button *ngIf="confirmService.config.previousLabel" type="button" class="btn btn-outline"
+                    (click)="onCancelClick()">
+
+                {{ confirmService.config.previousLabel }}
+
+            </button>
+
+            <button type="button"
+                    class="btn btn-primary"
+                    (click)="onNextClick()"
+                    [disabled]="confirmService.config.nextDisabled$ && (confirmService.config.nextDisabled$ | async)">
+
+                {{ confirmService.config.nextLabel }}
+
+            </button>
+
+        </div>
+
+    </div>
+
+</clr-modal>

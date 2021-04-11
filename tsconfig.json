@@ -62,6 +62,14 @@
             "@angular.studio/confirm": [
                 "dist/confirm"
             ],
+            "angularstudio-clr-confirm": [
+              "dist/angularstudio-clr-confirm/angularstudio-clr-confirm",
+              "dist/angularstudio-clr-confirm"
+            ],
+            "angularstudio-clr-wizard": [
+              "dist/angularstudio-clr-wizard/angularstudio-clr-wizard",
+              "dist/angularstudio-clr-wizard"
+            ],
             "clr-form": [
               "dist/clr-form/clr-form",
               "dist/clr-form"

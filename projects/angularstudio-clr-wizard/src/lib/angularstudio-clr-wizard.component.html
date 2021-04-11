@@ -1,0 +1,40 @@
+<clr-wizard *ngIf="createWizardService?.config"
+            #wizard
+            clrWizardOpen="true"
+            [clrWizardSize]="createWizardService.config?.size">
+
+    <clr-wizard-title>
+
+        {{ createWizardService.config?.title }}
+
+    </clr-wizard-title>
+
+    <clr-wizard-button *ngIf="createWizardService.config?.editing" [type]="'delete'" class="btn-danger-outline"
+                       (click)="onDeleteClick()">
+
+        {{ createWizardService.config?.deleteLabel }}
+
+    </clr-wizard-button>
+
+    <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+    <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+
+    <clr-wizard-button [type]="'custom-finish'" (click)="createWizardService.finish()">
+
+        {{ createWizardService.config?.title }}
+
+    </clr-wizard-button>
+
+    <clr-wizard-page *ngFor="let step of createWizardService.config?.steps"
+                     [clrWizardPageNextDisabled]="!step.nextEnabled">
+
+        <ng-template clrPageNavTitle>{{ step.navTitle }}</ng-template>
+        <ng-template clrPageTitle>{{ step.pageTitle}}</ng-template>
+
+
+        <div #pages></div>
+
+    </clr-wizard-page>
+
+</clr-wizard>

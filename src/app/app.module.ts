@@ -11,10 +11,15 @@ import { ChildOneComponent } from './manager/child-one/child-one.component';
 import { ChildTwoComponent } from './manager/child-two/child-two.component';
 import { AngularStudioClrSearchModule } from '../../projects/clr-search/src/lib/angular-studio-clr-search.module';
 import { ClrSearchComponent } from './clr-search/clr-search.component';
-import { AngularstudioClrFormFieldEditableModule } from '../../projects/clr-form-field-editable/src/lib/angularstudio-clr-form-field-editable.module';
 import { ClrFormEditableComponent } from './clr-form-editable/clr-form-editable.component';
 import { ClrFormComponent } from './clr-form/clr-form.component';
-import { AngularstudioClrFormModule } from '../../projects/clr-form/src/lib/angularstudio-clr-form.module';
+import { ClrWizardComponent } from './clr-wizard/clr-wizard.component';
+import { ClrFormContactInfoComponent } from './clr-form/clr-form-contact-info/clr-form-contact-info.component';
+import { ClrWizardStepUserInfoComponent } from './clr-wizard/clr-wizard-step-user-info/clr-wizard-step-user-info.component';
+import { AngularStudioClrWizardModule } from '../../projects/angularstudio-clr-wizard/src/lib/angularstudio-clr-wizard.module';
+import { AngularStudioClrFormModule } from '../../projects/clr-form/src/lib/angularstudio-clr-form.module';
+import { ClrConfirmComponent } from './clr-confirm/clr-confirm.component';
+import { AngularStudioClrConfirmModule } from '../../projects/angularstudio-clr-confirm/src/lib/angularstudio-clr-confirm.module';
 
 @NgModule({
 
@@ -27,7 +32,11 @@ import { AngularstudioClrFormModule } from '../../projects/clr-form/src/lib/angu
         ChildTwoComponent,
         ClrSearchComponent,
         ClrFormEditableComponent,
-        ClrFormComponent
+        ClrFormComponent,
+        ClrWizardComponent,
+        ClrFormContactInfoComponent,
+        ClrWizardStepUserInfoComponent,
+        ClrConfirmComponent
 
     ],
 
@@ -68,6 +77,16 @@ import { AngularstudioClrFormModule } from '../../projects/clr-form/src/lib/angu
                         path: 'clr-form',
                         component: ClrFormComponent
 
+                    }, {
+
+                        path: 'clr-wizard',
+                        component: ClrWizardComponent
+
+                    }, {
+
+                        path: 'clr-confirm',
+                        component: ClrConfirmComponent
+
                     }
 
                 ]
@@ -78,8 +97,10 @@ import { AngularstudioClrFormModule } from '../../projects/clr-form/src/lib/angu
 
         AngularStudioClrManagerModule,
         AngularStudioClrSearchModule,
-        AngularstudioClrFormModule,
-        AngularstudioClrFormFieldEditableModule
+        AngularStudioClrFormModule,
+        // AngularStudioClrFormFieldEditableModule,
+        AngularStudioClrWizardModule,
+        AngularStudioClrConfirmModule
         // BoardModule,
         // ButtonsModule,
         // CardModule,
@@ -96,7 +117,12 @@ import { AngularstudioClrFormModule } from '../../projects/clr-form/src/lib/angu
 
     bootstrap: [ AppComponent ],
 
-    entryComponents: []
+    entryComponents: [
+
+        ClrFormContactInfoComponent,
+        ClrWizardStepUserInfoComponent
+
+    ]
 
 })
 export class AppModule {
