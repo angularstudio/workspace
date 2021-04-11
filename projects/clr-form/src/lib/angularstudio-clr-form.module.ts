@@ -6,6 +6,7 @@ import { AngularstudioClrFormInputComponent } from './angularstudio-clr-form-inp
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularStudioClrFormSelectComponent } from './angularstudio-clr-form-select/angularstudio-clr-form-select.component';
 import { AngularStudioClrFormCheckboxComponent } from './angularstudio-clr-form-checkbox/angularstudio-clr-form-checkbox.component';
+import { AngularStudioClrFormTextareaComponent } from './angularstudio-clr-form-textarea/angularstudio-clr-form-textarea.component';
 
 @NgModule({
 
@@ -14,7 +15,8 @@ import { AngularStudioClrFormCheckboxComponent } from './angularstudio-clr-form-
         AngularstudioClrFormComponent,
         AngularstudioClrFormInputComponent,
         AngularStudioClrFormSelectComponent,
-        AngularStudioClrFormCheckboxComponent
+        AngularStudioClrFormCheckboxComponent,
+        AngularStudioClrFormTextareaComponent
 
     ],
 

@@ -8,6 +8,10 @@
                                       [field]="field"
                                       [control]="formService.formGroup.get(field.name)"></angularstudio-clr-form-input>
 
+        <angularstudio-clr-form-textarea *ngIf="field.type === 'textarea'"
+                                         [field]="field"
+                                         [control]="formService.formGroup.get(field.name)"></angularstudio-clr-form-textarea>
+
         <angularstudio-clr-form-select *ngIf="field.type === 'select'"
                                        [field]="field"
                                        [control]="formService.formGroup.get(field.name)"></angularstudio-clr-form-select>

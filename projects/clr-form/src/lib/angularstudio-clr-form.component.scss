@@ -4,6 +4,7 @@
 }
 
 angularstudio-clr-form-input,
+angularstudio-clr-form-textarea,
 angularstudio-clr-form-select,
 angularstudio-clr-form-checkbox {
 
@@ -41,15 +42,23 @@ angularstudio-clr-form-checkbox {
 
 .angularstudio-clr-form-control .clr-control-container,
 .clr-select-wrapper,
+.clr-textarea-wrapper,
 .clr-checkbox-wrapper {
 
     width: 100%;
 
 }
 
-.angularstudio-clr-form-control .clr-control-container input, select {
+.angularstudio-clr-form-control .clr-control-container input, select, textarea {
 
     width: 100%;
+
+}
+
+.angularstudio-clr-form-control .clr-control-container .clr-textarea-wrapper textarea {
+
+    width: 100%;
+    //min-height: 100px;
 
 }
 
@@ -64,13 +73,6 @@ angularstudio-clr-form-checkbox {
 
     text-decoration: underline;
     cursor: context-menu;
-
-}
-
-.angularstudio-clr-form-icons {
-
-    //display: flex;
-    //align-items: flex-end;
 
 }
 

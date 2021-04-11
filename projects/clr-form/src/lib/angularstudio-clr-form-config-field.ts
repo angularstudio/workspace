@@ -6,7 +6,7 @@ export class AngularStudioClrFormConfigField<T> {
     public label: string;
     public placeholder?: string;
     public wavy?: boolean = false;
-    public type: 'text' | 'select' | 'checkbox';
+    public type: 'text' | 'textarea' | 'select' | 'checkbox';
     public value: any;
     public helper?: string;
     public data?: Array<T>;

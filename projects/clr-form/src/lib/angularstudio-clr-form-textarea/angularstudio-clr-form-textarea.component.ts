@@ -1,15 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { AngularStudioClrFormConfigField } from '../angularstudio-clr-form-config-field';
+import { FormControl } from '@angular/forms';
 
 @Component({
-
-    selector: 'angularstudio-clr-form-input',
-    templateUrl: './angularstudio-clr-form-input.component.html',
-    styleUrls: [ './angularstudio-clr-form-input.component.scss' ]
-
+    selector: 'angularstudio-clr-form-textarea',
+    templateUrl: './angularstudio-clr-form-textarea.component.html',
+    styleUrls: [ './angularstudio-clr-form-textarea.component.css' ]
 })
-export class AngularstudioClrFormInputComponent implements OnInit {
+export class AngularStudioClrFormTextareaComponent implements OnInit {
 
     @Input() public field: AngularStudioClrFormConfigField<any>;
     @Input() public control: FormControl;
@@ -36,5 +34,4 @@ export class AngularstudioClrFormInputComponent implements OnInit {
         this.editing = false;
 
     }
-
 }
