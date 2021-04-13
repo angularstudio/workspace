@@ -28,6 +28,7 @@ export class AngularStudioClrLoginComponent {
 
         loginService.defaults$.subscribe(defaults => {
 
+            console.log(defaults);
             this.formGroup.get('email').setValue(defaults.email);
 
         });
