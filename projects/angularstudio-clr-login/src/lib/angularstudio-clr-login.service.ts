@@ -13,6 +13,8 @@ export class AngularStudioClrLoginService {
 
     public init(config: AngularStudioClrLoginConfig) {
 
+        this.events$ = new Subject();
+
         this.config = new AngularStudioClrLoginConfig(config);
 
     }
