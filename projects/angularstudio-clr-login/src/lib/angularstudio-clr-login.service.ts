@@ -10,7 +10,7 @@ export class AngularStudioClrLoginService {
 
     public config: AngularStudioClrLoginConfig;
     public events$: Subject<AngularStudioClrLoginEvent> = new Subject();
-    public defaults$: Subject<{ email: string, password: string }> = new Subject();
+    public defaults$: Subject<{ email: string }> = new Subject();
 
     public init(config: AngularStudioClrLoginConfig): Observable<AngularStudioClrLoginEvent> {
 
