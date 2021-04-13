@@ -4,7 +4,6 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, of, ReplaySubject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { v4 as uuidv4 } from 'uuid';
 
 /**
  * Authentication service to handle login and logout events
@@ -96,8 +95,6 @@ export class AngularStudioAuthenticationService<T> {
                 }
 
                 result.body = cleanData;
-
-                result.body.id = uuidv4();
 
             }
 

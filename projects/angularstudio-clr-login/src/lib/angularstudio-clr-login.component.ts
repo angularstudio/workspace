@@ -13,8 +13,8 @@ export class AngularStudioClrLoginComponent {
 
     public formGroup = new FormGroup({
 
-        email: new FormControl('test@test.com', Validators.email),
-        password: new FormControl('asdfasdf', [
+        email: new FormControl('', Validators.email),
+        password: new FormControl('', [
 
             Validators.minLength(8),
             Validators.maxLength(255)
@@ -25,6 +25,12 @@ export class AngularStudioClrLoginComponent {
     });
 
     public constructor(public readonly loginService: AngularStudioClrLoginService) {
+
+        loginService.defaults$.subscribe(defaults => {
+
+            this.formGroup.setValue(defaults);
+
+        });
 
     }
 

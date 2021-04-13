@@ -9,7 +9,7 @@ export class AngularStudioClrLoginConfig {
     public logo?: string;
     public subtitle?: string = 'Welcome back!';
     public title?: string = 'Login';
-
+    public defaults?: { email: string, password: string };
     public providers?: Array<AngularstudioClrLoginProviderConfig> = [];
 
     public constructor(config: AngularStudioClrLoginConfig) {
