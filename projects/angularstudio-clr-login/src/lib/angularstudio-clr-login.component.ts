@@ -30,12 +30,8 @@ export class AngularStudioClrLoginComponent {
 
             if (defaults.email) {
 
-                this.formGroup.setValue({
-
-                    email: defaults.email,
-                    remember: true
-
-                });
+                this.formGroup.get('email').setValue(defaults.email);
+                this.formGroup.get('remember').setValue(true);
 
             }
 
