@@ -6,7 +6,7 @@
 
     </div>
 
-    <div *ngIf="editing"
+    <div *ngIf="formService.config[name].editing || editing"
          class="angularstudio-clr-form-control angular-clr-form-input-control">
 
         <clr-textarea-container>
@@ -22,7 +22,7 @@
 
     </div>
 
-    <div *ngIf="!editing"
+    <div *ngIf="!formService.config[name].editing && !editing"
          (click)="editing = !editing"
          [style.text-decoration]="styleTextDecoration"
          [style.text-decoration-style]="styleTextDecorationStyle"
@@ -32,7 +32,8 @@
 
     </div>
 
-    <div *ngIf="editing && control.valid" class="angularstudio-clr-form-icons">
+    <div *ngIf="(formService.config[name].editing || editing) && formService.config[name].saveShow && control.valid"
+         class="angularstudio-clr-form-icons">
 
         <i (click)="onSaveClick()" class="fad fa-save"></i>
 

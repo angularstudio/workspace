@@ -32,6 +32,12 @@ import { AngularStudioClrFormTextareaComponent } from './angularstudio-clr-form-
 
         AngularstudioClrFormComponent
 
+    ],
+
+    entryComponents: [
+
+        AngularstudioClrFormComponent
+
     ]
 
 })

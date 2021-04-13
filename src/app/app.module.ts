@@ -20,6 +20,8 @@ import { AngularStudioClrWizardModule } from '../../projects/angularstudio-clr-w
 import { AngularStudioClrFormModule } from '../../projects/clr-form/src/lib/angularstudio-clr-form.module';
 import { ClrConfirmComponent } from './clr-confirm/clr-confirm.component';
 import { AngularStudioClrConfirmModule } from '../../projects/angularstudio-clr-confirm/src/lib/angularstudio-clr-confirm.module';
+import { ClrLoginComponent } from './clr-login/clr-login.component';
+import { AngularStudioClrLoginModule } from '../../projects/angularstudio-clr-login/src/lib/angularstudio-clr-login.module';
 
 @NgModule({
 
@@ -36,7 +38,8 @@ import { AngularStudioClrConfirmModule } from '../../projects/angularstudio-clr-
         ClrWizardComponent,
         ClrFormContactInfoComponent,
         ClrWizardStepUserInfoComponent,
-        ClrConfirmComponent
+        ClrConfirmComponent,
+        ClrLoginComponent
 
     ],
 
@@ -66,6 +69,11 @@ import { AngularStudioClrConfirmModule } from '../../projects/angularstudio-clr-
 
                         path: 'search',
                         component: ClrSearchComponent
+
+                    }, {
+
+                        path: 'clr-login',
+                        component: ClrLoginComponent
 
                     }, {
 
@@ -100,7 +108,8 @@ import { AngularStudioClrConfirmModule } from '../../projects/angularstudio-clr-
         AngularStudioClrFormModule,
         // AngularStudioClrFormFieldEditableModule,
         AngularStudioClrWizardModule,
-        AngularStudioClrConfirmModule
+        AngularStudioClrConfirmModule,
+        AngularStudioClrLoginModule
         // BoardModule,
         // ButtonsModule,
         // CardModule,

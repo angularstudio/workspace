@@ -62,9 +62,21 @@
             "@angular.studio/confirm": [
                 "dist/confirm"
             ],
+            "angularstudio-auth-jwt": [
+              "dist/angularstudio-auth-jwt/angularstudio-auth-jwt",
+              "dist/angularstudio-auth-jwt"
+            ],
+            "angularstudio-authentication": [
+              "dist/angularstudio-authentication/angularstudio-authentication",
+              "dist/angularstudio-authentication"
+            ],
             "angularstudio-clr-confirm": [
               "dist/angularstudio-clr-confirm/angularstudio-clr-confirm",
               "dist/angularstudio-clr-confirm"
+            ],
+            "angularstudio-clr-login": [
+              "dist/angularstudio-clr-login/angularstudio-clr-login",
+              "dist/angularstudio-clr-login"
             ],
             "angularstudio-clr-wizard": [
               "dist/angularstudio-clr-wizard/angularstudio-clr-wizard",

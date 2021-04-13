@@ -10,6 +10,7 @@ import { AngularStudioClrFormService } from '../angularstudio-clr-form.service';
 })
 export class AngularStudioClrFormTextareaComponent implements OnInit {
 
+    @Input() public name: string;
     @Input() public field: AngularStudioClrFormConfigField<any>;
     @Input() public control: FormControl;
 
@@ -17,7 +18,7 @@ export class AngularStudioClrFormTextareaComponent implements OnInit {
     public styleTextDecoration: string;
     public styleTextDecorationStyle: string;
 
-    public constructor(private readonly formService: AngularStudioClrFormService<any>) {
+    public constructor(public readonly formService: AngularStudioClrFormService<any>) {
 
     }
 
@@ -38,7 +39,8 @@ export class AngularStudioClrFormTextareaComponent implements OnInit {
 
         this.editing = false;
 
-        this.formService.save();
+        this.formService.save(this.name);
 
     }
+
 }

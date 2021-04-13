@@ -12,6 +12,7 @@ export class AngularStudioClrFormConfigField<T> {
     public data?: Array<T>;
     public validators?: Array<ValidatorFn>;
     public editing?: boolean = false;
+    public saveShow?: boolean = true;
 
     public constructor(field: AngularStudioClrFormConfigField<T>) {
 

@@ -1,8 +1,14 @@
 import { AngularStudioClrFormConfigField } from './angularstudio-clr-form-config-field';
+import { ViewContainerRef } from '@angular/core';
 
 export class AngularStudioClrFormConfig<T> {
 
+    public name: string;
     public width: string;
+    public rootViewContainer: ViewContainerRef;
+    public editing?: boolean = false;
+    public saveShow?: boolean = true;
+
     public fields: Array<AngularStudioClrFormConfigField<any>>;
 
     public constructor(config: AngularStudioClrFormConfig<T>) {

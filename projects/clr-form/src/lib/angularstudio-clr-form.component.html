@@ -1,26 +1,28 @@
-<form *ngIf="formService.config"
-      [formGroup]="formService.formGroup"
-      [style.width]="formService.config?.width"
-      class="angularstudio-clr-form">
+<div [style.width]="formService.config?.width"
+     class="angularstudio-clr-form">
 
-    <div *ngFor="let field of formService.config?.fields" class="angularstudio-clr-form-row">
+    <div *ngFor="let field of formService.config[name].fields" class="angularstudio-clr-form-row">
 
         <angularstudio-clr-form-input *ngIf="field.type === 'text'"
+                                      [name]="name"
                                       [field]="field"
-                                      [control]="formService.formGroup.get(field.name)"></angularstudio-clr-form-input>
+                                      [control]="formGroup.get(field.name)"></angularstudio-clr-form-input>
 
         <angularstudio-clr-form-textarea *ngIf="field.type === 'textarea'"
+                                         [name]="name"
                                          [field]="field"
-                                         [control]="formService.formGroup.get(field.name)"></angularstudio-clr-form-textarea>
+                                         [control]="formGroup.get(field.name)"></angularstudio-clr-form-textarea>
 
         <angularstudio-clr-form-select *ngIf="field.type === 'select'"
+                                       [name]="name"
                                        [field]="field"
-                                       [control]="formService.formGroup.get(field.name)"></angularstudio-clr-form-select>
+                                       [control]="formGroup.get(field.name)"></angularstudio-clr-form-select>
 
         <angularstudio-clr-form-checkbox *ngIf="field.type === 'checkbox'"
+                                         [name]="name"
                                          [field]="field"
-                                         [control]="formService.formGroup.get(field.name)"></angularstudio-clr-form-checkbox>
+                                         [control]="formGroup.get(field.name)"></angularstudio-clr-form-checkbox>
 
     </div>
 
-</form>
+</div>

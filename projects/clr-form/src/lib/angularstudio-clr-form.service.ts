@@ -1,25 +1,36 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ComponentFactoryResolver } from '@angular/core';
 import { AngularStudioClrFormConfig } from './angularstudio-clr-form-config';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Subject } from 'rxjs';
+import { AngularstudioClrFormComponent } from './angularstudio-clr-form.component';
+import { AngularStudioClrFormSaveResult } from './angularstudio-clr-form-save-result';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AngularStudioClrFormService<T> {
 
-    public config: AngularStudioClrFormConfig<T>;
-    public formGroup: FormGroup;
+    public config: { [ name: string ]: AngularStudioClrFormConfig<T> } = {};
+    public formGroups: { [ name: string ]: FormGroup } = {};
     public value$: Subject<T> = new Subject();
-    public save$: Subject<T> = new Subject();
+    public save$: Subject<AngularStudioClrFormSaveResult<T>> = new Subject();
 
-    public constructor(private formBuilder: FormBuilder) {
+    public constructor(private formBuilder: FormBuilder,
+                       private readonly factoryResolver: ComponentFactoryResolver) {
 
     }
 
     public init(config: AngularStudioClrFormConfig<T>) {
 
-        this.config = new AngularStudioClrFormConfig(config);
+        if (this.config[ config.name ]) {
+
+            this.config[ config.name ].rootViewContainer.remove(0);
+
+            delete this.config[ config.name ];
+
+        }
+
+        this.config[ config.name ] = new AngularStudioClrFormConfig(config);
 
         const formControls = {};
 
@@ -29,11 +40,11 @@ export class AngularStudioClrFormService<T> {
 
         }
 
-        this.formGroup = this.formBuilder.group(formControls, {});
+        this.formGroups[ config.name ] = this.formBuilder.group(formControls, {});
 
-        this.formGroup.valueChanges.subscribe(v => {
+        this.formGroups[ config.name ].valueChanges.subscribe(v => {
 
-            if (this.formGroup.valid) {
+            if (this.formGroups[ config.name ].valid) {
 
                 this.value$.next(v);
 
@@ -41,17 +52,27 @@ export class AngularStudioClrFormService<T> {
 
         });
 
+        const component = this.config[ config.name ].rootViewContainer.createComponent(this.factoryResolver.resolveComponentFactory(AngularstudioClrFormComponent));
+
+        component.instance.name = config.name;
+        component.instance.formGroup = this.formGroups[ config.name ];
+
     }
 
-    public edit(): void {
+    public edit(name: string): void {
 
-        this.config.fields.forEach(field => field.editing = true);
+        this.config[ name ].fields.forEach(field => field.editing = true);
 
     }
 
-    public save(): void {
+    public save(name: string): void {
 
-        this.save$.next(this.formGroup.value);
+        this.save$.next({
+
+            name,
+            value: this.formGroups[ name ].value
+
+        });
 
     }
 

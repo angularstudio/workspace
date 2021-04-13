@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
 import { AngularStudioClrFormService } from './angularstudio-clr-form.service';
+import { AngularStudioClrFormConfig } from './angularstudio-clr-form-config';
+import { FormGroup } from '@angular/forms';
 
 @Component({
 
@@ -9,13 +11,18 @@ import { AngularStudioClrFormService } from './angularstudio-clr-form.service';
     encapsulation: ViewEncapsulation.None
 
 })
-export class AngularstudioClrFormComponent implements OnInit {
+export class AngularstudioClrFormComponent {
 
-    public constructor(public readonly formService: AngularStudioClrFormService<any>) {
+    public name: string;
+    public config: AngularStudioClrFormConfig<any>;
+    public formGroup: FormGroup;
 
-    }
+    public constructor(private readonly changeDetector: ChangeDetectorRef,
+                       public readonly formService: AngularStudioClrFormService<any>) {
 
-    public ngOnInit(): void {
+        changeDetector.detach();
+
+        setTimeout(() => changeDetector.reattach());
 
     }
 

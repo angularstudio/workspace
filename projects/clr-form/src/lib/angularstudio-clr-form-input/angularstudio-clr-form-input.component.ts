@@ -12,6 +12,8 @@ import { AngularStudioClrFormService } from '../angularstudio-clr-form.service';
 })
 export class AngularstudioClrFormInputComponent implements OnInit {
 
+    @Input() public name: string;
+    @Input() public config: AngularStudioClrFormConfigField<any>;
     @Input() public field: AngularStudioClrFormConfigField<any>;
     @Input() public control: FormControl;
 
@@ -19,7 +21,7 @@ export class AngularstudioClrFormInputComponent implements OnInit {
     public styleTextDecoration: string;
     public styleTextDecorationStyle: string;
 
-    public constructor(private readonly formService: AngularStudioClrFormService<any>) {
+    public constructor(public readonly formService: AngularStudioClrFormService<any>) {
 
     }
 
@@ -38,9 +40,13 @@ export class AngularstudioClrFormInputComponent implements OnInit {
 
     public onSaveClick(): void {
 
-        this.editing = false;
+        if (this.control.valid) {
 
-        this.formService.save();
+            this.editing = false;
+
+            this.formService.save(this.name);
+
+        }
 
     }
 
