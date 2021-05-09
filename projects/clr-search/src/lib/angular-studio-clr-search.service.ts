@@ -8,18 +8,51 @@ import { AngularStudioClrSearchComponent } from './angular-studio-clr-search.com
 })
 export class AngularStudioClrSearchService<T, R> {
 
+    /**
+     * Maintains all of the configuration(s) for handling multiple
+     * instances of the search component.
+     *
+     * @type {{[p: string]: AngularStudioClrSearchConfig<T, R>}}
+     */
     public config: { [ name: string ]: AngularStudioClrSearchConfig<T, R> } = {};
 
+    /**
+     * Set by the caller when injected in to a component.
+     * Only needs to be set once.
+     *
+     * @type {ViewContainerRef}
+     */
     public rootViewContainer: ViewContainerRef;
 
+    /**
+     * Subscription for data emitting used to unsubscribe on destroy.
+     *
+     * @type {Subscription}
+     * @private
+     */
     private subscription: Subscription;
 
+    /**
+     * Dependency injection.
+     *
+     * @param {ComponentFactoryResolver} factoryResolver
+     */
     public constructor(private readonly factoryResolver: ComponentFactoryResolver) {
 
     }
 
+    /**
+     * Called to initialize a new search instance.
+     *
+     * @param {AngularStudioClrSearchConfig<T, R>} config
+     *
+     * @returns {AngularStudioClrSearchConfig<T, R>}
+     */
     public init(config: AngularStudioClrSearchConfig<T, R>): AngularStudioClrSearchConfig<T, R> {
 
+        //
+        // Instantiate a new search configuration based on name.
+        //
         this.config[ config.name ] = new AngularStudioClrSearchConfig(config);
 
         //
@@ -71,7 +104,6 @@ export class AngularStudioClrSearchService<T, R> {
     public destroy(name: string): void {
 
         delete this.config[ name ];
-        // delete this.transformedData[ name ];
 
     }
 

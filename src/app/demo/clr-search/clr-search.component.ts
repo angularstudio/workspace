@@ -219,6 +219,8 @@ export class ClrSearchComponent implements AfterViewInit, OnDestroy {
 
         config.search$.subscribe(terms => {
 
+            config.pageNumber = 1;
+
             const newResults = data.filter(item => Object.values(item).some(term => {
 
                 return term.toString().includes(terms);
@@ -237,10 +239,14 @@ export class ClrSearchComponent implements AfterViewInit, OnDestroy {
 
                     });
 
+                } else {
+
+                    console.log(12312);
                 }
 
             } else {
 
+                console.log(8888);
                 data2$.next({
 
                     results: newResults
@@ -248,9 +254,6 @@ export class ClrSearchComponent implements AfterViewInit, OnDestroy {
                 });
 
             }
-
-
-            // config.pageNumber = 1;
 
         });
 
