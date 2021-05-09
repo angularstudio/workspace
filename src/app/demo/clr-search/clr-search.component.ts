@@ -221,39 +221,39 @@ export class ClrSearchComponent implements AfterViewInit, OnDestroy {
 
             config.pageNumber = 1;
 
-            const newResults = data.filter(item => Object.values(item).some(term => {
-
-                return term.toString().includes(terms);
-
-            }));
-
-            config.totalResults = newResults.length;
-
-            if (terms) {
-
-                if (newResults.length > 0) {
-
-                    data2$.next({
-
-                        results: newResults
-
-                    });
-
-                } else {
-
-                    console.log(12312);
-                }
-
-            } else {
-
-                console.log(8888);
-                data2$.next({
-
-                    results: newResults
-
-                });
-
-            }
+            // const newResults = data.filter(item => Object.values(item).some(term => {
+            //
+            //     return term.toString().includes(terms);
+            //
+            // }));
+            //
+            // config.totalResults = newResults.length;
+            //
+            // if (terms) {
+            //
+            //     if (newResults.length > 0) {
+            //
+            //         data2$.next({
+            //
+            //             results: newResults
+            //
+            //         });
+            //
+            //     } else {
+            //
+            //         console.log(12312);
+            //     }
+            //
+            // } else {
+            //
+            //     console.log(8888);
+            //     data2$.next({
+            //
+            //         results: newResults
+            //
+            //     });
+            //
+            // }
 
         });
 

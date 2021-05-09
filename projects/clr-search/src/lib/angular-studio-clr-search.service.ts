@@ -84,11 +84,11 @@ export class AngularStudioClrSearchService<T, R> {
 
             }
 
-            setTimeout(() => {
+            // setTimeout(() => {
 
-                this.config[ config.name ].transformedData$.next(data);
+            this.config[ config.name ].transformedData$.next(data);
 
-            }, 3000);
+            // }, 3000);
 
         });
 
