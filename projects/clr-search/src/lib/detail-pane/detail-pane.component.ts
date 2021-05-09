@@ -1,4 +1,12 @@
-import { Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, Input, AfterViewInit } from '@angular/core';
+import {
+    Component,
+    ViewChild,
+    ViewContainerRef,
+    ComponentFactoryResolver,
+    Input,
+    AfterViewInit,
+    ChangeDetectorRef
+} from '@angular/core';
 import { AngularStudioClrSearchConfig } from '../angular-studio-clr-search-config';
 
 @Component({
@@ -12,8 +20,10 @@ export class DetailPaneComponent implements AfterViewInit {
     @ViewChild('detailPane', { read: ViewContainerRef }) public detailPane: ViewContainerRef;
 
     @Input() public config: AngularStudioClrSearchConfig<any, any>;
+    @Input() public data: any;
 
-    public constructor(private readonly factoryResolver: ComponentFactoryResolver) {
+    public constructor(private readonly factoryResolver: ComponentFactoryResolver,
+                       private readonly changeDetector: ChangeDetectorRef) {
 
     }
 
@@ -21,7 +31,24 @@ export class DetailPaneComponent implements AfterViewInit {
 
         if (this.config.detailPane) {
 
-            this.detailPane.createComponent(this.factoryResolver.resolveComponentFactory(this.config.detailPane.componentType));
+            //
+            // Prevent change detection from occurring temporarily.
+            //
+            this.changeDetector.detach();
+
+            const comp = this.detailPane.createComponent(this.factoryResolver.resolveComponentFactory(this.config.detailPane.componentType));
+
+            comp.instance.data = this.data;
+
+            //
+            // Draw the changes for the new component.
+            //
+            this.changeDetector.detectChanges();
+
+            //
+            // Let change detection run itself.
+            //
+            this.changeDetector.reattach();
 
         }
 

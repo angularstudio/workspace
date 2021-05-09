@@ -1,11 +1,9 @@
-import { Component, OnDestroy, ChangeDetectorRef, AfterContentChecked, OnInit } from '@angular/core';
+import { Component, OnDestroy, ChangeDetectorRef, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { debounceTime, delay } from 'rxjs/operators';
-import { AngularStudioClrSearchService } from './angular-studio-clr-search.service';
+import { debounceTime } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { AngularStudioClrSearchConfig } from './angular-studio-clr-search-config';
 import { ClrDatagridStateInterface } from '@clr/angular';
-import { AngularStudioClrSearchValueFilterComponent } from './filters/angular-studio-clr-search-value-filter/angular-studio-clr-search-value-filter.component';
 
 @Component({
 
@@ -14,16 +12,14 @@ import { AngularStudioClrSearchValueFilterComponent } from './filters/angular-st
     styleUrls: [ './angular-studio-clr-search.component.scss' ]
 
 })
-export class AngularStudioClrSearchComponent implements AfterContentChecked, OnInit, OnDestroy {
+export class AngularStudioClrSearchComponent implements OnInit, OnDestroy {
 
-    public valueFilter = new AngularStudioClrSearchValueFilterComponent();
+    public detailState: any;
 
-    public detailState;
-
+    public totalItems: number = 0;
     public page: number = 10;
 
     public results: Array<any> = [];
-    public loading: boolean = true;
     public config: AngularStudioClrSearchConfig<any, any>;
 
     public selected: Array<any> = [];
@@ -33,8 +29,7 @@ export class AngularStudioClrSearchComponent implements AfterContentChecked, OnI
 
     private readonly subscription: Subscription;
 
-    public constructor(public readonly searchService: AngularStudioClrSearchService<any, any>,
-                       private readonly changeDetector: ChangeDetectorRef) {
+    public constructor(private readonly changeDetector: ChangeDetectorRef) {
 
         changeDetector.detach();
 
@@ -44,13 +39,15 @@ export class AngularStudioClrSearchComponent implements AfterContentChecked, OnI
 
         });
 
-        console.log(this.config);
-
     }
 
-    public refresh(state: ClrDatagridStateInterface) {
+    public refresh(pagination: ClrDatagridStateInterface) {
 
-        this.config.refresh$.next(state);
+        this.config.paginationState = pagination;
+
+        this.config.loading = true;
+
+        this.config.refresh$.next(pagination);
 
     }
 
@@ -68,10 +65,7 @@ export class AngularStudioClrSearchComponent implements AfterContentChecked, OnI
 
         if (e) {
 
-
-        } else {
-
-            this.changeDetector.detach();
+            this.changeDetector.reattach();
 
         }
 
@@ -79,25 +73,18 @@ export class AngularStudioClrSearchComponent implements AfterContentChecked, OnI
 
     public ngOnInit() {
 
-        this.config.data$.subscribe(data => {
+        this.changeDetector.detectChanges();
 
-            // this.page = 1;
-            this.changeDetector.detach();
+        this.config.transformedData$.pipe(debounceTime(200)).subscribe(results => {
 
-        });
-
-    }
-
-    public ngAfterContentChecked() {
-
-        this.changeDetector.reattach();
-
-        this.config.transformedData$.pipe(delay(2000)).subscribe(results => {
-
+            console.log(results);
+            this.totalItems = 0;
             this.results = results.results;
+            this.config.loading = false;
+
+            this.changeDetector.detectChanges();
 
         });
-
     }
 
     public ngOnDestroy() {

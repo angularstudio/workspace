@@ -1,19 +1,34 @@
-import { Component, ViewChild, ViewContainerRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef, AfterViewInit } from '@angular/core';
 import { AngularStudioClrSearchService } from '../../../../projects/clr-search/src/lib/angular-studio-clr-search.service';
 import { Subject } from 'rxjs';
 import { DetailPaneComponent } from './detail-pane/detail-pane.component';
+import { AngularStudioClrSearchConfig } from '../../../../projects/clr-search/src/lib/angular-studio-clr-search-config';
 
 @Component({
+
     selector: 'app-clr-search',
     templateUrl: './clr-search.component.html',
     styleUrls: [ './clr-search.component.scss' ]
+
 })
-export class ClrSearchComponent implements AfterViewInit, OnDestroy {
+export class ClrSearchComponent implements AfterViewInit {
 
-    @ViewChild('one', { read: ViewContainerRef }) private one: ViewContainerRef;
-    @ViewChild('two', { read: ViewContainerRef }) private two: ViewContainerRef;
+    @ViewChild('search', { read: ViewContainerRef }) private two: ViewContainerRef;
 
-    private interval1: any;
+    private config: AngularStudioClrSearchConfig<any, any>;
+    private terms: string = '';
+    private data = Array.from({ length: 93 }, (_, i) => {
+
+        return {
+
+            iteration: i + 1,
+            random: Math.random(),
+            name: 'Constant data example.',
+            date: new Date().toISOString()
+
+        };
+
+    });
 
     public constructor(private readonly searchService: AngularStudioClrSearchService<any, any>) {
 
@@ -21,100 +36,11 @@ export class ClrSearchComponent implements AfterViewInit, OnDestroy {
 
     public ngAfterViewInit(): void {
 
-        const data1$ = new Subject<any>();
-        const data2$ = new Subject<any>();
         const click$ = new Subject<any>();
 
         click$.subscribe(button => console.log(button));
 
-        // this.searchService.init({
-        //
-        //     name: 'one',
-        //     rootViewContainer: this.one,
-        //
-        //     rowButtons: [ { class: 'fad fa-trash', id: 'delete', label: 'delete' } ],
-        //
-        //     columns: [
-        //
-        //         {
-        //
-        //             id: 'name',
-        //             name: 'Name'
-        //
-        //         }, {
-        //
-        //             id: 'iteration',
-        //             name: 'iteration++'
-        //
-        //         }, {
-        //
-        //             id: 'random',
-        //             name: 'random()'
-        //
-        //         }, {
-        //
-        //             id: 'date',
-        //             name: 'Date Transformed',
-        //             transformer: (data) => {
-        //
-        //                 return new Date(data).toDateString() + ' asdfasdf';
-        //
-        //             }
-        //
-        //         }
-        //
-        //     ],
-        //     data$: data1$,
-        //     pageSize: 1,
-        //     pagination: true,
-        //     title: 'Search Example #1',
-        //     columnFilters: [],
-        //     multiSelect: true,
-        //
-        //     buttons: [
-        //
-        //         { id: 'button1', label: 'Button 1', click$, class: AngularStudioClrSearchButtonClass.DANGER_OUTLINE },
-        //         { id: 'button2', label: 'Button 2', click$, class: AngularStudioClrSearchButtonClass.INFO }
-        //
-        //     ]
-        //
-        // });
-
-        let iteration1 = 0;
-
-        this.interval1 = setInterval(() => {
-
-            iteration1++;
-
-            data1$.next({
-
-                results: [ {
-
-                    iteration: iteration1,
-                    random: Math.random(),
-                    name: 'Search Example #1',
-                    date: new Date().toISOString()
-
-                } ]
-
-            });
-
-        }, 1000);
-
-        const data = Array.from({ length: 93 }, (_, i) => {
-
-            return {
-
-                iteration: i,
-                random: Math.random(),
-                name: 'Search Example #2',
-                date: new Date().toISOString()
-
-            };
-
-        });
-
-        const config = this.searchService.init({
+        this.config = this.searchService.init({
 
             name: 'two',
             rootViewContainer: this.two,
@@ -187,10 +113,8 @@ export class ClrSearchComponent implements AfterViewInit, OnDestroy {
                 }
 
             ],
-            data$: data2$,
             pagination: true,
-            title: 'Search Example #2',
-            columnFilters: [],
+            title: 'Server Side Search Demo',
             multiSelect: true
 
             // buttons: [
@@ -202,76 +126,56 @@ export class ClrSearchComponent implements AfterViewInit, OnDestroy {
 
         });
 
-        config.refresh$.subscribe(state => {
+        this.config.refresh$.subscribe(state => {
 
-            console.log(state);
+            const data = this.getFromServer(1, this.terms);
 
-            if (state.filters) {
-                data2$.next({
-
-                    results: data.filter(item => item.iteration === state.filters[ 0 ].value.iteration)
-
-                });
-
-
-            }
-        });
-
-        config.search$.subscribe(terms => {
-
-            config.pageNumber = 1;
-
-            // const newResults = data.filter(item => Object.values(item).some(term => {
-            //
-            //     return term.toString().includes(terms);
-            //
-            // }));
-            //
-            // config.totalResults = newResults.length;
-            //
-            // if (terms) {
-            //
-            //     if (newResults.length > 0) {
-            //
-            //         data2$.next({
-            //
-            //             results: newResults
-            //
-            //         });
-            //
-            //     } else {
-            //
-            //         console.log(12312);
-            //     }
-            //
-            // } else {
-            //
-            //     console.log(8888);
-            //     data2$.next({
-            //
-            //         results: newResults
-            //
-            //     });
-            //
-            // }
+            this.searchService.setData('two', { results: data }, 93);
 
         });
 
-        setTimeout(() => {
+        this.config.search$.subscribe(terms => {
 
-            data2$.next({
+            this.terms = terms;
 
-                results: data
+            const data = this.getFromServer(1, this.terms);
 
-            });
+            this.searchService.setData('two', { results: data }, data.length);
 
-        }, 1000);
+        });
+
+        this.searchService.setData('two', { results: this.getFromServer(1, this.terms) }, 93);
 
     }
 
-    public ngOnDestroy() {
+    public getFromServer(currentPage: number, terms: string): Array<any> {
 
-        clearInterval(this.interval1);
+        const paginationState = this.config.getPagination();
+
+        if (terms.length > 0) {
+
+            const maxToSimulate = Math.ceil(Math.random() * 10);
+
+            const results = Array.from({ length: maxToSimulate }, (_, i) => {
+
+                return {
+
+                    iteration: i + 1,
+                    random: Math.random(),
+                    name: 'Random data from search.',
+                    date: new Date().toISOString()
+
+                };
+
+            });
+
+            return results.filter(item => Object.values(item).some(term => term.toString().includes(terms))).slice((paginationState.currentPage - 1) * paginationState.perPage, (paginationState.currentPage - 1) * paginationState.perPage + paginationState.perPage);
+
+        } else {
+
+            return this.data.filter(item => Object.values(item).some(term => term.toString().includes(terms))).slice((paginationState.currentPage - 1) * paginationState.perPage, (paginationState.currentPage - 1) * paginationState.perPage + paginationState.perPage);
+
+        }
 
     }
 

@@ -2,6 +2,7 @@ import { Injectable, ViewContainerRef, ComponentFactoryResolver } from '@angular
 import { AngularStudioClrSearchConfig } from './angular-studio-clr-search-config';
 import { Subscription } from 'rxjs';
 import { AngularStudioClrSearchComponent } from './angular-studio-clr-search.component';
+import { AngularStudioClrSearchResult } from './angular-studio-clr-search-result';
 
 @Injectable({
     providedIn: 'root'
@@ -65,34 +66,50 @@ export class AngularStudioClrSearchService<T, R> {
         //
         component.instance.config = this.config[ config.name ];
 
-        //
-        // Transform the data whenever changes are emitted from the outside.
-        //
-        this.subscription = this.config[ config.name ].data$.subscribe((data: any) => {
+        return this.config[ config.name ];
 
-            for (let i = 0; i < data.results.length; i++) {
+    }
 
-                for (let j = 0; j < this.config[ config.name ].columns.length; j++) {
+    /**
+     * Update the datagrid items.
+     *
+     * @param {string} name Configuration instance name.
+     * @param {R} data New data to set.
+     * @param {number} totalItems Total number of server side items (not currently passed total).
+     */
+    public setData(name: string, data: AngularStudioClrSearchResult<R>, totalItems: number): void {
 
-                    if (this.config[ config.name ].columns[ j ].transformer) {
+        this.config[ name ].totalItems = totalItems;
+        this.config[ name ].transformedData$.next(this.transformData(name, data));
 
-                        data.results[ i ][ this.config[ config.name ].columns[ j ].id ] = this.config[ config.name ].columns[ j ].transformer(data.results[ i ][ this.config[ config.name ].columns[ j ].id ]);
+    }
 
-                    }
+    /**
+     * Transform the data set if there are any transformer functions configured.
+     *
+     * @param {string} name Configuration instance name.
+     * @param data Data to apply transformers to.
+     *
+     * @returns {AngularStudioClrSearchResult<R>}
+     * @private
+     */
+    private transformData(name: string, data: AngularStudioClrSearchResult<R>): AngularStudioClrSearchResult<R> {
+
+        for (let i = 0; i < data.results.length; i++) {
+
+            for (let j = 0; j < this.config[ name ].columns.length; j++) {
+
+                if (this.config[ name ].columns[ j ].transformer) {
+
+                    data.results[ i ][ this.config[ name ].columns[ j ].id ] = this.config[ name ].columns[ j ].transformer(data.results[ i ][ this.config[ name ].columns[ j ].id ]);
 
                 }
 
             }
 
-            // setTimeout(() => {
+        }
 
-            this.config[ config.name ].transformedData$.next(data);
-
-            // }, 3000);
-
-        });
-
-        return this.config[ config.name ];
+        return data;
 
     }
 

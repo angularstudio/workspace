@@ -33,8 +33,10 @@
 
 <clr-datagrid (clrDgRefresh)="refresh($event)"
               [clrDgLoading]="config.loading"
+              [clrDgRowSelection]="true"
               [clrDgSelected]="config.multiSelect ? selected : null"
-              (clrDgSelectedChange)="onSelectionChange($event)">
+              (clrDgSelectedChange)="onSelectionChange($event)"
+              #dataGrid>
 
     <clr-dg-action-bar *ngIf="config.actions">
 
@@ -105,7 +107,7 @@
 
     <clr-dg-column *ngIf="config.rowButtons"></clr-dg-column>
 
-    <clr-dg-row *clrDgItems="let row of results" [clrDgItem]="row">
+    <clr-dg-row *ngFor="let row of results" [clrDgItem]="row">
 
         <clr-dg-cell *ngFor="let column of config.columns"
                      (click)="config.rowClick$.next(row)">
@@ -128,13 +130,11 @@
 
         <clr-dg-pagination *ngIf="config.pagination"
                            #pagination
-                           [clrDgTotalItems]="config.totalResults"
-                           [clrDgPageSize]="config.pageSize"
-                           [(clrDgPage)]="config.pageNumber">
+                           [clrDgTotalItems]="config.totalItems">
 
             <clr-dg-page-size [clrPageSizeOptions]="[10,25,50,100]">
 
-                Items per page
+                Items per page:
 
             </clr-dg-page-size>
 
@@ -148,7 +148,8 @@
 
         <clr-dg-detail>
 
-            <detail-pane [config]="config"></detail-pane>
+            <detail-pane [config]="config"
+                         [data]="detailState"></detail-pane>
 
         </clr-dg-detail>
 
