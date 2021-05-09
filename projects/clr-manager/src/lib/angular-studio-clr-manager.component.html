@@ -1,0 +1,47 @@
+<ng-content select="[location=alerts-top]"></ng-content>
+
+<div class="wrapper">
+
+    <angularstudio-clr-header>
+
+        <div location="header-thumb">
+
+            <ng-content select="[location=header-thumb]"></ng-content>
+
+        </div>
+
+        <div location="header-left">
+
+            <ng-content select="[location=header-left]"></ng-content>
+
+        </div>
+
+        <div location="header-right">
+
+            <ng-content select="[location=header-right]"></ng-content>
+
+        </div>
+
+    </angularstudio-clr-header>
+
+</div>
+
+<angularstudio-clr-sub-nav></angularstudio-clr-sub-nav>
+
+<ng-content select="[location=alerts-below]"></ng-content>
+
+<div class="content-container">
+
+    <div class="content-area">
+
+        <ng-content select="[location=content]"></ng-content>
+
+    </div>
+
+    <nav *ngIf="sideNavService.config?.buttons || sideNavService.config?.items" class="sidenav">
+
+        <angularstudio-clr-side-nav></angularstudio-clr-side-nav>
+
+    </nav>
+
+</div>

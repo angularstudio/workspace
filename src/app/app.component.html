@@ -1,57 +1,33 @@
-<!--<div class="wrapper mat-elevation-z6">-->
+<header class="header-6">
 
-<!--    <div class="top">-->
+    <div class="branding">
 
-<!--        <toolbar [config]="toolbar">-->
+        <a href="#" class="nav-link">
 
-<!--            <div class="left" left>-->
+            <img src="/assets/gfx/logo-satin.jpg">
 
-<!--                <div class="icon">-->
+        </a>
 
-<!--                    <img src="https://storage.googleapis.com/streamnvr-assets/gfx/logos/icon.png">-->
+    </div>
 
-<!--                </div>-->
+    <div class="header-nav">
 
-<!--                <div class="logo">-->
+        <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
+        <a routerLink="/demo" routerLinkActive="active" class="nav-link">Demo</a>
+        <a routerLink="/about" routerLinkActive="active" class="nav-link">About</a>
 
-<!--                    <img src="https://storage.googleapis.com/streamnvr-assets/gfx/logos/logo-text.png">-->
+    </div>
 
-<!--                </div>-->
+    <div class="header-actions">
 
-<!--            </div>-->
+        <a class="nav-link nav-icon" aria-label="settings">
 
-<!--            <div class="logo" center>-->
+            <clr-icon shape="cog"></clr-icon>
 
-<!--                center-->
+        </a>
 
-<!--            </div>-->
+    </div>
 
-<!--        </toolbar>-->
+</header>
 
-<!--    </div>-->
-
-<!--    <div class="content" fxLayout="row">-->
-
-<!--        <div class="left">-->
-
-<!--            <board [collapsed]="true" [board]="board"></board>-->
-
-<!--        </div>-->
-
-<!--        <div class="right" fxLayout="column" fxFlexAlign="center" fxLayoutAlign="center">-->
-
-<!--            <toggle [config]="toggle"></toggle>-->
-
-<!--            &lt;!&ndash;            <features-table [config]="features"></features-table>&ndash;&gt;-->
-
-<!--            <plans [config]="plans"></plans>-->
-
-<!--            <buttons [config]="buttons"> asdfasd fas asd fsfs</buttons>-->
-
-<!--        </div>-->
-
-<!--    </div>-->
-
-<!--</div>-->
-
-<app-manager></app-manager>
+<router-outlet></router-outlet>

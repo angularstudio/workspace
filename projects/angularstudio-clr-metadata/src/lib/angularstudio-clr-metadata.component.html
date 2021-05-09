@@ -1,0 +1,62 @@
+<div class="angularstudio-clr-metadata">
+
+    <div *ngFor="let field of metadataService.config[name].fields; let i = index"
+         class="angularstudio-clr-metadata-row">
+
+        <angularstudio-clr-metadata-field [i]="i"
+                                          [name]="name"
+                                          [field]="field.label"
+                                          controlName="label"></angularstudio-clr-metadata-field>
+
+        <div class="angularstudio-clr-metadata-equals">
+
+            =
+
+        </div>
+
+        <angularstudio-clr-metadata-field [i]="i"
+                                          [name]="name"
+                                          [field]="field.value"
+                                          [sensitive]="field.sensitive"
+                                          controlName="value"></angularstudio-clr-metadata-field>
+
+        <div class="angularstudio-clr-metadata-sensitive">
+
+            <clr-checkbox-container>
+
+                <clr-checkbox-wrapper>
+
+                    <input #sensitive
+                           clrCheckbox
+                           type="checkbox"
+                           (click)="onSensitiveClick(field, sensitive.checked)">
+
+                    <label>Sensitive</label>
+
+                </clr-checkbox-wrapper>
+
+            </clr-checkbox-container>
+
+        </div>
+
+        <div *ngIf="field.deletable" class="angularstudio-clr-metadata-icons">
+
+            <i (click)="onDeleteClick(field)" class="fa fa-trash"></i>
+
+        </div>
+
+    </div>
+
+    <div
+        *ngIf="metadataService.config[name].max > 0 ? metadataService.config[name].fields.length < metadataService.config[name].max && metadataService.config[name].allowAdditional : metadataService.config[name].allowAdditional"
+        [class.angularstudio-clr-metadata-additional]="metadataService.config[name].align === 'right'">
+
+        <button (click)="metadataService.addBlankField(name)" class="btn btn-outline-success">
+
+            ADD FIELD
+
+        </button>
+
+    </div>
+
+</div>

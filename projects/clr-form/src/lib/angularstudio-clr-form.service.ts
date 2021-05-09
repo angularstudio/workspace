@@ -57,6 +57,8 @@ export class AngularStudioClrFormService<T> {
         component.instance.name = config.name;
         component.instance.formGroup = this.formGroups[ config.name ];
 
+        console.log(this.config);
+
     }
 
     public edit(name: string): void {

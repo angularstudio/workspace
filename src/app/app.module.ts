@@ -1,45 +1,20 @@
 import { NgModule } from '@angular/core';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { AngularStudioClrManagerModule } from '../../projects/clr-manager/src/lib/angular-studio-clr-manager.module';
-import { ManagerComponent } from './manager/manager.component';
-import { ChildComponent } from './manager/child/child.component';
-import { ChildOneComponent } from './manager/child-one/child-one.component';
-import { ChildTwoComponent } from './manager/child-two/child-two.component';
-import { AngularStudioClrSearchModule } from '../../projects/clr-search/src/lib/angular-studio-clr-search.module';
-import { ClrSearchComponent } from './clr-search/clr-search.component';
-import { ClrFormEditableComponent } from './clr-form-editable/clr-form-editable.component';
-import { ClrFormComponent } from './clr-form/clr-form.component';
-import { ClrWizardComponent } from './clr-wizard/clr-wizard.component';
-import { ClrFormContactInfoComponent } from './clr-form/clr-form-contact-info/clr-form-contact-info.component';
-import { ClrWizardStepUserInfoComponent } from './clr-wizard/clr-wizard-step-user-info/clr-wizard-step-user-info.component';
-import { AngularStudioClrWizardModule } from '../../projects/angularstudio-clr-wizard/src/lib/angularstudio-clr-wizard.module';
-import { AngularStudioClrFormModule } from '../../projects/clr-form/src/lib/angularstudio-clr-form.module';
-import { ClrConfirmComponent } from './clr-confirm/clr-confirm.component';
-import { AngularStudioClrConfirmModule } from '../../projects/angularstudio-clr-confirm/src/lib/angularstudio-clr-confirm.module';
-import { ClrLoginComponent } from './clr-login/clr-login.component';
-import { AngularStudioClrLoginModule } from '../../projects/angularstudio-clr-login/src/lib/angularstudio-clr-login.module';
+import { ClarityModule } from '@clr/angular';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
+import { DemoModule } from './demo/demo.module';
 
 @NgModule({
 
     declarations: [
 
         AppComponent,
-        ManagerComponent,
-        ChildComponent,
-        ChildOneComponent,
-        ChildTwoComponent,
-        ClrSearchComponent,
-        ClrFormEditableComponent,
-        ClrFormComponent,
-        ClrWizardComponent,
-        ClrFormContactInfoComponent,
-        ClrWizardStepUserInfoComponent,
-        ClrConfirmComponent,
-        ClrLoginComponent
+        AboutComponent,
+        HomeComponent
 
     ],
 
@@ -47,91 +22,35 @@ import { AngularStudioClrLoginModule } from '../../projects/angularstudio-clr-lo
 
         BrowserModule,
         BrowserAnimationsModule,
-        FlexLayoutModule,
+        ClarityModule,
+        DemoModule,
         RouterModule.forRoot([
 
             {
 
-                path: 'manage',
-                children: [
+                path: '',
+                pathMatch: 'full',
+                redirectTo: 'home'
 
-                    {
+            }, {
 
-                        path: 'child-one',
-                        component: ChildOneComponent
+                path: 'home',
+                component: HomeComponent
 
-                    }, {
+            }, {
 
-                        path: 'child-two',
-                        component: ChildTwoComponent
-
-                    }, {
-
-                        path: 'search',
-                        component: ClrSearchComponent
-
-                    }, {
-
-                        path: 'clr-login',
-                        component: ClrLoginComponent
-
-                    }, {
-
-                        path: 'clr-form-editable',
-                        component: ClrFormEditableComponent
-
-                    }, {
-
-                        path: 'clr-form',
-                        component: ClrFormComponent
-
-                    }, {
-
-                        path: 'clr-wizard',
-                        component: ClrWizardComponent
-
-                    }, {
-
-                        path: 'clr-confirm',
-                        component: ClrConfirmComponent
-
-                    }
-
-                ]
+                path: 'about',
+                component: AboutComponent
 
             }
 
-        ]),
-
-        AngularStudioClrManagerModule,
-        AngularStudioClrSearchModule,
-        AngularStudioClrFormModule,
-        // AngularStudioClrFormFieldEditableModule,
-        AngularStudioClrWizardModule,
-        AngularStudioClrConfirmModule,
-        AngularStudioClrLoginModule
-        // BoardModule,
-        // ButtonsModule,
-        // CardModule,
-        // ConfirmModule,
-        // DatatableModule,
-        // DialogModule,
-        // PlansModule,
-        // ToggleModule,
-        // ToolbarModule,
+        ])
 
     ],
 
     providers: [],
 
-    bootstrap: [ AppComponent ],
-
-    entryComponents: [
-
-        ClrFormContactInfoComponent,
-        ClrWizardStepUserInfoComponent
-
-    ]
+    bootstrap: [ AppComponent ]
 
 })
 export class AppModule {

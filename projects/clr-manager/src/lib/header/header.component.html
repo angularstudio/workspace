@@ -1,0 +1,23 @@
+<div [style.height]="managerService.config?.header.height"
+     [style.background-color]="managerService.config?.header.backgroundColor"
+     class="wrapper mat-elevation-z3">
+
+    <div class="thumb">
+
+        <ng-content select="[location=header-thumb]"></ng-content>
+
+    </div>
+
+    <div class="left">
+
+        <ng-content select="[location=header-left]"></ng-content>
+
+    </div>
+
+    <div class="right">
+
+        <ng-content select="[location=header-right]"></ng-content>
+
+    </div>
+
+</div>

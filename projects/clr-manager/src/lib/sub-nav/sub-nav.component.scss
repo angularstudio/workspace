@@ -1,0 +1,22 @@
+:host {
+
+    nav {
+
+        display: flex;
+        justify-content: space-between;
+
+        .subnav-left {
+
+            padding-left: 10px;
+
+        }
+
+        .subnav-right {
+
+            flex: 1;
+
+        }
+
+    }
+
+}

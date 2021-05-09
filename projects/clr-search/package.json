@@ -1,0 +1,13 @@
+{
+    "name": "@angular.studio/clr-search",
+    "version": "0.0.17",
+    "peerDependencies": {
+        "@angular/common": "^11.2.9",
+        "@angular/core": "^11.2.9",
+        "@clr/angular": "^5.1.1",
+        "tslib": "^2.0.0",
+        "@clr/ui": "^5.1.1",
+        "@cds/core": "^5.1.1",
+        "@clr/core": "^4.0.12"
+    }
+}

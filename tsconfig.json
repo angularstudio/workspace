@@ -78,6 +78,10 @@
               "dist/angularstudio-clr-login/angularstudio-clr-login",
               "dist/angularstudio-clr-login"
             ],
+            "angularstudio-clr-metadata": [
+              "dist/angularstudio-clr-metadata/angularstudio-clr-metadata",
+              "dist/angularstudio-clr-metadata"
+            ],
             "angularstudio-clr-wizard": [
               "dist/angularstudio-clr-wizard/angularstudio-clr-wizard",
               "dist/angularstudio-clr-wizard"

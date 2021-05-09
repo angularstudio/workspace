@@ -1,0 +1,54 @@
+<section class="sidenav-content">
+
+    <section class="sidenav-buttons">
+
+        <section *ngIf="sideNavService.config?.buttons" class="nav-group">
+
+            <label>{{ sideNavService.config?.buttonsTitle }}</label>
+
+            <ul class="nav-list">
+
+                <li *ngFor="let button of sideNavService.config?.buttons">
+
+                    <button [class]="button.class"
+                            [class.btn]="true"
+                            (click)="onButtonClick(button)"
+                            [routerLink]="button.path">
+
+                        <i *ngIf="button.icon" [class]="button.icon"></i>
+
+                        {{ button.label }}
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+        </section>
+
+        <section class="nav-group">
+
+            <label>{{ sideNavService.config?.itemsTitle}}</label>
+
+            <ul class="nav-list">
+
+                <li *ngFor="let item of sideNavService.config?.items">
+
+                    <a [routerLink]="item.path" class="nav-link" (click)="onItemClick(item)">
+
+                        <i *ngIf="item.icon" [class]="item.icon"></i>
+
+                        {{ item.label }}
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </section>
+
+    </section>
+
+</section>

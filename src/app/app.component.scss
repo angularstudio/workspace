@@ -1,5 +1,31 @@
 :host {
 
+    header {
+
+        background: #121212;
+        border-bottom: 2px solid #555;
+        overflow: hidden;
+
+        .branding {
+
+            margin-right: 25px;
+
+            img {
+
+                height: 90px;
+
+            }
+
+        }
+
+        .active {
+
+            background: #1d1d1d !important;
+
+        }
+
+    }
+
     .wrapper {
 
         display: flex;

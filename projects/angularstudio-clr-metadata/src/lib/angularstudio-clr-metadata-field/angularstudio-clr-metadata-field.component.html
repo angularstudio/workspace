@@ -1,0 +1,38 @@
+<div *ngIf="metadataService.config[name].editing || editing"
+     class="angularstudio-clr-metadata-control angular-clr-metadata-input-control">
+
+    <clr-input-container>
+
+        <input #input
+               clrInput
+               (keydown.enter)="onSaveClick()"
+               (blur)="onSaveClick()"
+               [clrFocusOnViewInit]="!field.dynamic"
+               [placeholder]="field.placeholder || ''"
+               [formControl]="control">
+
+        <clr-control-helper *ngIf="field.helper">{{ field.helper}}</clr-control-helper>
+        <clr-control-error>This field is required!</clr-control-error>
+
+    </clr-input-container>
+
+</div>
+
+<div *ngIf="!metadataService.config[name].editing && !editing"
+     (click)="editing = !editing"
+     [style.text-decoration]="styleTextDecoration"
+     [style.text-decoration-style]="styleTextDecorationStyle"
+     class="angularstudio-clr-metadata-plaintext">
+
+    {{ sensitive ? '***' : control?.value }}
+
+</div>
+
+<div
+    *ngIf="(metadataService.config[name].editing || editing) && metadataService.config[name].saveShow && control.valid && control.dirty"
+    class="angularstudio-clr-metadata-icons">
+
+    <i (click)="onSaveClick()" class="fad fa-save"></i>
+
+</div>
+

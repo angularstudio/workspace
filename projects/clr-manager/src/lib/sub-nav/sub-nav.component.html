@@ -1,0 +1,35 @@
+<nav *ngIf="managerService.config?.subNav?.items" class="subnav">
+
+    <div class="subnav-left">
+
+        <a [routerLink]="managerService.config?.subNav?.backPath" class="nav-link">
+
+            <i [class]="managerService.config?.subNav?.backIcon"></i>
+
+            {{ managerService.config?.subNav?.backLabel }}
+
+        </a>
+
+    </div>
+
+    <div class="subnav-right">
+
+        <ul class="nav">
+
+            <li *ngFor="let item of managerService.config.subNav.items" class="nav-item">
+
+                <a [routerLink]="item.path" [routerLinkActive]="'active'" class="nav-link">
+
+                    <i *ngIf="item.icon" [class]="item.icon"></i>
+
+                    {{ item.label }}
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>

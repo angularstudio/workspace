@@ -1,0 +1,33 @@
+:host {
+
+    .wrapper {
+
+        display: flex;
+        align-items: center;
+
+        padding: 10px;
+
+        filter: drop-shadow(0.1px 1px 1px rgba(0, 0, 0, 0.01));
+
+        .thumb {
+
+            margin-right: 10px;
+            padding: 10px;
+
+        }
+
+        .left {
+
+            flex: 1;
+
+        }
+
+        .right {
+
+            display: flex;
+
+        }
+
+    }
+
+}
