@@ -1,7 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularstudioApiClient } from './APIClient';
 import { AngularstudioAPIClientConfig } from './angularstudio-api-client-config';
 
 
@@ -11,12 +10,6 @@ import { AngularstudioAPIClientConfig } from './angularstudio-api-client-config'
 
         CommonModule,
         HttpClientModule
-
-    ],
-
-    exports: [
-
-        AngularstudioApiClient
 
     ]
 

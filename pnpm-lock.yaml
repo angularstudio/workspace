@@ -136,13 +136,9 @@ importers:
       zone.js: ^0.11.4
   projects/angularstudio-clr-login:
     dependencies:
-      '@clr/core': 4.0.12
-      '@clr/ui': 5.1.1
-      tslib: 2.2.0
+      '@auth0/angular-jwt': 5.0.2
     specifiers:
-      '@clr/core': ^4.0.12
-      '@clr/ui': ^5.1.1
-      tslib: ^2.0.0
+      '@auth0/angular-jwt': ^5.0.2
   projects/angularstudio-clr-metadata:
     dependencies:
       '@clr/core': 4.0.12
@@ -714,7 +710,6 @@ packages:
   /@auth0/angular-jwt/5.0.2:
     dependencies:
       tslib: 2.2.0
-    dev: true
     peerDependencies:
       '@angular/common': '>=9.0.0'
     resolution:
