@@ -1154,6 +1154,46 @@
                     }
                 }
             }
+        },
+        "angularstudio-api-client": {
+            "projectType": "library",
+            "root": "projects/angularstudio-api-client",
+            "sourceRoot": "projects/angularstudio-api-client/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "tsConfig": "projects/angularstudio-api-client/tsconfig.lib.json",
+                        "project": "projects/angularstudio-api-client/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/angularstudio-api-client/tsconfig.lib.prod.json"
+                        }
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/angularstudio-api-client/src/test.ts",
+                        "tsConfig": "projects/angularstudio-api-client/tsconfig.spec.json",
+                        "karmaConfig": "projects/angularstudio-api-client/karma.conf.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/angularstudio-api-client/tsconfig.lib.json",
+                            "projects/angularstudio-api-client/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
         }
     },
     "defaultProject": "angular-studio-framework"

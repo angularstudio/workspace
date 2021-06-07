@@ -10,6 +10,7 @@ export class AngularStudioClrMetadataConfigField {
     public editing?: boolean = false;
     public deletable?: boolean = true;
     public sensitive?: boolean = false;
+    public showSensitive?: boolean = false;
 
     public label: AngularStudioClrMetadataConfigFieldLabel;
     public value: AngularStudioClrMetadataConfigFieldValue;

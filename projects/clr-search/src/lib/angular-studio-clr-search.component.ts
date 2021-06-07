@@ -75,7 +75,7 @@ export class AngularStudioClrSearchComponent implements OnInit, OnDestroy {
 
         this.changeDetector.detectChanges();
 
-        this.config.transformedData$.pipe(debounceTime(200)).subscribe(results => {
+        this.config.transformedData$.pipe(debounceTime(100)).subscribe(results => {
 
             console.log(results);
             this.totalItems = 0;

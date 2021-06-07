@@ -62,6 +62,10 @@
             "@angular.studio/confirm": [
                 "dist/confirm"
             ],
+            "angularstudio-api-client": [
+              "dist/angularstudio-api-client/angularstudio-api-client",
+              "dist/angularstudio-api-client"
+            ],
             "angularstudio-auth-jwt": [
               "dist/angularstudio-auth-jwt/angularstudio-auth-jwt",
               "dist/angularstudio-auth-jwt"

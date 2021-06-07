@@ -20,7 +20,7 @@
                                           [sensitive]="field.sensitive"
                                           controlName="value"></angularstudio-clr-metadata-field>
 
-        <div class="angularstudio-clr-metadata-sensitive">
+        <div *ngIf="field.showSensitive" class="angularstudio-clr-metadata-sensitive">
 
             <clr-checkbox-container>
 

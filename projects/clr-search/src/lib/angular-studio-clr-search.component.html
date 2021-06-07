@@ -119,7 +119,7 @@
         <clr-dg-cell *ngIf="config.rowButtons" class="flex-right">
 
             <i *ngFor="let button of config.rowButtons"
-               (click)="config.rowButtonClick$.next({ data: row, button: button })"
+               (click)="config.rowButtonClick$.next({ data: row, button: button }); $event.stopPropagation()"
                [class]="button.class"></i>
 
         </clr-dg-cell>
