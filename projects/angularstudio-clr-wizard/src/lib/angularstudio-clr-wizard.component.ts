@@ -12,6 +12,7 @@ import {
 import { AngularStudioClrWizardService } from './angularstudio-clr-wizard.service';
 import { ClrWizard } from '@clr/angular';
 import { first } from 'rxjs/operators';
+import { AngularstudioClrWizardConfigStep } from './angularstudio-clr-wizard-config-step';
 
 @Component({
 
@@ -45,6 +46,12 @@ export class AngularStudioClrWizardComponent implements OnInit, OnDestroy, After
             this.changeDetector.detectChanges();
 
         });
+
+    }
+
+    public onPageLoad(step: AngularstudioClrWizardConfigStep): void {
+
+        step.onPageLoad$.next(step);
 
     }
 

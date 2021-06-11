@@ -1,8 +1,8 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularstudioAPIClientConfig } from './angularstudio-api-client-config';
-
+import { AngularStudioAPIClientConfig } from './angularstudio-api-client-config';
+import { AngularStudioAPIClientService } from './angularstudio-api-client-service';
 
 @NgModule({
 
@@ -14,13 +14,13 @@ import { AngularstudioAPIClientConfig } from './angularstudio-api-client-config'
     ]
 
 })
-export class AngularstudioAPIClientModule {
+export class AngularStudioAPIClientModule {
 
-    public static forRoot(config: AngularstudioAPIClientConfig): ModuleWithProviders<AngularstudioAPIClientModule> {
+    public static forRoot(config: AngularStudioAPIClientConfig): ModuleWithProviders<AngularStudioAPIClientModule> {
 
         return {
 
-            ngModule: AngularstudioAPIClientModule,
+            ngModule: AngularStudioAPIClientModule,
 
             providers: [
 
@@ -29,7 +29,9 @@ export class AngularstudioAPIClientModule {
                     provide: 'METADATA_CONFIG',
                     useValue: config
 
-                }
+                },
+
+                AngularStudioAPIClientService
 
             ]
 

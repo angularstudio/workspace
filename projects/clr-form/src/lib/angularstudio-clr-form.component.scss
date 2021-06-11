@@ -15,9 +15,22 @@ angularstudio-clr-form-checkbox {
 .angularstudio-clr-form-row {
 
     display: flex;
+    align-items: center;
     width: 100%;
 
     margin-bottom: 5px;
+
+    background: #eee;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+}
+
+.angularstudio-clr-form-row-wrapper {
+
+    display: flex;
+    align-items: center;
 
 }
 
@@ -29,7 +42,19 @@ angularstudio-clr-form-checkbox {
 
 .angularstudio-clr-form-label {
 
-    flex: 0 1 200px;
+    flex: 1;
+
+}
+
+.angularstudio-clr-form-label-label {
+
+    font-size: 16px;
+
+}
+
+.angularstudio-clr-form-label-description {
+
+    font-size: 12px;
 
 }
 

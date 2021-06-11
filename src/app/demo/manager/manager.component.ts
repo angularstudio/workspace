@@ -69,6 +69,12 @@ export class ManagerComponent {
 
                     }, {
 
+                        label: 'Fancy Form Field',
+                        icon: 'fa fa-search',
+                        path: '/demo/clr-fancy-field'
+
+                    }, {
+
                         label: 'Wizard',
                         icon: 'fa fa-search',
                         path: '/demo/clr-wizard'

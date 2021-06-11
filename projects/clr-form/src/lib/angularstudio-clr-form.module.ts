@@ -7,6 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularStudioClrFormSelectComponent } from './angularstudio-clr-form-select/angularstudio-clr-form-select.component';
 import { AngularStudioClrFormCheckboxComponent } from './angularstudio-clr-form-checkbox/angularstudio-clr-form-checkbox.component';
 import { AngularStudioClrFormTextareaComponent } from './angularstudio-clr-form-textarea/angularstudio-clr-form-textarea.component';
+import { AngularStudioClrFormRangeComponent } from './angularstudio-clr-form-range/angularstudio-clr-form-range.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
 
@@ -16,7 +18,8 @@ import { AngularStudioClrFormTextareaComponent } from './angularstudio-clr-form-
         AngularstudioClrFormInputComponent,
         AngularStudioClrFormSelectComponent,
         AngularStudioClrFormCheckboxComponent,
-        AngularStudioClrFormTextareaComponent
+        AngularStudioClrFormTextareaComponent,
+        AngularStudioClrFormRangeComponent
 
     ],
 
@@ -24,7 +27,9 @@ import { AngularStudioClrFormTextareaComponent } from './angularstudio-clr-form-
 
         CommonModule,
         ClarityModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+
+        NgxSliderModule
 
     ],
 

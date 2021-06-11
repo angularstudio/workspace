@@ -1194,6 +1194,46 @@
                     }
                 }
             }
+        },
+        "angularstudio-clr-fancy-field": {
+            "projectType": "library",
+            "root": "projects/angularstudio-clr-fancy-field",
+            "sourceRoot": "projects/angularstudio-clr-fancy-field/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "tsConfig": "projects/angularstudio-clr-fancy-field/tsconfig.lib.json",
+                        "project": "projects/angularstudio-clr-fancy-field/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/angularstudio-clr-fancy-field/tsconfig.lib.prod.json"
+                        }
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/angularstudio-clr-fancy-field/src/test.ts",
+                        "tsConfig": "projects/angularstudio-clr-fancy-field/tsconfig.spec.json",
+                        "karmaConfig": "projects/angularstudio-clr-fancy-field/karma.conf.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/angularstudio-clr-fancy-field/tsconfig.lib.json",
+                            "projects/angularstudio-clr-fancy-field/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
         }
     },
     "defaultProject": "angular-studio-framework"

@@ -23,6 +23,11 @@
                                          [field]="field"
                                          [control]="formGroup.get(field.name)"></angularstudio-clr-form-checkbox>
 
+        <angularstudio-clr-form-range *ngIf="field.type === 'range'"
+                                      [name]="name"
+                                      [field]="field"
+                                      [control]="formGroup.get(field.name)"></angularstudio-clr-form-range>
+
     </div>
 
 </div>

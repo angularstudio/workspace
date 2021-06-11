@@ -24,6 +24,8 @@ import { AngularStudioClrWizardModule } from '../../../projects/angularstudio-cl
 import { AngularStudioClrConfirmModule } from '../../../projects/angularstudio-clr-confirm/src/lib/angularstudio-clr-confirm.module';
 import { AngularStudioClrLoginModule } from '../../../projects/angularstudio-clr-login/src/lib/angularstudio-clr-login.module';
 import { ClarityModule } from '@clr/angular';
+import { ClrFancyFieldComponent } from './clr-fancy-field/clr-fancy-field.component';
+import { AngularStudioClrFancyFieldModule } from '../../../projects/angularstudio-clr-fancy-field/src/lib/angularstudio-clr-fancy-field.module';
 
 @NgModule({
 
@@ -43,7 +45,8 @@ import { ClarityModule } from '@clr/angular';
         ClrConfirmComponent,
         ClrLoginComponent,
         ClrMetadataComponent,
-        DetailPaneComponent
+        DetailPaneComponent,
+        ClrFancyFieldComponent
 
     ],
 
@@ -105,6 +108,11 @@ import { ClarityModule } from '@clr/angular';
                         path: 'clr-confirm',
                         component: ClrConfirmComponent
 
+                    }, {
+
+                        path: 'clr-fancy-field',
+                        component: ClrFancyFieldComponent
+
                     }
 
                 ]
@@ -124,7 +132,8 @@ import { ClarityModule } from '@clr/angular';
         // AngularStudioClrFormFieldEditableModule,
         AngularStudioClrWizardModule,
         AngularStudioClrConfirmModule,
-        AngularStudioClrLoginModule
+        AngularStudioClrLoginModule,
+        AngularStudioClrFancyFieldModule
 
     ],
 

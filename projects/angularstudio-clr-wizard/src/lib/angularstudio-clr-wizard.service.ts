@@ -10,7 +10,7 @@ import { AngularStudioClrWizardComponent } from './angularstudio-clr-wizard.comp
 export class AngularStudioClrWizardService {
 
     public rootViewContainer: ViewContainerRef;
-
+    public currentStep: string;
     public config: AngularStudioClrWizardConfig;
     public init$: Subject<AngularStudioClrWizardConfig> = new Subject();
     public finish$: Subject<void> = new Subject();

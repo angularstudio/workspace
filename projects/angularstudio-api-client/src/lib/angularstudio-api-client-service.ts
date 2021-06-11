@@ -2,12 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { AngularstudioAPIClientConfig } from './angularstudio-api-client-config';
+import { AngularStudioAPIClientConfig } from './angularstudio-api-client-config';
 
-@Injectable()
-export class AngularstudioAPIClientService<T> {
+@Injectable({
+    providedIn: 'root'
+})
+export class AngularStudioAPIClientService<T> {
 
-    public constructor(@Inject('METADATA_CONFIG') private readonly config: AngularstudioAPIClientConfig,
+    public constructor(@Inject('METADATA_CONFIG') private readonly config: AngularStudioAPIClientConfig,
                        @Inject(HttpClient) private readonly httpClient: HttpClient) {
 
     }

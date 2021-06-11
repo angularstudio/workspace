@@ -27,11 +27,11 @@
     </clr-wizard-button>
 
     <clr-wizard-page *ngFor="let step of createWizardService.config?.steps"
+                     (clrWizardPageOnLoad)="onPageLoad(step)"
                      [clrWizardPageNextDisabled]="!step.nextEnabled">
 
         <ng-template clrPageNavTitle>{{ step.navTitle }}</ng-template>
         <ng-template clrPageTitle>{{ step.pageTitle}}</ng-template>
-
 
         <div #pages></div>
 

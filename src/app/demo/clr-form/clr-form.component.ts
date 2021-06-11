@@ -29,6 +29,7 @@ export class ClrFormComponent implements AfterViewInit {
 
                     name: 'firstName',
                     label: '1First Name',
+                    description: 'asdf asd fas dfas dfa sdf asdf.',
                     placeholder: 'Enter your first name..',
                     type: 'text',
                     value: 'John',
@@ -39,6 +40,7 @@ export class ClrFormComponent implements AfterViewInit {
 
                     name: 'lastName',
                     label: 'Last Name',
+                    description: 'asdf asd fas dfas dfa sdf asdf.',
                     type: 'text',
                     value: 'Doe',
                     validators: [ Validators.required, Validators.minLength(3) ]
@@ -47,6 +49,7 @@ export class ClrFormComponent implements AfterViewInit {
 
                     name: 'textarea',
                     label: 'Textarea',
+                    description: 'asdf asd fas dfas dfa sdf asdf.',
                     type: 'textarea',
                     value: 'asdf as dfasd f asd fa sdf asdf',
                     validators: [ Validators.required, Validators.minLength(3) ]
@@ -55,6 +58,7 @@ export class ClrFormComponent implements AfterViewInit {
 
                     name: 'select',
                     label: 'Select Dropdown',
+                    description: 'asdf asd fas dfas dfa sdf asdf.',
                     type: 'select',
                     value: 'apple',
                     data: [ { label: 'Apple', value: 'apple' }, { label: 'Orange', value: 'orange' } ],
@@ -64,10 +68,21 @@ export class ClrFormComponent implements AfterViewInit {
 
                     name: 'checkbox',
                     label: 'Checkbox',
+                    description: 'asdf asd fas dfas dfa sdf asdf.',
                     type: 'checkbox',
                     value: [ { label: 'Orange', value: 'orange' } ],
                     data: [ { label: 'Apple', value: 'apple' }, { label: 'Orange', value: 'orange' } ],
                     validators: []
+
+                }, {
+
+                    name: 'range',
+                    label: 'Some Range',
+                    description: 'asdf asd fas dfas dfa sdf asdf.',
+                    type: 'range',
+                    value: 50,
+                    min: 1,
+                    max: 100
 
                 }
 
@@ -87,6 +102,7 @@ export class ClrFormComponent implements AfterViewInit {
 
                     name: 'firstName',
                     label: 'Firasdfst Name',
+                    description: 'asdf asd fas dfas dfa sdf asdf.',
                     placeholder: 'Enter your first name..',
                     type: 'text',
                     value: 'John',
@@ -97,6 +113,7 @@ export class ClrFormComponent implements AfterViewInit {
 
                     name: 'asdf',
                     label: 'Lasdfast Name',
+                    description: 'asdf asd fas dfas dfa sdf asdf.',
                     type: 'text',
                     value: 'Doe',
                     validators: [ Validators.required, Validators.minLength(3) ]
@@ -105,6 +122,7 @@ export class ClrFormComponent implements AfterViewInit {
 
                     name: 'textarea',
                     label: 'Textarea',
+                    description: 'asdf asd fas dfas dfa sdf asdf.',
                     type: 'textarea',
                     value: 'asdf as dfasd f asd fa sdf asdf',
                     validators: [ Validators.required, Validators.minLength(3) ]
@@ -113,6 +131,7 @@ export class ClrFormComponent implements AfterViewInit {
 
                     name: 'select',
                     label: 'Select Dropdown',
+                    description: 'asdf asd fas dfas dfa sdf asdf.',
                     type: 'select',
                     value: 'apple',
                     data: [ { label: 'Apple', value: 'apple' }, { label: 'Orange', value: 'orange' } ],
@@ -122,10 +141,21 @@ export class ClrFormComponent implements AfterViewInit {
 
                     name: 'checkbox',
                     label: 'Checkbox',
+                    description: 'asdf asd fas dfas dfa sdf asdf.',
                     type: 'checkbox',
                     value: [ { label: 'Orange', value: 'orange' } ],
                     data: [ { label: 'Apple', value: 'apple' }, { label: 'Orange', value: 'orange' } ],
                     validators: []
+
+                }, {
+
+                    name: 'range',
+                    label: 'Some Range',
+                    description: 'asdf asd fas dfas dfa sdf asdf.',
+                    type: 'range',
+                    value: 50,
+                    min: 1,
+                    max: 100
 
                 }
 

@@ -1,8 +1,8 @@
-export class AngularstudioAPIClientConfig {
+export class AngularStudioAPIClientConfig {
 
     public apiBase: string;
 
-    public constructor(obj: AngularstudioAPIClientConfig) {
+    public constructor(obj: AngularStudioAPIClientConfig) {
 
         Object.assign(this, obj);
 

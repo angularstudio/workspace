@@ -1,8 +1,19 @@
-<div class="angularstudio-clr-form-row">
+<div class="angularstudio-clr-form-row-wrapper">
 
     <div class="angularstudio-clr-form-label">
 
-        {{ field.label }}
+        <div class="angularstudio-clr-form-label-label">
+
+            {{ field.label }}
+
+        </div>
+
+        <div *ngIf="field.description"
+             class="angularstudio-clr-form-label-description">
+
+            {{ field.description }}
+
+        </div>
 
     </div>
 

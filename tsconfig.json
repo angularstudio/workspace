@@ -78,6 +78,10 @@
               "dist/angularstudio-clr-confirm/angularstudio-clr-confirm",
               "dist/angularstudio-clr-confirm"
             ],
+            "angularstudio-clr-fancy-field": [
+              "dist/angularstudio-clr-fancy-field/angularstudio-clr-fancy-field",
+              "dist/angularstudio-clr-fancy-field"
+            ],
             "angularstudio-clr-login": [
               "dist/angularstudio-clr-login/angularstudio-clr-login",
               "dist/angularstudio-clr-login"
