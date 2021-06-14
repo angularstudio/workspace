@@ -26,14 +26,14 @@ export class AngularStudioAPIClientModule {
 
             providers: [
 
+                AngularStudioAPIClientService,
+
                 {
 
-                    provide: AngularStudioAPIClientConfigService,
+                    provide: 'config',
                     useValue: config
 
-                },
-
-                AngularStudioAPIClientService
+                }
 
             ]
 
