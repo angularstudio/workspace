@@ -27,9 +27,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
         CommonModule,
         ClarityModule,
-        ReactiveFormsModule,
-
-        NgxSliderModule
+        ReactiveFormsModule
 
     ],
 
