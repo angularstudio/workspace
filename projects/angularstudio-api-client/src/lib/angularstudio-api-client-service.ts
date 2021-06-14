@@ -3,14 +3,17 @@ import { Injectable, Inject } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AngularStudioAPIClientConfig } from './angularstudio-api-client-config';
+import { API_CLIENT_CONFIG } from "./angularstudio-api-client-config-token";
 
 @Injectable({
     providedIn: 'root'
 })
 export class AngularStudioAPIClientService<T> {
 
-    public constructor(@Inject(AngularStudioAPIClientConfig) private readonly config: AngularStudioAPIClientConfig,
+    public constructor(@Inject(API_CLIENT_CONFIG) private readonly config: AngularStudioAPIClientConfig,
                        @Inject(HttpClient) private readonly httpClient: HttpClient) {
+
+        console.log(config);
 
     }
 

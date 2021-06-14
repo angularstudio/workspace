@@ -28,7 +28,7 @@ export class AngularStudioAPIClientModule {
 
                 {
 
-                    provide: AngularStudioAPIClientConfig,
+                    provide: API_CLIENT_CONFIG,
                     useValue: config
 
                 }
