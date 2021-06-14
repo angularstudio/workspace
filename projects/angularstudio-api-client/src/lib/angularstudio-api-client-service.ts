@@ -9,7 +9,7 @@ import { AngularStudioAPIClientConfig } from './angularstudio-api-client-config'
 })
 export class AngularStudioAPIClientService<T> {
 
-    public constructor(@Inject('METADATA_CONFIG') private readonly config: AngularStudioAPIClientConfig,
+    public constructor(@Inject(AngularStudioAPIClientConfig) private readonly config: AngularStudioAPIClientConfig,
                        @Inject(HttpClient) private readonly httpClient: HttpClient) {
 
     }
