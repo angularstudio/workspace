@@ -4,8 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularStudioAPIClientConfig } from './angularstudio-api-client-config';
 import { AngularStudioAPIClientService } from './angularstudio-api-client-service';
 
-const AngularStudioAPIClientConfigService = new InjectionToken<AngularStudioAPIClientConfig>('AngularStudioAPIClientConfig');
-
 @NgModule({
 
     imports: [
@@ -30,7 +28,7 @@ export class AngularStudioAPIClientModule {
 
                 {
 
-                    provide: 'config',
+                    provide: AngularStudioAPIClientConfig,
                     useValue: config
 
                 }
