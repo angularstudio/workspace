@@ -16,7 +16,7 @@ import { AngularStudioAPIClientService } from './angularstudio-api-client-servic
 })
 export class AngularStudioAPIClientModule {
 
-    public static forRoot(config: AngularStudioAPIClientConfig): ModuleWithProviders<AngularStudioAPIClientService> {
+    public static forRoot(config: AngularStudioAPIClientConfig): ModuleWithProviders<AngularStudioAPIClientService<any>> {
 
         return {
 
