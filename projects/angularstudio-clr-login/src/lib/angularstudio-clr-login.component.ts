@@ -41,7 +41,11 @@ export class AngularStudioClrLoginComponent {
 
     public onSubmit(): void {
 
-        this.loginService.events$.next(this.formGroup.value);
+        if (this.formGroup.valid) {
+
+            this.loginService.events$.next(this.formGroup.value);
+
+        }
 
     }
 

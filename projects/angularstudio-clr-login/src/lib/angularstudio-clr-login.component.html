@@ -68,7 +68,10 @@
             <!--            </div>-->
 
 
-            <button (click)="onSubmit()" class="btn btn-secondary">LOGIN</button>
+            <button (click)="onSubmit()"
+                    [disabled]="!formGroup.valid"
+                    class="btn btn-secondary">LOGIN
+            </button>
 
         </div>
 
