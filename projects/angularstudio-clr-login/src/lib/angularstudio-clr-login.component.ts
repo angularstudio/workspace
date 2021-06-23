@@ -13,7 +13,13 @@ export class AngularStudioClrLoginComponent {
 
     public formGroup = new FormGroup({
 
-        email: new FormControl('', Validators.email),
+        email: new FormControl('', [
+
+            Validators.minLength(8),
+            Validators.maxLength(255),
+            Validators.email
+
+        ]),
         password: new FormControl('', [
 
             Validators.minLength(8),
