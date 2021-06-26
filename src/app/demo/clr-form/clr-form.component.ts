@@ -157,6 +157,15 @@ export class ClrFormComponent implements AfterViewInit {
                     min: 1,
                     max: 100
 
+                }, {
+
+                    name: 'toggle',
+                    label: 'Some toggle',
+                    description: 'asdf asd fas dfas dfa sdf asdf.',
+                    type: 'toggle',
+                    helper: 'If you select this then blah!',
+                    value: true
+
                 }
 
             ]

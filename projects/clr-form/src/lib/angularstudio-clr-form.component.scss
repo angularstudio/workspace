@@ -6,6 +6,8 @@
 angularstudio-clr-form-input,
 angularstudio-clr-form-textarea,
 angularstudio-clr-form-select,
+angularstudio-clr-form-toggle,
+angularstudio-clr-form-range,
 angularstudio-clr-form-checkbox {
 
     width: 100%;
@@ -105,5 +107,36 @@ angularstudio-clr-form-checkbox {
 
     cursor: pointer;
     margin-left: 15px;
+
+}
+
+.angular-clr-form-range-control {
+
+    display: flex;
+    align-items: center;
+
+}
+
+.angular-clr-form-range-control .left, .angular-clr-form-range-control .right {
+
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 12px;
+
+}
+
+.angular-clr-form-range-control .center {
+
+    margin-bottom: -13px;
+    padding: 5px;
+
+}
+
+.angular-clr-form-range-control clr-control-helper {
+
+    text-align: center;
+    font-size: 14px;
+    padding: 3px;
+    font-weight: bold;
 
 }

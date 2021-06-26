@@ -28,6 +28,11 @@
                                       [field]="field"
                                       [control]="formGroup.get(field.name)"></angularstudio-clr-form-range>
 
+        <angularstudio-clr-form-toggle *ngIf="field.type === 'toggle'"
+                                       [name]="name"
+                                       [field]="field"
+                                       [control]="formGroup.get(field.name)"></angularstudio-clr-form-toggle>
+
     </div>
 
 </div>

@@ -1232,6 +1232,86 @@
                     }
                 }
             }
+        },
+        "angulatstudio-modal": {
+            "projectType": "library",
+            "root": "projects/angulatstudio-modal",
+            "sourceRoot": "projects/angulatstudio-modal/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "tsConfig": "projects/angulatstudio-modal/tsconfig.lib.json",
+                        "project": "projects/angulatstudio-modal/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/angulatstudio-modal/tsconfig.lib.prod.json"
+                        }
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/angulatstudio-modal/src/test.ts",
+                        "tsConfig": "projects/angulatstudio-modal/tsconfig.spec.json",
+                        "karmaConfig": "projects/angulatstudio-modal/karma.conf.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/angulatstudio-modal/tsconfig.lib.json",
+                            "projects/angulatstudio-modal/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
+        },
+        "angularstudio-modal": {
+            "projectType": "library",
+            "root": "projects/angularstudio-modal",
+            "sourceRoot": "projects/angularstudio-modal/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "tsConfig": "projects/angularstudio-modal/tsconfig.lib.json",
+                        "project": "projects/angularstudio-modal/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/angularstudio-modal/tsconfig.lib.prod.json"
+                        }
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/angularstudio-modal/src/test.ts",
+                        "tsConfig": "projects/angularstudio-modal/tsconfig.spec.json",
+                        "karmaConfig": "projects/angularstudio-modal/karma.conf.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/angularstudio-modal/tsconfig.lib.json",
+                            "projects/angularstudio-modal/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
         }
     },
     "defaultProject": "angular-studio-framework"

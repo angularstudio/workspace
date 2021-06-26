@@ -1,0 +1,41 @@
+<clr-modal clrModalOpen="true"
+           [clrModalSize]="modalService.config.size"
+           [clrModalStaticBackdrop]="false"
+           [clrModalClosable]="false"
+           #modal>
+
+    <div class="modal-title">
+
+        <i *ngIf="modalService.config.titleIcon" [class]="modalService.config.titleIcon"></i>
+
+        {{ modalService.config?.title }}
+
+    </div>
+
+    <div class="modal-body" #container></div>
+
+    <div class="modal-footer">
+
+        <div class="right">
+
+            <button *ngIf="modalService.config.previousLabel" type="button" class="btn btn-outline"
+                    (click)="onCancelClick()">
+
+                {{ modalService.config.previousLabel }}
+
+            </button>
+
+            <button type="button"
+                    class="btn btn-primary"
+                    (click)="onNextClick()"
+                    [disabled]="modalService.config.nextDisabled$ && (modalService.config.nextDisabled$ | async)">
+
+                {{ modalService.config.nextLabel }}
+
+            </button>
+
+        </div>
+
+    </div>
+
+</clr-modal>

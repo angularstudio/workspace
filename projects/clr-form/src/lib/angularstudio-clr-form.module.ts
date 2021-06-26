@@ -8,6 +8,7 @@ import { AngularStudioClrFormSelectComponent } from './angularstudio-clr-form-se
 import { AngularStudioClrFormCheckboxComponent } from './angularstudio-clr-form-checkbox/angularstudio-clr-form-checkbox.component';
 import { AngularStudioClrFormTextareaComponent } from './angularstudio-clr-form-textarea/angularstudio-clr-form-textarea.component';
 import { AngularStudioClrFormRangeComponent } from './angularstudio-clr-form-range/angularstudio-clr-form-range.component';
+import { AngularstudioClrFormToggleComponent } from './angularstudio-clr-form-toggle/angularstudio-clr-form-toggle.component';
 
 @NgModule({
 
@@ -18,7 +19,8 @@ import { AngularStudioClrFormRangeComponent } from './angularstudio-clr-form-ran
         AngularStudioClrFormSelectComponent,
         AngularStudioClrFormCheckboxComponent,
         AngularStudioClrFormTextareaComponent,
-        AngularStudioClrFormRangeComponent
+        AngularStudioClrFormRangeComponent,
+        AngularstudioClrFormToggleComponent
 
     ],
 

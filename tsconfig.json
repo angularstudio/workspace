@@ -94,6 +94,14 @@
               "dist/angularstudio-clr-wizard/angularstudio-clr-wizard",
               "dist/angularstudio-clr-wizard"
             ],
+            "angularstudio-modal": [
+              "dist/angularstudio-modal/angularstudio-modal",
+              "dist/angularstudio-modal"
+            ],
+            "angulatstudio-modal": [
+              "dist/angulatstudio-modal/angulatstudio-modal",
+              "dist/angulatstudio-modal"
+            ],
             "clr-form": [
               "dist/clr-form/clr-form",
               "dist/clr-form"

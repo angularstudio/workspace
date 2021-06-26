@@ -85,6 +85,12 @@ export class ManagerComponent {
                         icon: 'fa fa-search',
                         path: '/demo/clr-confirm'
 
+                    }, {
+
+                        label: 'Modal',
+                        icon: 'fa fa-search',
+                        path: '/demo/modal'
+
                     }
 
                 ]

@@ -18,29 +18,44 @@
     </div>
 
     <div *ngIf="formService.config[name].editing || editing"
-         class="angularstudio-clr-form-control angular-clr-form-input-control">
+         class="angularstudio-clr-form-control angular-clr-form-input-control angular-clr-form-range-control">
 
-        <!--        <clr-range-container [clrRangeHasProgress]="true">-->
+        <div class="left">
 
-        <!--            <input clrRange-->
-        <!--                   type="range"-->
-        <!--                   (keydown.enter)="onSaveClick()"-->
-        <!--                   (blur)="onSaveClick()"-->
-        <!--                   [placeholder]="field.placeholder || ''"-->
-        <!--                   [formControl]="control"-->
-        <!--                   [min]="field.min"-->
-        <!--                   [max]="field.max">-->
+            {{ field.min }}
 
-        <!--            <clr-control-helper>{{ field.helper}}</clr-control-helper>-->
-        <!--            <clr-control-error>This field is required!</clr-control-error>-->
+        </div>
 
-        <!--        </clr-range-container>-->
-<!--        <ngx-slider [(value)]="value" (valueChange)="onValueChange($event)" [options]="options"></ngx-slider>-->
+        <div class="center">
+
+            <clr-range-container [clrRangeHasProgress]="true" style="width: 100px;">
+
+                <input clrRange
+                       type="range"
+                       (keydown.enter)="onSaveClick()"
+                       (blur)="onSaveClick()"
+                       [placeholder]="field.placeholder || ''"
+                       [formControl]="control"
+                       [min]="field.min"
+                       [max]="field.max">
+
+                <clr-control-helper>{{ control.value }}</clr-control-helper>
+                <clr-control-error>This field is required!</clr-control-error>
+
+            </clr-range-container>
+
+        </div>
+
+        <div class="right">
+
+            {{ field.max }}
+
+        </div>
 
     </div>
 
     <div *ngIf="!formService.config[name].editing && !editing"
-         (click)="editing = !editing"
+         (click)="onEditClick()"
          [style.text-decoration]="styleTextDecoration"
          [style.text-decoration-style]="styleTextDecorationStyle"
          class="angularstudio-clr-form-plaintext">

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef, AfterContentChecked } from '@angular/core';
 import { AngularStudioClrFormConfigField } from '../angularstudio-clr-form-config-field';
 import { FormControl } from '@angular/forms';
 import { AngularStudioClrFormService } from '../angularstudio-clr-form.service';
@@ -8,7 +8,7 @@ import { AngularStudioClrFormService } from '../angularstudio-clr-form.service';
     templateUrl: './angularstudio-clr-form-range.component.html',
     styleUrls: [ './angularstudio-clr-form-range.component.scss' ]
 })
-export class AngularStudioClrFormRangeComponent implements OnInit {
+export class AngularStudioClrFormRangeComponent implements OnInit, AfterContentChecked {
 
     @Input() public name: string;
     @Input() public config: AngularStudioClrFormConfigField<any>;
@@ -35,8 +35,6 @@ export class AngularStudioClrFormRangeComponent implements OnInit {
 
     public ngOnInit(): void {
 
-        this.changeDetectorRef.detectChanges();
-
         if (this.field.wavy) {
 
             this.styleTextDecoration = 'underline';
@@ -48,6 +46,20 @@ export class AngularStudioClrFormRangeComponent implements OnInit {
         this.options = { floor: this.field.min, ceil: this.field.max };
 
         this.editing = this.field.editing;
+
+    }
+
+    public ngAfterContentChecked() {
+
+        this.changeDetectorRef.detectChanges();
+
+    }
+
+    public onEditClick() {
+
+        // this.changeDetectorRef.detach();
+        this.editing = true;
+        // this.changeDetectorRef.reattach();
 
     }
 

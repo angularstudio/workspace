@@ -26,6 +26,9 @@ import { AngularStudioClrLoginModule } from '../../../projects/angularstudio-clr
 import { ClarityModule } from '@clr/angular';
 import { ClrFancyFieldComponent } from './clr-fancy-field/clr-fancy-field.component';
 import { AngularStudioClrFancyFieldModule } from '../../../projects/angularstudio-clr-fancy-field/src/lib/angularstudio-clr-fancy-field.module';
+import { ModalComponent } from './modal/modal.component';
+import { AngularStudioModalModule } from '../../../projects/angularstudio-modal/src/lib/angularstudio-modal.module';
+import { ModalExampleComponent } from './modal/modal-example/modal-example.component';
 
 @NgModule({
 
@@ -46,7 +49,9 @@ import { AngularStudioClrFancyFieldModule } from '../../../projects/angularstudi
         ClrLoginComponent,
         ClrMetadataComponent,
         DetailPaneComponent,
-        ClrFancyFieldComponent
+        ClrFancyFieldComponent,
+        ModalComponent,
+        ModalExampleComponent
 
     ],
 
@@ -113,6 +118,11 @@ import { AngularStudioClrFancyFieldModule } from '../../../projects/angularstudi
                         path: 'clr-fancy-field',
                         component: ClrFancyFieldComponent
 
+                    }, {
+
+                        path: 'modal',
+                        component: ModalComponent
+
                     }
 
                 ]
@@ -133,7 +143,8 @@ import { AngularStudioClrFancyFieldModule } from '../../../projects/angularstudi
         AngularStudioClrWizardModule,
         AngularStudioClrConfirmModule,
         AngularStudioClrLoginModule,
-        AngularStudioClrFancyFieldModule
+        AngularStudioClrFancyFieldModule,
+        AngularStudioModalModule
 
     ],
 
@@ -142,7 +153,8 @@ import { AngularStudioClrFancyFieldModule } from '../../../projects/angularstudi
         ClrFormContactInfoComponent,
         ClrWizardStepUserInfoComponent,
 
-        DetailPaneComponent
+        DetailPaneComponent,
+        ModalExampleComponent
 
     ]
 
