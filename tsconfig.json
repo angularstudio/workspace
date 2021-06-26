@@ -74,6 +74,10 @@
               "dist/angularstudio-authentication/angularstudio-authentication",
               "dist/angularstudio-authentication"
             ],
+            "angularstudio-change-password": [
+              "dist/angularstudio-change-password/angularstudio-change-password",
+              "dist/angularstudio-change-password"
+            ],
             "angularstudio-clr-confirm": [
               "dist/angularstudio-clr-confirm/angularstudio-clr-confirm",
               "dist/angularstudio-clr-confirm"

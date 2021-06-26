@@ -1312,6 +1312,46 @@
                     }
                 }
             }
+        },
+        "angularstudio-change-password": {
+            "projectType": "library",
+            "root": "projects/angularstudio-change-password",
+            "sourceRoot": "projects/angularstudio-change-password/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "tsConfig": "projects/angularstudio-change-password/tsconfig.lib.json",
+                        "project": "projects/angularstudio-change-password/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/angularstudio-change-password/tsconfig.lib.prod.json"
+                        }
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/angularstudio-change-password/src/test.ts",
+                        "tsConfig": "projects/angularstudio-change-password/tsconfig.spec.json",
+                        "karmaConfig": "projects/angularstudio-change-password/karma.conf.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/angularstudio-change-password/tsconfig.lib.json",
+                            "projects/angularstudio-change-password/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
         }
     },
     "defaultProject": "angular-studio-framework"

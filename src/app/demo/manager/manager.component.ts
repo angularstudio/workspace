@@ -91,6 +91,12 @@ export class ManagerComponent {
                         icon: 'fa fa-search',
                         path: '/demo/modal'
 
+                    }, {
+
+                        label: 'Change Password',
+                        icon: 'fa fa-search',
+                        path: '/demo/change-password'
+
                     }
 
                 ]

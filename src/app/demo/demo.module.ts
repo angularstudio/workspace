@@ -29,6 +29,8 @@ import { AngularStudioClrFancyFieldModule } from '../../../projects/angularstudi
 import { ModalComponent } from './modal/modal.component';
 import { AngularStudioModalModule } from '../../../projects/angularstudio-modal/src/lib/angularstudio-modal.module';
 import { ModalExampleComponent } from './modal/modal-example/modal-example.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AngularStudioChangePasswordModule } from '../../../projects/angularstudio-change-password/src/lib/angularstudio-change-password.module';
 
 @NgModule({
 
@@ -51,7 +53,8 @@ import { ModalExampleComponent } from './modal/modal-example/modal-example.compo
         DetailPaneComponent,
         ClrFancyFieldComponent,
         ModalComponent,
-        ModalExampleComponent
+        ModalExampleComponent,
+        ChangePasswordComponent
 
     ],
 
@@ -123,6 +126,11 @@ import { ModalExampleComponent } from './modal/modal-example/modal-example.compo
                         path: 'modal',
                         component: ModalComponent
 
+                    }, {
+
+                        path: 'change-password',
+                        component: ChangePasswordComponent
+
                     }
 
                 ]
@@ -144,7 +152,8 @@ import { ModalExampleComponent } from './modal/modal-example/modal-example.compo
         AngularStudioClrConfirmModule,
         AngularStudioClrLoginModule,
         AngularStudioClrFancyFieldModule,
-        AngularStudioModalModule
+        AngularStudioModalModule,
+        AngularStudioChangePasswordModule
 
     ],
 
