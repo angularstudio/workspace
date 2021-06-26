@@ -18,7 +18,43 @@
 
     </div>
 
-    <div class="modal-body" #container></div>
+    <div class="modal-body">
+
+        <div class="modal-alerts">
+
+            <div *ngFor="let alert of modalService.config.alerts"
+                 [class.alert-info]="alert.type === 'info'"
+                 [class.alert-warning]="alert.type === 'info'"
+                 [class.alert-danger]="alert.type === 'error'"
+                 class="alert alert-app-level">
+
+                <div class="alert-items">
+
+                    <div class="alert-item">
+
+                        <div class="alert-icon-wrapper">
+
+                            <i [class]="alert.iconClass"></i>
+
+                        </div>
+
+                        <div class="alert-text">
+
+                            {{ alert.message }}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div #container></div>
+
+    </div>
 
     <div class="modal-footer">
 

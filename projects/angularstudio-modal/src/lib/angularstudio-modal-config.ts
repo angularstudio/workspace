@@ -1,5 +1,6 @@
 import { Subject } from 'rxjs';
 import { ComponentType } from '@angular/cdk/overlay';
+import { AngularstudioModalAlertConfig } from './angularstudio-modal-alert-config';
 
 export class AngularStudioModalConfig {
 
@@ -11,6 +12,7 @@ export class AngularStudioModalConfig {
     public previousLabel?: string = 'CANCEL';
     public nextLabel?: string = 'OK';
     public nextDisabled$?: Subject<boolean> = new Subject();
+    public alerts?: Array<AngularstudioModalAlertConfig>;
 
     public constructor(config: AngularStudioModalConfig) {
 

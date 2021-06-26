@@ -4,9 +4,17 @@ angularstudio-modal .modal-header, .modal-header--accessible {
 
 }
 
-angularstudio-modal .modal-header .modal-title, angularstudio-modal .modal-header--accessible .modal-title {
+angularstudio-modal .modal-header .modal-title,
+angularstudio-modal .modal-header--accessible .modal-title,
+angularstudio-modal .modal-body {
 
     padding: 0 !important;
+
+}
+
+angularstudio-modal .modal-body .alert {
+
+    margin-bottom: 10px;
 
 }
 
@@ -16,4 +24,5 @@ angularstudio-modal .modal-title .description {
     margin-bottom: 10px;
     font-size: 13px;
     line-height: 18px;
+
 }
