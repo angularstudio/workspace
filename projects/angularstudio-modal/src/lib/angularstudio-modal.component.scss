@@ -18,6 +18,18 @@ angularstudio-modal .modal-body .alert {
 
 }
 
+angularstudio-modal .modal-body .alert:last-child {
+
+    margin: 0;
+
+}
+
+angularstudio-modal .modal-alerts {
+
+    margin-bottom: 10px;
+
+}
+
 angularstudio-modal .modal-title .description {
 
     margin-top: 5px;
