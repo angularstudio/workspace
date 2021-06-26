@@ -10,6 +10,12 @@
 
         {{ modalService.config?.title }}
 
+        <div *ngIf="modalService.config?.description" class="description">
+
+            {{ modalService.config?.description }}
+
+        </div>
+
     </div>
 
     <div class="modal-body" #container></div>

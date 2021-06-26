@@ -5,6 +5,7 @@ export class AngularStudioModalConfig {
 
     public title: string;
     public titleIcon?: string;
+    public description?: string;
     public componentType: ComponentType<any>;
     public size?: 'sm' | 'md' | 'lg' = 'md';
     public previousLabel?: string = 'CANCEL';
