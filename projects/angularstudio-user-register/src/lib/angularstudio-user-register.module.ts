@@ -34,5 +34,5 @@ import { ReactiveFormsModule } from '@angular/forms';
     ]
 
 })
-export class AngularstudioUserRegisterModule {
+export class AngularStudioUserRegisterModule {
 }
