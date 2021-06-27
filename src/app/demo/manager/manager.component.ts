@@ -99,6 +99,12 @@ export class ManagerComponent {
 
                     }, {
 
+                        label: 'User Register',
+                        icon: 'fa fa-search',
+                        path: '/demo/user-register'
+
+                    }, {
+
                         label: 'Form Validators',
                         icon: 'fa fa-search',
                         path: '/demo/form-validators'

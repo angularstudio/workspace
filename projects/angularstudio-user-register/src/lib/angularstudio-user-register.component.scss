@@ -1,0 +1,30 @@
+angularstudio-user-register .clr-focus {
+
+    width: auto !important;
+
+}
+
+angularstudio-user-register .alert {
+
+    margin-top: 10px;
+
+    .alert-icon-wrapper {
+
+        i {
+
+            font-size: 20px;
+            color: red;
+
+        }
+
+    }
+
+}
+
+angularstudio-user-register clr-input-container:first-child {
+
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 10px;
+    padding-bottom: 35px;
+
+}

@@ -1,0 +1,141 @@
+<clr-modal clrModalOpen="true"
+           clrModalSize="md"
+           clrModalStaticBackdrop="false"
+           clrModalClosable="false"
+           #modal>
+
+    <h3 class="modal-title">
+
+        {{ userRegisterService.config.title}}
+
+    </h3>
+
+    <div class="modal-body">
+
+        <div class="message">
+
+            {{ userRegisterService.config.message}}
+
+        </div>
+
+        <form [formGroup]="userRegisterService.formGroup"
+              clrLabelSize="4"
+              clrForm>
+
+            <clr-input-container>
+
+                <label>Email Address:</label>
+
+                <input clrInput
+                       placeholder="Enter your email.."
+                       formControlName="email"
+                       minlength="8"
+                       maxlength="255"
+                       style="width: 100%;"
+                       required>
+
+                <clr-control-error *clrIfError="'required'">This field is required!</clr-control-error>
+                <clr-control-error *clrIfError="'minlength'">Please enter a valid email address!</clr-control-error>
+
+            </clr-input-container>
+
+            <clr-password-container>
+
+                <label>New Password</label>
+
+                <input placeholder="Enter new password.."
+                       clrPassword
+                       formControlName="new"
+                       minlength="8"
+                       maxlength="255"
+                       required>
+
+                <clr-control-helper>
+
+                    Must contain at least 8 characters with at least one of them a special character like !@#$%^&*)
+
+                </clr-control-helper>
+
+                <clr-control-error *clrIfError="'required'">This field is required!</clr-control-error>
+                <clr-control-error *clrIfError="'minlength'">Password must be at least 8 characters!</clr-control-error>
+                <clr-control-error *clrIfError="'match'">Passwords must match!</clr-control-error>
+
+            </clr-password-container>
+
+            <clr-password-container>
+
+                <label>Verify New Password</label>
+
+                <input placeholder="Verify new password.."
+                       clrPassword
+                       formControlName="confirm"
+                       minlength="8"
+                       maxlength="255"
+                       required>
+
+                <clr-control-helper>
+
+                    Must contain at least 8 characters with at least one of them a special character like !@#$%^&*)
+
+                </clr-control-helper>
+
+                <clr-control-error *clrIfError="'required'">This field is required!</clr-control-error>
+                <clr-control-error *clrIfError="'minlength'">Password must be at least 8 characters!</clr-control-error>
+
+            </clr-password-container>
+
+        </form>
+
+        <div *ngIf="userRegisterService.formGroup.hasError('match')"
+             class="alert alert-danger">
+
+            <div class="alert-items">
+
+                <div class="alert-item">
+
+                    <div class="alert-icon-wrapper">
+
+                        <i class="fad fa-exclamation-triangle"></i>
+
+                    </div>
+
+                    <div class="alert-text">
+
+                        Passwords must match!
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+
+        <div class="right">
+
+            <button type="button"
+                    class="btn btn-outline"
+                    (click)="onCancelClick()">
+
+                CANCEL
+
+            </button>
+
+            <button type="button"
+                    class="btn btn-primary"
+                    (click)="onNextClick()"
+                    [disabled]="!userRegisterService.formGroup.valid">
+
+                REGISTER
+
+            </button>
+
+        </div>
+
+    </div>
+
+</clr-modal>

@@ -3,13 +3,15 @@ import { AngularStudioClrLoginComponent } from './angularstudio-clr-login.compon
 import { CommonModule } from '@angular/common';
 import { ClarityModule } from '@clr/angular';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularstudioClrLoginRegisterComponent } from './angularstudio-clr-login-register/angularstudio-clr-login-register.component';
 
 
 @NgModule({
 
     declarations: [
 
-        AngularStudioClrLoginComponent
+        AngularStudioClrLoginComponent,
+        AngularstudioClrLoginRegisterComponent
 
     ],
 

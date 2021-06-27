@@ -33,6 +33,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { AngularStudioChangePasswordModule } from '../../../projects/angularstudio-change-password/src/lib/angularstudio-change-password.module';
 import { FormValidatorsComponent } from './form-validators/form-validators.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserRegisterComponent } from './user-register/user-register.component';
+import { AngularstudioUserRegisterModule } from '../../../projects/angularstudio-user-register/src/lib/angularstudio-user-register.module';
 
 @NgModule({
 
@@ -57,7 +59,8 @@ import { ReactiveFormsModule } from '@angular/forms';
         ModalComponent,
         ModalExampleComponent,
         ChangePasswordComponent,
-        FormValidatorsComponent
+        FormValidatorsComponent,
+        UserRegisterComponent
 
     ],
 
@@ -132,6 +135,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 
                     }, {
 
+                        path: 'user-register',
+                        component: UserRegisterComponent
+
+                    }, {
+
                         path: 'change-password',
                         component: ChangePasswordComponent
 
@@ -162,7 +170,8 @@ import { ReactiveFormsModule } from '@angular/forms';
         AngularStudioClrLoginModule,
         AngularStudioClrFancyFieldModule,
         AngularStudioModalModule,
-        AngularStudioChangePasswordModule
+        AngularStudioChangePasswordModule,
+        AngularstudioUserRegisterModule
 
     ],
 

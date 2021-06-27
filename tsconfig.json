@@ -106,6 +106,10 @@
               "dist/angularstudio-modal/angularstudio-modal",
               "dist/angularstudio-modal"
             ],
+            "angularstudio-user-register": [
+              "dist/angularstudio-user-register/angularstudio-user-register",
+              "dist/angularstudio-user-register"
+            ],
             "angulatstudio-modal": [
               "dist/angulatstudio-modal/angulatstudio-modal",
               "dist/angulatstudio-modal"
