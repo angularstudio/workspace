@@ -11,6 +11,7 @@ export class AngularStudioClrLoginService {
     public config: AngularStudioClrLoginConfig;
     public events$: Subject<AngularStudioClrLoginEvent> = new Subject();
     public defaults$: ReplaySubject<{ email: string }> = new ReplaySubject(1);
+    public click$: Subject<string> = new Subject();
 
     public init(config: AngularStudioClrLoginConfig): Observable<AngularStudioClrLoginEvent> {
 

@@ -34,7 +34,7 @@ import { AngularStudioChangePasswordModule } from '../../../projects/angularstud
 import { FormValidatorsComponent } from './form-validators/form-validators.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserRegisterComponent } from './user-register/user-register.component';
-import { AngularstudioUserRegisterModule } from '../../../projects/angularstudio-user-register/src/lib/angularstudio-user-register.module';
+import { AngularStudioUserRegisterModule } from '../../../projects/angularstudio-user-register/src/lib/angularstudio-user-register.module';
 
 @NgModule({
 
@@ -171,7 +171,7 @@ import { AngularstudioUserRegisterModule } from '../../../projects/angularstudio
         AngularStudioClrFancyFieldModule,
         AngularStudioModalModule,
         AngularStudioChangePasswordModule,
-        AngularstudioUserRegisterModule
+        AngularStudioUserRegisterModule
 
     ],
 

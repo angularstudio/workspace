@@ -61,16 +61,12 @@
 
             </clr-checkbox-wrapper>
 
-            <!--            <div class="error active">-->
-
-            <!--                Invalid user name or password-->
-
-            <!--            </div>-->
-
-
             <button (click)="onSubmit()"
                     [disabled]="formGroup.pristine || !formGroup.valid"
-                    class="btn btn-secondary">LOGIN
+                    class="btn btn-secondary">
+
+                LOGIN
+
             </button>
 
         </div>
@@ -79,13 +75,23 @@
 
             <div>
 
-                <a class="forgot">Forgot password?</a>
+                <a class="forgot"
+                   (click)="loginService.click$.next('forgot')">
+
+                    Forgot password?
+
+                </a>
 
             </div>
 
             <div>
 
-                <a class="signup">Sign up for a free account now!</a>
+                <a class="signup"
+                   (click)="loginService.click$.next('signup')">
+
+                    Sign up for a free account now!
+
+                </a>
 
             </div>
 
