@@ -1352,6 +1352,46 @@
                     }
                 }
             }
+        },
+        "angularstudio-form-validators": {
+            "projectType": "library",
+            "root": "projects/angularstudio-form-validators",
+            "sourceRoot": "projects/angularstudio-form-validators/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "tsConfig": "projects/angularstudio-form-validators/tsconfig.lib.json",
+                        "project": "projects/angularstudio-form-validators/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/angularstudio-form-validators/tsconfig.lib.prod.json"
+                        }
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/angularstudio-form-validators/src/test.ts",
+                        "tsConfig": "projects/angularstudio-form-validators/tsconfig.spec.json",
+                        "karmaConfig": "projects/angularstudio-form-validators/karma.conf.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/angularstudio-form-validators/tsconfig.lib.json",
+                            "projects/angularstudio-form-validators/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
         }
     },
     "defaultProject": "angular-studio-framework"
