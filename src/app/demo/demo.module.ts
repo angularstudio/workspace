@@ -31,6 +31,8 @@ import { AngularStudioModalModule } from '../../../projects/angularstudio-modal/
 import { ModalExampleComponent } from './modal/modal-example/modal-example.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AngularStudioChangePasswordModule } from '../../../projects/angularstudio-change-password/src/lib/angularstudio-change-password.module';
+import { FormValidatorsComponent } from './form-validators/form-validators.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 
@@ -54,7 +56,8 @@ import { AngularStudioChangePasswordModule } from '../../../projects/angularstud
         ClrFancyFieldComponent,
         ModalComponent,
         ModalExampleComponent,
-        ChangePasswordComponent
+        ChangePasswordComponent,
+        FormValidatorsComponent
 
     ],
 
@@ -62,6 +65,7 @@ import { AngularStudioChangePasswordModule } from '../../../projects/angularstud
 
         CommonModule,
         ClarityModule,
+        ReactiveFormsModule,
 
         RouterModule.forChild([
 
@@ -130,6 +134,11 @@ import { AngularStudioChangePasswordModule } from '../../../projects/angularstud
 
                         path: 'change-password',
                         component: ChangePasswordComponent
+
+                    }, {
+
+                        path: 'form-validators',
+                        component: FormValidatorsComponent
 
                     }
 

@@ -97,6 +97,12 @@ export class ManagerComponent {
                         icon: 'fa fa-search',
                         path: '/demo/change-password'
 
+                    }, {
+
+                        label: 'Form Validators',
+                        icon: 'fa fa-search',
+                        path: '/demo/form-validators'
+
                     }
 
                 ]
