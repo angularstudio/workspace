@@ -59,7 +59,7 @@ export class AngularStudioChangePasswordService {
 
     }
 
-    public open(config: AngularStudioChangePasswordConfig): Observable<AngularStudioChangePasswordResult> {
+    public open(config?: AngularStudioChangePasswordConfig): Observable<AngularStudioChangePasswordResult> {
 
         this.config = new AngularStudioChangePasswordConfig(config);
 
