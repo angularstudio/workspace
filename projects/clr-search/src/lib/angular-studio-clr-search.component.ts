@@ -53,8 +53,6 @@ export class AngularStudioClrSearchComponent implements OnInit, OnDestroy {
 
     public onSelectionChange(selected: Array<any>) {
 
-        console.log(selected);
-
         this.selected = selected;
 
         this.config.selectionChanged$.next(selected);
@@ -77,7 +75,6 @@ export class AngularStudioClrSearchComponent implements OnInit, OnDestroy {
 
         this.config.transformedData$.pipe(debounceTime(100)).subscribe(results => {
 
-            console.log(results);
             this.totalItems = 0;
             this.results = results.results;
             this.config.loading = false;

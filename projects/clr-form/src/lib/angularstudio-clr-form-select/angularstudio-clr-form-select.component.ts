@@ -47,6 +47,14 @@ export class AngularStudioClrFormSelectComponent implements OnInit {
 
         this.formService.save(this.name);
 
+        this.formService.fieldChange$.next({
+
+            form: this.name,
+            name: this.field.name,
+            value: this.control.value
+
+        });
+
     }
 
 }

@@ -39,7 +39,7 @@
                        [min]="field.min"
                        [max]="field.max">
 
-                <clr-control-helper>{{ control.value }}</clr-control-helper>
+                <clr-control-helper>{{ field.prefix }} {{ control.value }} {{ field.suffix }}</clr-control-helper>
                 <clr-control-error>This field is required!</clr-control-error>
 
             </clr-range-container>
@@ -60,7 +60,7 @@
          [style.text-decoration-style]="styleTextDecorationStyle"
          class="angularstudio-clr-form-plaintext">
 
-        {{ control.value }}
+        {{ field.prefix }} {{ control.value }} {{ field.suffix }}
 
     </div>
 

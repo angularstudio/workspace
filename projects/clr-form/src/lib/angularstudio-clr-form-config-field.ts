@@ -16,12 +16,13 @@ export class AngularStudioClrFormConfigField<T> {
     public saveShow?: boolean = true;
     public min?: number;
     public max?: number;
+    public prefix?: string;
+    public suffix?: string;
 
     public constructor(field: AngularStudioClrFormConfigField<T>) {
 
         Object.assign(this, field);
 
-        console.log(this);
     }
 
 }

@@ -101,7 +101,7 @@ export class AngularStudioClrSearchService<T, R> {
 
                 if (this.config[ name ].columns[ j ].transformer) {
 
-                    data.results[ i ][ this.config[ name ].columns[ j ].id ] = this.config[ name ].columns[ j ].transformer(data.results[ i ][ this.config[ name ].columns[ j ].id ]);
+                    data.results[ i ][ this.config[ name ].columns[ j ].id ] = this.config[ name ].columns[ j ].transformer(data.results[ i ][ this.config[ name ].columns[ j ].id ], data.results[ i ]);
 
                 }
 

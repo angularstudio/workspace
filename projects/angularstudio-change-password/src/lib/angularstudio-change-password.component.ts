@@ -47,8 +47,6 @@ export class AngularStudioChangePasswordComponent {
 
         });
 
-        this.view.close();
-
     }
 
 }

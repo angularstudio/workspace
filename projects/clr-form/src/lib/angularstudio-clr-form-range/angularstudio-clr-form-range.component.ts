@@ -76,6 +76,14 @@ export class AngularStudioClrFormRangeComponent implements OnInit, AfterContentC
 
             this.formService.save(this.name);
 
+            this.formService.fieldChange$.next({
+
+                form: this.name,
+                name: this.field.name,
+                value: this.control.value
+
+            });
+
         }
 
     }

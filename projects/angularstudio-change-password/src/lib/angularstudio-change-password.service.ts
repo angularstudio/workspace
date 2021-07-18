@@ -13,7 +13,6 @@ export class AngularStudioChangePasswordService {
 
     public config: AngularStudioChangePasswordConfig;
     public subject$: Subject<AngularStudioChangePasswordResult> = new Subject();
-
     public rootViewContainer: ViewContainerRef;
 
     public formGroup = new FormGroup({
@@ -67,6 +66,12 @@ export class AngularStudioChangePasswordService {
         this.rootViewContainer.createComponent(this.factoryResolver.resolveComponentFactory(AngularStudioChangePasswordComponent));
 
         return this.subject$;
+
+    }
+
+    public close(): void {
+
+        this.rootViewContainer.clear();
 
     }
 

@@ -14,6 +14,7 @@ export class AngularStudioClrFormService<T> {
     public formGroups: { [ name: string ]: FormGroup } = {};
     public value$: Subject<T> = new Subject();
     public save$: Subject<AngularStudioClrFormSaveResult<T>> = new Subject();
+    public fieldChange$: Subject<{ form: string, name: string, value: string }> = new Subject();
 
     public constructor(private formBuilder: FormBuilder,
                        private readonly factoryResolver: ComponentFactoryResolver) {
@@ -32,11 +33,23 @@ export class AngularStudioClrFormService<T> {
 
         this.config[ config.name ] = new AngularStudioClrFormConfig(config);
 
-        const formControls = {};
+        const formControls: { [ name: string ]: FormControl } = {};
 
         for (let i = 0; i < config.fields.length; i++) {
 
             formControls[ config.fields[ i ].name ] = new FormControl(config.fields[ i ].value, config.fields[ i ].validators);
+
+            // formControls[ config.fields[ i ].name ].valueChanges.subscribe(change => {
+            //
+            //     this.fieldChange$.next({
+            //
+            //         form: config.name,
+            //         name: config.fields[ i ].name,
+            //         value: change
+            //
+            //     });
+            //
+            // });
 
         }
 
@@ -56,8 +69,6 @@ export class AngularStudioClrFormService<T> {
 
         component.instance.name = config.name;
         component.instance.formGroup = this.formGroups[ config.name ];
-
-        console.log(this.config);
 
     }
 
