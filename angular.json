@@ -58,7 +58,7 @@
                         ],
                         "scripts": [
                             "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",
-                            "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",
+                            "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"
                         ]
                     },
                     "configurations": {
@@ -69,7 +69,14 @@
                                     "with": "src/environments/environment.prod.ts"
                                 }
                             ],
-                            "optimization": true,
+                            "optimization": {
+                                "scripts": true,
+                                "styles": {
+                                    "minify": true,
+                                    "inlineCritical": false
+                                },
+                                "fonts": true
+                            },
                             "outputHashing": "all",
                             "sourceMap": false,
                             "extractCss": true,
