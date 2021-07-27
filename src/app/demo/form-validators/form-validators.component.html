@@ -1,0 +1,21 @@
+<h1>Multiple Email Addresses</h1>
+
+<form [formGroup]="emailMultipleFormGroup"
+      clrForm>
+
+    <clr-textarea-container>
+
+        <label>Email Addresses:</label>
+
+        <textarea clrTextarea
+                  formControlName="emails"
+                  rows="3"
+                  placeholder="Enter email addresses.."></textarea>
+
+        <clr-control-error *clrIfError="'required'">This field is required!</clr-control-error>
+        <clr-control-error *clrIfError="'minlength'">Enter at least one email address!</clr-control-error>
+        <clr-control-error *clrIfError="'emailMultiple'">Enter at least one email address!</clr-control-error>
+
+    </clr-textarea-container>
+
+</form>

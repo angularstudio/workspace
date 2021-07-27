@@ -1,0 +1,56 @@
+<div class="angularstudio-clr-form-row-wrapper">
+
+    <div class="angularstudio-clr-form-label">
+
+        <div class="angularstudio-clr-form-label-label">
+
+            {{ field.label }}
+
+        </div>
+
+        <div *ngIf="field.description"
+             class="angularstudio-clr-form-label-description">
+
+            {{ field.description }}
+
+        </div>
+
+    </div>
+
+    <div class="angularstudio-clr-form-control angular-clr-form-input-control">
+
+        <clr-toggle-container>
+
+            <clr-toggle-wrapper>
+
+                <input type="checkbox"
+                       clrToggle value="true"
+                       (change)="onSaveClick()"
+                       [formControl]="control">
+
+            </clr-toggle-wrapper>
+
+            <clr-control-helper>{{ field.helper}}</clr-control-helper>
+
+        </clr-toggle-container>
+
+    </div>
+
+    <!--    <div *ngIf="!formService.config[name].editing && !editing"-->
+    <!--         (click)="editing = !editing"-->
+    <!--         [style.text-decoration]="styleTextDecoration"-->
+    <!--         [style.text-decoration-style]="styleTextDecorationStyle"-->
+    <!--         class="angularstudio-clr-form-plaintext">-->
+
+    <!--        {{ control.value }}-->
+
+    <!--    </div>-->
+
+    <div *ngIf="(formService.config[name].editing || editing) && formService.config[name].saveShow && control.valid"
+         class="angularstudio-clr-form-icons">
+
+        <i (click)="onSaveClick()" class="fad fa-save"></i>
+
+    </div>
+
+</div>
