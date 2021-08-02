@@ -60,7 +60,12 @@ export class AngularStudioModalComponent implements AfterViewInit {
 
         });
 
-        this.view.close();
+        if (this.modalService.config.closeOnNext) {
+
+            this.view.close();
+
+        }
 
     }
+
 }

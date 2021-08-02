@@ -11,6 +11,7 @@ export class AngularStudioModalConfig {
     public size?: 'sm' | 'md' | 'lg' = 'md';
     public previousLabel?: string = 'CANCEL';
     public nextLabel?: string = 'OK';
+    public closeOnNext: boolean = true;
     public nextDisabled$?: Subject<boolean> = new Subject();
     public alerts?: Array<AngularstudioModalAlertConfig>;
 
