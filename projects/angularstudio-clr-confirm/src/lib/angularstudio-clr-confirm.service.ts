@@ -10,7 +10,7 @@ import { AngularstudioClrConfirmResult } from './angularstudio-clr-confirm-resul
 export class AngularStudioClrConfirmService {
 
     public config: AngularStudioClrConfirmConfig;
-    public subject$: Subject<AngularstudioClrConfirmResult> = new Subject();
+    public subject$: Subject<AngularstudioClrConfirmResult>;
 
     public rootViewContainer: ViewContainerRef;
 
@@ -25,6 +25,8 @@ export class AngularStudioClrConfirmService {
     }
 
     public open(config: AngularStudioClrConfirmConfig): Observable<AngularstudioClrConfirmResult> {
+
+        this.subject$ = new Subject();
 
         this.config = new AngularStudioClrConfirmConfig(config);
 

@@ -36,7 +36,7 @@ export class AngularStudioModalService {
 
     public close(): void {
 
-        this.rootViewContainer.remove(0);
+        this.rootViewContainer.clear();
 
     }
 
