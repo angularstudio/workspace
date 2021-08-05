@@ -12,7 +12,7 @@ import { AngularStudioUserRegisterComponent } from './angularstudio-user-registe
 export class AngularStudioUserRegisterService {
 
     public config: AngularStudioUserRegisterConfig;
-    public subject$: Subject<AngularstudioUserRegisterResult> = new Subject();
+    public subject$: Subject<AngularstudioUserRegisterResult>;
 
     public rootViewContainer: ViewContainerRef;
 
@@ -59,6 +59,8 @@ export class AngularStudioUserRegisterService {
     }
 
     public open(config: AngularStudioUserRegisterConfig): Observable<AngularstudioUserRegisterResult> {
+
+        this.subject$ = new Subject();
 
         this.config = new AngularStudioUserRegisterConfig(config);
 

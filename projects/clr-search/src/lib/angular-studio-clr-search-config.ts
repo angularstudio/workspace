@@ -52,6 +52,7 @@ export class AngularStudioClrSearchConfig<T, R> {
     public rowButtonClick$?: Subject<AngularStudioClrSearchRowButtonEvent<T>> = new Subject();
     public rowClick$?: Subject<T> = new Subject();
     public selectionChanged$?: Subject<Array<T>> = new Subject();
+    public selected?: Array<T>;
     public search$?: Subject<string> = new Subject();
     public paginationState?: ClrDatagridStateInterface = { page: { current: 1, size: 10 } };
 

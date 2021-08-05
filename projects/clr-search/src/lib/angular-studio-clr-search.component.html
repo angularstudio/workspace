@@ -31,128 +31,251 @@
 
 </div>
 
-<clr-datagrid (clrDgRefresh)="refresh($event)"
-              [clrDgLoading]="config.loading"
-              [clrDgRowSelection]="true"
-              [clrDgSelected]="config.multiSelect ? selected : null"
-              (clrDgSelectedChange)="onSelectionChange($event)"
-              #dataGrid>
+<ng-container *ngIf="config.detailPane">
 
-    <clr-dg-action-bar *ngIf="config.actions">
+    <clr-datagrid (clrDgRefresh)="refresh($event)"
+                  [clrDgLoading]="config.loading"
+                  [clrDgRowSelection]="true"
+                  [clrDgSelected]="config.multiSelect ? selected : null"
+                  (clrDgSelectedChange)="onSelectionChange($event)"
+                  #dataGrid>
 
-        <div *ngFor="let group of config.actions"
-             class="btn-group">
+        <clr-dg-action-bar *ngIf="config.actions">
 
-            <clr-dropdown *ngIf="group.dropdown">
+            <div *ngFor="let group of config.actions"
+                 class="btn-group">
 
-                <button type="button"
-                        class="btn btn-sm btn-secondary"
-                        [disabled]="selected.length === 0"
-                        clrDropdownTrigger>
+                <clr-dropdown *ngIf="group.dropdown">
 
-                    ({{ selected.length }})
+                    <button type="button"
+                            class="btn btn-sm btn-secondary"
+                            [disabled]="selected.length === 0"
+                            clrDropdownTrigger>
 
-                    {{ group.dropdownPrefix || 'Selected' }}
+                        ({{ selected.length }})
 
-                    <clr-icon shape="caret down"></clr-icon>
+                        {{ group.dropdownPrefix || 'Selected' }}
 
-                </button>
+                        <clr-icon shape="caret down"></clr-icon>
 
-                <clr-dropdown-menu clrPosition="bottom-left" *clrIfOpen>
+                    </button>
+
+                    <clr-dropdown-menu clrPosition="bottom-left" *clrIfOpen>
+
+                        <button *ngFor="let button of group.buttons"
+                                [class]="button.class"
+                                [class.btn]="true"
+                                [class.btn-sm]="button.small"
+                                (click)="button.click$.next(button)"
+                                clrDropdownItem>
+
+                            {{ button.label }}
+
+                        </button>
+
+                    </clr-dropdown-menu>
+
+                </clr-dropdown>
+
+                <ng-container *ngIf="!group.dropdown">
 
                     <button *ngFor="let button of group.buttons"
                             [class]="button.class"
                             [class.btn]="true"
                             [class.btn-sm]="button.small"
-                            (click)="button.click$.next(button)"
-                            clrDropdownItem>
+                            (click)="button.click$.next(button)">
 
                         {{ button.label }}
 
                     </button>
 
-                </clr-dropdown-menu>
+                </ng-container>
 
-            </clr-dropdown>
+            </div>
 
-            <ng-container *ngIf="!group.dropdown">
+        </clr-dg-action-bar>
 
-                <button *ngFor="let button of group.buttons"
-                        [class]="button.class"
-                        [class.btn]="true"
-                        [class.btn-sm]="button.small"
-                        (click)="button.click$.next(button)">
+        <clr-dg-placeholder>No results found</clr-dg-placeholder>
 
-                    {{ button.label }}
+        <clr-dg-column *ngFor="let column of config.columns">
 
-                </button>
+            <ng-container *clrDgHideableColumn="{hidden: false}">
+
+                {{ column.name }}
 
             </ng-container>
 
-        </div>
+        </clr-dg-column>
 
-    </clr-dg-action-bar>
+        <clr-dg-column *ngIf="config.rowButtons"></clr-dg-column>
 
-    <clr-dg-placeholder>No results found</clr-dg-placeholder>
+        <clr-dg-row *ngFor="let row of results" [clrDgItem]="row">
 
-    <clr-dg-column *ngFor="let column of config.columns">
+            <clr-dg-cell *ngFor="let column of config.columns"
+                         (click)="config.rowClick$.next(row)">
 
-        <ng-container *clrDgHideableColumn="{hidden: false}">
+                {{ row[ column.id ] }}
 
-            {{ column.name }}
+            </clr-dg-cell>
 
-        </ng-container>
+            <clr-dg-cell *ngIf="config.rowButtons" class="flex-right">
 
-    </clr-dg-column>
+                <i *ngFor="let button of config.rowButtons"
+                   (click)="config.rowButtonClick$.next({ data: row, button: button }); $event.stopPropagation()"
+                   [class]="button.class"></i>
 
-    <clr-dg-column *ngIf="config.rowButtons"></clr-dg-column>
+            </clr-dg-cell>
 
-    <clr-dg-row *ngFor="let row of results" [clrDgItem]="row">
+        </clr-dg-row>
 
-        <clr-dg-cell *ngFor="let column of config.columns"
-                     (click)="config.rowClick$.next(row)">
+        <clr-dg-footer>
 
-            {{ row[column.id] }}
+            <clr-dg-pagination *ngIf="config.pagination"
+                               #pagination
+                               [clrDgTotalItems]="config.totalItems">
 
-        </clr-dg-cell>
+                <clr-dg-page-size [clrPageSizeOptions]="[10,25,50,100]">
 
-        <clr-dg-cell *ngIf="config.rowButtons" class="flex-right">
+                    Items per page:
 
-            <i *ngFor="let button of config.rowButtons"
-               (click)="config.rowButtonClick$.next({ data: row, button: button }); $event.stopPropagation()"
-               [class]="button.class"></i>
+                </clr-dg-page-size>
 
-        </clr-dg-cell>
+                Showing {{ pagination.firstItem + 1 }} - {{ pagination.lastItem + 1 }} of {{ pagination.totalItems }}
 
-    </clr-dg-row>
+            </clr-dg-pagination>
 
-    <clr-dg-footer>
+        </clr-dg-footer>
 
-        <clr-dg-pagination *ngIf="config.pagination"
-                           #pagination
-                           [clrDgTotalItems]="config.totalItems">
+        <ng-template [(clrIfDetail)]="detailState" (clrIfDetailChange)="onDetailOpen($event)">
 
-            <clr-dg-page-size [clrPageSizeOptions]="[10,25,50,100]">
+            <clr-dg-detail>
 
-                Items per page:
+                <detail-pane [config]="config"
+                             [data]="detailState"></detail-pane>
 
-            </clr-dg-page-size>
+            </clr-dg-detail>
 
-            Showing {{ pagination.firstItem + 1 }} - {{ pagination.lastItem + 1 }} of {{ pagination.totalItems }}
+        </ng-template>
 
-        </clr-dg-pagination>
+    </clr-datagrid>
 
-    </clr-dg-footer>
+</ng-container>
 
-    <ng-template [(clrIfDetail)]="detailState" (clrIfDetailChange)="onDetailOpen($event)">
+<ng-container *ngIf="!config.detailPane">
 
-        <clr-dg-detail>
+    <clr-datagrid (clrDgRefresh)="refresh($event)"
+                  [clrDgLoading]="config.loading"
+                  [clrDgRowSelection]="true"
+                  [clrDgSelected]="config.multiSelect ? selected : null"
+                  (clrDgSelectedChange)="onSelectionChange($event)"
+                  #dataGrid>
 
-            <detail-pane [config]="config"
-                         [data]="detailState"></detail-pane>
+        <clr-dg-action-bar *ngIf="config.actions">
 
-        </clr-dg-detail>
+            <div *ngFor="let group of config.actions"
+                 class="btn-group">
 
-    </ng-template>
+                <clr-dropdown *ngIf="group.dropdown">
 
-</clr-datagrid>
+                    <button type="button"
+                            class="btn btn-sm btn-secondary"
+                            [disabled]="selected.length === 0"
+                            clrDropdownTrigger>
+
+                        ({{ selected.length }})
+
+                        {{ group.dropdownPrefix || 'Selected' }}
+
+                        <clr-icon shape="caret down"></clr-icon>
+
+                    </button>
+
+                    <clr-dropdown-menu clrPosition="bottom-left" *clrIfOpen>
+
+                        <button *ngFor="let button of group.buttons"
+                                [class]="button.class"
+                                [class.btn]="true"
+                                [class.btn-sm]="button.small"
+                                (click)="button.click$.next(button)"
+                                clrDropdownItem>
+
+                            {{ button.label }}
+
+                        </button>
+
+                    </clr-dropdown-menu>
+
+                </clr-dropdown>
+
+                <ng-container *ngIf="!group.dropdown">
+
+                    <button *ngFor="let button of group.buttons"
+                            [class]="button.class"
+                            [class.btn]="true"
+                            [class.btn-sm]="button.small"
+                            (click)="button.click$.next(button)">
+
+                        {{ button.label }}
+
+                    </button>
+
+                </ng-container>
+
+            </div>
+
+        </clr-dg-action-bar>
+
+        <clr-dg-placeholder>No results found</clr-dg-placeholder>
+
+        <clr-dg-column *ngFor="let column of config.columns">
+
+            <ng-container *clrDgHideableColumn="{hidden: false}">
+
+                {{ column.name }}
+
+            </ng-container>
+
+        </clr-dg-column>
+
+        <clr-dg-column *ngIf="config.rowButtons"></clr-dg-column>
+
+        <clr-dg-row *ngFor="let row of results" [clrDgItem]="row">
+
+            <clr-dg-cell *ngFor="let column of config.columns"
+                         (click)="config.rowClick$.next(row)">
+
+                {{ row[ column.id ] }}
+
+            </clr-dg-cell>
+
+            <clr-dg-cell *ngIf="config.rowButtons" class="flex-right">
+
+                <i *ngFor="let button of config.rowButtons"
+                   (click)="config.rowButtonClick$.next({ data: row, button: button }); $event.stopPropagation()"
+                   [class]="button.class"></i>
+
+            </clr-dg-cell>
+
+        </clr-dg-row>
+
+        <clr-dg-footer>
+
+            <clr-dg-pagination *ngIf="config.pagination"
+                               #pagination
+                               [clrDgTotalItems]="config.totalItems">
+
+                <clr-dg-page-size [clrPageSizeOptions]="[10,25,50,100]">
+
+                    Items per page:
+
+                </clr-dg-page-size>
+
+                Showing {{ pagination.firstItem + 1 }} - {{ pagination.lastItem + 1 }} of {{ pagination.totalItems }}
+
+            </clr-dg-pagination>
+
+        </clr-dg-footer>
+
+    </clr-datagrid>
+
+</ng-container>

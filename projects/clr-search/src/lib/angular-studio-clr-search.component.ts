@@ -55,6 +55,8 @@ export class AngularStudioClrSearchComponent implements OnInit, OnDestroy {
 
         this.selected = selected;
 
+        this.config.selected = selected;
+
         this.config.selectionChanged$.next(selected);
 
     }

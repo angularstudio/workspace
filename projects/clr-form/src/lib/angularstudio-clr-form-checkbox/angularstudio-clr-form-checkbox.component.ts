@@ -51,7 +51,7 @@ export class AngularStudioClrFormCheckboxComponent implements OnInit {
 
         this.formService.save(this.name);
 
-        this.formService.fieldChange$.next({
+        this.formService.config[ this.name ].fieldChange$.next({
 
             form: this.name,
             name: this.field.name,
