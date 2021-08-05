@@ -35,6 +35,8 @@ import { FormValidatorsComponent } from './form-validators/form-validators.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { AngularStudioUserRegisterModule } from '../../../projects/angularstudio-user-register/src/lib/angularstudio-user-register.module';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AngularStudioForgotPasswordModule } from '../../../projects/angularstudio-forgot-password/src/lib/angularstudio-forgot-password.module';
 
 @NgModule({
 
@@ -60,7 +62,8 @@ import { AngularStudioUserRegisterModule } from '../../../projects/angularstudio
         ModalExampleComponent,
         ChangePasswordComponent,
         FormValidatorsComponent,
-        UserRegisterComponent
+        UserRegisterComponent,
+        ForgotPasswordComponent
 
     ],
 
@@ -140,6 +143,11 @@ import { AngularStudioUserRegisterModule } from '../../../projects/angularstudio
 
                     }, {
 
+                        path: 'forgot-password',
+                        component: ForgotPasswordComponent
+
+                    }, {
+
                         path: 'change-password',
                         component: ChangePasswordComponent
 
@@ -170,6 +178,7 @@ import { AngularStudioUserRegisterModule } from '../../../projects/angularstudio
         AngularStudioClrLoginModule,
         AngularStudioClrFancyFieldModule,
         AngularStudioModalModule,
+        AngularStudioForgotPasswordModule,
         AngularStudioChangePasswordModule,
         AngularStudioUserRegisterModule
 

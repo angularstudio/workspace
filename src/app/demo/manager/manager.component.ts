@@ -93,6 +93,12 @@ export class ManagerComponent {
 
                     }, {
 
+                        label: 'Forgot Password',
+                        icon: 'fa fa-search',
+                        path: '/demo/forgot-password'
+
+                    }, {
+
                         label: 'Change Password',
                         icon: 'fa fa-search',
                         path: '/demo/change-password'
