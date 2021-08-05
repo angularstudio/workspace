@@ -12,42 +12,9 @@ import { checkNotSame, checkMatching } from './angularstudio-change-password-val
 export class AngularStudioChangePasswordService {
 
     public config: AngularStudioChangePasswordConfig;
-    public subject$: Subject<AngularStudioChangePasswordResult> = new Subject();
+    public subject$: Subject<AngularStudioChangePasswordResult>;
     public rootViewContainer: ViewContainerRef;
-
-    public formGroup = new FormGroup({
-
-        current: new FormControl('', [
-
-            Validators.minLength(8),
-            Validators.maxLength(255)
-
-        ]),
-
-        new: new FormControl('', [
-
-            Validators.minLength(8),
-            Validators.maxLength(255)
-
-        ]),
-
-        confirm: new FormControl('', [
-
-            Validators.minLength(8),
-            Validators.maxLength(255)
-
-        ])
-
-    }, {
-
-        validators: [
-
-            checkMatching,
-            checkNotSame
-
-        ]
-
-    });
+    public formGroup: FormGroup;
 
     public constructor(private readonly factoryResolver: ComponentFactoryResolver) {
 
@@ -61,7 +28,43 @@ export class AngularStudioChangePasswordService {
 
     public open(config?: AngularStudioChangePasswordConfig): Observable<AngularStudioChangePasswordResult> {
 
+        this.subject$ = new Subject();
+
         this.config = new AngularStudioChangePasswordConfig(config);
+
+        this.formGroup = new FormGroup({
+
+            current: new FormControl('', [
+
+                Validators.minLength(8),
+                Validators.maxLength(255)
+
+            ]),
+
+            new: new FormControl('', [
+
+                Validators.minLength(8),
+                Validators.maxLength(255)
+
+            ]),
+
+            confirm: new FormControl('', [
+
+                Validators.minLength(8),
+                Validators.maxLength(255)
+
+            ])
+
+        }, {
+
+            validators: [
+
+                checkMatching,
+                checkNotSame
+
+            ]
+
+        });
 
         this.rootViewContainer.createComponent(this.factoryResolver.resolveComponentFactory(AngularStudioChangePasswordComponent));
 
