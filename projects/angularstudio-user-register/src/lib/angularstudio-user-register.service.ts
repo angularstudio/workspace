@@ -13,40 +13,8 @@ export class AngularStudioUserRegisterService {
 
     public config: AngularStudioUserRegisterConfig;
     public subject$: Subject<AngularstudioUserRegisterResult>;
-
     public rootViewContainer: ViewContainerRef;
-
-    public formGroup = new FormGroup({
-
-        email: new FormControl('', [
-
-            Validators.email
-
-        ]),
-
-        new: new FormControl('', [
-
-            Validators.minLength(8),
-            Validators.maxLength(255)
-
-        ]),
-
-        confirm: new FormControl('', [
-
-            Validators.minLength(8),
-            Validators.maxLength(255)
-
-        ])
-
-    }, {
-
-        validators: [
-
-            checkMatching
-
-        ]
-
-    });
+    public formGroup: FormGroup;
 
     public constructor(private readonly factoryResolver: ComponentFactoryResolver) {
 
@@ -63,6 +31,38 @@ export class AngularStudioUserRegisterService {
         this.subject$ = new Subject();
 
         this.config = new AngularStudioUserRegisterConfig(config);
+
+        this.formGroup = new FormGroup({
+
+            email: new FormControl('', [
+
+                Validators.email
+
+            ]),
+
+            new: new FormControl('', [
+
+                Validators.minLength(8),
+                Validators.maxLength(255)
+
+            ]),
+
+            confirm: new FormControl('', [
+
+                Validators.minLength(8),
+                Validators.maxLength(255)
+
+            ])
+
+        }, {
+
+            validators: [
+
+                checkMatching
+
+            ]
+
+        });
 
         this.rootViewContainer.createComponent(this.factoryResolver.resolveComponentFactory(AngularStudioUserRegisterComponent));
 
