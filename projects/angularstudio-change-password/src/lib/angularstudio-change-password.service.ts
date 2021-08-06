@@ -3,7 +3,7 @@ import { AngularStudioChangePasswordConfig } from './angularstudio-change-passwo
 import { Subject, Observable } from 'rxjs';
 import { AngularStudioChangePasswordResult } from './angularstudio-change-password-result';
 import { AngularStudioChangePasswordComponent } from './angularstudio-change-password.component';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, ValidatorFn } from '@angular/forms';
 import { checkNotSame, checkMatching } from './angularstudio-change-password-validators';
 
 @Injectable({
@@ -16,7 +16,8 @@ export class AngularStudioChangePasswordService {
     public rootViewContainer: ViewContainerRef;
     public formGroup: FormGroup;
 
-    public constructor(private readonly factoryResolver: ComponentFactoryResolver) {
+    public constructor(private readonly factoryResolver: ComponentFactoryResolver,
+                       private readonly formBuilder: FormBuilder) {
 
     }
 
@@ -32,39 +33,39 @@ export class AngularStudioChangePasswordService {
 
         this.config = new AngularStudioChangePasswordConfig(config);
 
-        this.formGroup = new FormGroup({
+        const formControls: { [ name: string ]: FormControl } = {};
+        const validators: Array<ValidatorFn> = [];
 
-            current: new FormControl('', [
+        if (config.showCurrent) {
 
-                Validators.minLength(8),
-                Validators.maxLength(255)
-
-            ]),
-
-            new: new FormControl('', [
+            formControls[ 'current' ] = new FormControl('', [
 
                 Validators.minLength(8),
                 Validators.maxLength(255)
 
-            ]),
+            ]);
 
-            confirm: new FormControl('', [
+            validators.push(checkNotSame);
 
-                Validators.minLength(8),
-                Validators.maxLength(255)
+        }
 
-            ])
+        formControls[ 'new' ] = new FormControl('', [
 
-        }, {
+            Validators.minLength(8),
+            Validators.maxLength(255)
 
-            validators: [
+        ]);
 
-                checkMatching,
-                checkNotSame
+        formControls[ 'confirm' ] = new FormControl('', [
 
-            ]
+            Validators.minLength(8),
+            Validators.maxLength(255)
 
-        });
+        ]);
+
+        validators.push(checkMatching);
+
+        this.formGroup = this.formBuilder.group(formControls, { validators });
 
         this.rootViewContainer.createComponent(this.factoryResolver.resolveComponentFactory(AngularStudioChangePasswordComponent));
 
