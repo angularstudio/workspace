@@ -42,7 +42,7 @@ export class AngularStudioChangePasswordComponent {
 
             event: AngularStudioChangePasswordEvent.NEXT,
             result: true,
-            current: this.changePasswordService.formGroup.get('current').value,
+            current: this.changePasswordService.formGroup.get('current')?.value,
             password: this.changePasswordService.formGroup.get('new').value
 
         });
