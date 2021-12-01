@@ -1,0 +1,31 @@
+:host {
+
+    .wrapper {
+
+        display: flex;
+        padding: 15px;
+
+        p {
+
+            margin: 5px;
+            padding: 10px;
+            background: white;
+            font-weight: bold;
+            font-size: 16px;
+
+        }
+
+        .example {
+
+            background: #d2d2d2;
+            border: 5px dashed blueviolet;
+            width: 300px;
+            height: 200px;
+            margin: 20px;
+            padding: 10px;
+
+        }
+
+    }
+
+}

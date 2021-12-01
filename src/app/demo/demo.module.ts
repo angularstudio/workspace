@@ -37,6 +37,11 @@ import { UserRegisterComponent } from './user-register/user-register.component';
 import { AngularStudioUserRegisterModule } from '../../../projects/angularstudio-user-register/src/lib/angularstudio-user-register.module';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AngularStudioForgotPasswordModule } from '../../../projects/angularstudio-forgot-password/src/lib/angularstudio-forgot-password.module';
+import { ComponentFactoryComponent } from './component-factory/component-factory.component';
+import { OneComponent } from './component-factory/one/one.component';
+import { TwoComponent } from './component-factory/two/two.component';
+import { ThreeComponent } from './component-factory/three/three.component';
+import { AngularstudioComponentFactoryModule } from '../../../projects/angularstudio-component-factory/src/lib/angularstudio-component-factory.module';
 
 @NgModule({
 
@@ -63,7 +68,11 @@ import { AngularStudioForgotPasswordModule } from '../../../projects/angularstud
         ChangePasswordComponent,
         FormValidatorsComponent,
         UserRegisterComponent,
-        ForgotPasswordComponent
+        ForgotPasswordComponent,
+        ComponentFactoryComponent,
+        OneComponent,
+        TwoComponent,
+        ThreeComponent
 
     ],
 
@@ -82,6 +91,11 @@ import { AngularStudioForgotPasswordModule } from '../../../projects/angularstud
                 children: [
 
                     {
+
+                        path: 'component-factory',
+                        component: ComponentFactoryComponent
+
+                    }, {
 
                         path: 'child-one',
                         component: ChildOneComponent
@@ -177,6 +191,7 @@ import { AngularStudioForgotPasswordModule } from '../../../projects/angularstud
         AngularStudioClrConfirmModule,
         AngularStudioClrLoginModule,
         AngularStudioClrFancyFieldModule,
+        AngularstudioComponentFactoryModule,
         AngularStudioModalModule,
         AngularStudioForgotPasswordModule,
         AngularStudioChangePasswordModule,

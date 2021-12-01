@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { Config } from './config';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Observable, of, ReplaySubject } from 'rxjs';
+import { Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
@@ -19,7 +19,7 @@ export class AngularStudioAuthenticationService<T> {
      *
      * @type {ReplaySubject<HttpResponse<T>>}
      */
-    public readonly data$: ReplaySubject<HttpResponse<T>> = new ReplaySubject();
+    public readonly data$: Subject<HttpResponse<T>> = new Subject();
 
     /**
      * @auth0/angular-jwt helper service for validating jwt tokens.
@@ -75,6 +75,8 @@ export class AngularStudioAuthenticationService<T> {
             observe: 'response'
 
         }).pipe(catchError(e => of(e))).subscribe((result) => {
+
+            console.log(result);
 
             if (result.status === 200) {
 

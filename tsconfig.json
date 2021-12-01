@@ -98,6 +98,10 @@
               "dist/angularstudio-clr-wizard/angularstudio-clr-wizard",
               "dist/angularstudio-clr-wizard"
             ],
+            "angularstudio-component-factory": [
+              "dist/angularstudio-component-factory/angularstudio-component-factory",
+              "dist/angularstudio-component-factory"
+            ],
             "angularstudio-forgot-password": [
               "dist/angularstudio-forgot-password/angularstudio-forgot-password",
               "dist/angularstudio-forgot-password"

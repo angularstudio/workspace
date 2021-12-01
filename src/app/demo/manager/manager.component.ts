@@ -27,6 +27,12 @@ export class ManagerComponent {
 
                     {
 
+                        label: 'Dynamic Component Factory',
+                        icon: 'fa fa-check',
+                        path: '/demo/component-factory'
+
+                    }, {
+
                         label: 'One',
                         icon: 'fa fa-check',
                         path: '/demo/child-one'
